@@ -2,16 +2,17 @@ const mongoose = require('mongoose');
 
 async function connect() {
     try {
-        await mongoose.connect('mongodb+srv://vuvanthanh:vuvanthanh2311@cluster0.gsrkt.mongodb.net/test', {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-            useFindAndModify: false,
-            useCreateIndex: true
-        });
-        console.log("connect succesfully!")
+        await mongoose.connect(
+            'mongodb+srv://vuvanthanh:vuvanthanh2311@cluster0.gsrkt.mongodb.net/Web', {
+                useNewUrlParser: true,
+                useUnifiedTopology: true,
+                useFindAndModify: false,
+                useCreateIndex: true,
+            },
+        );
+        console.log('connect succesfully!');
     } catch (error) {
-        console.log("connect falure!")
-
+        console.log('connect falure!');
     }
 }
-module.exports = { connect }
+module.exports = { connect };

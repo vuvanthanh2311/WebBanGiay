@@ -1,19 +1,17 @@
 var path = require('path');
 const express = require('express');
 const morgan = require('morgan');
-const handlebars = require("express-handlebars");
+const handlebars = require('express-handlebars');
 const { join } = require('path');
-const { urlencoded } = require("express");
+const { urlencoded } = require('express');
 const app = express();
 const port = 3000;
 
-
-const route = require("./routes");
-const db = require("./config/db")
+const route = require('./routes');
+const db = require('./config/db');
 
 // connect db
 db.connect();
-
 
 app.use(
     express.urlencoded({

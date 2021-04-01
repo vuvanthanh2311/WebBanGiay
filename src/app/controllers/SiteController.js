@@ -1,16 +1,16 @@
-const Course = require("../modules/Course")
-const { mutipleMongooseObject } = require('../../util/mongoose')
+const Product = require('../modules/Product');
+const { mutipleMongooseObject } = require('../../util/mongoose');
 class SiteController {
     //[get]
     home(req, res, next) {
         // res.render('home');
-        Course.find({})
-            .then(course => {
-                res.render("home", {
-                    course: mutipleMongooseObject(course)
-                })
+        Product.find({})
+            .then((product) => {
+                res.render('home', {
+                    product: mutipleMongooseObject(product),
+                });
             })
-            .catch(next)
+            .catch(next);
     }
 
     //[get] news
@@ -25,6 +25,5 @@ class SiteController {
     search(req, res) {
         res.render('search');
     }
-
 }
 module.exports = new SiteController();
