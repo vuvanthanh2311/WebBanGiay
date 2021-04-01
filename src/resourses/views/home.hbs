@@ -1,0 +1,16 @@
+<div >
+    <div class="row">
+        {{#each course}}
+        <div class="col-sm-6 col-lg-4">
+            <div class="card mt-4" style="width: 18rem;">
+                <img class="card-img-top" src="/img/giay.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{this.name}}</h5>
+                    <p class="card-text">{{this.account}}</p>
+                    <a href="#" class="btn btn-primary">{{this.password}}</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
