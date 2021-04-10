@@ -30,7 +30,7 @@ class SiteController {
         //  res.render('men/sport');
         Product.find({ type:"sport"})
             .then((product) => {
-                res.render('men/sport', {
+                res.render('content/show', {
                     product: mutipleMongooseObject(product),
                 });
             })
@@ -41,7 +41,7 @@ class SiteController {
         //  res.render('men/lazy');
         Product.find({type:"lazy"})
             .then((product) => {
-                res.render('men/lazy', {
+                res.render('content/show', {
                     product: mutipleMongooseObject(product),
                 });
             })
@@ -52,7 +52,7 @@ class SiteController {
         //  res.render('men/leather');
         Product.find({type:"leather"})
             .then((product) => {
-                res.render('men/leather', {
+                res.render('content/show', {
                     product: mutipleMongooseObject(product),
                 });
             })
@@ -63,11 +63,83 @@ class SiteController {
         //  res.render('men/sandan');
         Product.find({type:"sandan"})
             .then((product) => {
-                res.render('men/sandan', {
+                res.render('content/show', {
                     product: mutipleMongooseObject(product),
                 });
             })
             .catch(next);
+    }
+
+
+    wsport(req, res, next){
+        Product.find({type:"wsport"})
+            .then((product) => {
+                res.render('content/show', {
+                    product: mutipleMongooseObject(product),
+                });
+
+                
+            })
+            .catch(next);
+
+    }
+
+    wsandan(req, res, next){
+        Product.find({type:"wsandan"})
+            .then((product) => {
+                res.render('content/show', {
+                    product: mutipleMongooseObject(product),
+                });
+            })
+            .catch(next);
+
+    }
+
+    whighheel(req, res, next){
+        Product.find({type:"whighheel"})
+            .then((product) => {
+                res.render('content/show', {
+                    product: mutipleMongooseObject(product),
+                });
+            })
+            .catch(next);
+
+    }
+
+
+    ksport(req, res, next){
+        Product.find({type:"ksport"})
+            .then((product) => {
+                res.render('content/show', {
+                    product: mutipleMongooseObject(product),
+                });
+            })
+            .catch(next);
+
+    }
+
+
+    ksandan(req, res, next){
+        Product.find({type:"ksandan"})
+            .then((product) => {
+                res.render('content/show', {
+                    product: mutipleMongooseObject(product),
+                });
+            })
+            .catch(next);
+
+    }
+
+
+    kslipper(req, res, next){
+        Product.find({type:"kslipper"})
+            .then((product) => {
+                res.render('content/show', {
+                    product: mutipleMongooseObject(product),
+                });
+            })
+            .catch(next);
+
     }
     
 
