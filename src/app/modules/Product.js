@@ -5,7 +5,14 @@ const Product = new Schema({
     image: { typeof: String },
     name: { typeof: String },
     price: { typeof: String },
-    credate: { type: Date, default: Date.now },
-    update: { type: Date, default: Date.now },
-});
+    type: { typeof: String },
+    
+    slug: { type: String, slug: "name", unique: true},
+
+},{
+    timestamps: true,
+  });
+
+
+
 module.exports = mongoose.model('Product', Product);
