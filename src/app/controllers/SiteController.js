@@ -1,5 +1,7 @@
 const Product = require('../modules/Product');
 const { mutipleMongooseObject } = require('../../util/mongoose');
+const { MongooseObject } = require('../../util/mongoose');
+const { render } = require('node-sass');
 class SiteController {
     //[get]
     home(req, res, next) {
@@ -13,13 +15,8 @@ class SiteController {
             .catch(next);
     }
 
-    //[get] news
-    news(req, res) {
-        res.render('news');
-    }
-    newsshow(req, res) {
-        res.send('news page slug');
-    }
+
+
 
     //[get] news
     search(req, res) {
