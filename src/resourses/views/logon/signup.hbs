@@ -1,0 +1,67 @@
+<div class="container mt-4 mb-4" style="width: 560px;" >
+    <form class="form__signup" action="/logon/store" method="POST" id="form__signup">
+        <h1>SIGN UP</h1>
+        <div class="form__group">
+            <label for="fullname">full name</label>
+            <input type="text" placeholder="vu van thanh" id="fullname" name="fullname">
+            <span class="form_message"></span>
+        </div>
+        <div class="form__group">
+            <label for="email">email</label>
+            <input type="email" placeholder="vuvanthanh@gmail.com" id="email" name="email">
+            <span class="form_message"></span>
+        </div>
+        <div class="form__group">
+            <label for="password">password</label>
+            <input type="password"  id="password" name="password">
+            <span class="form_message"></span>
+        </div>
+        <div class="form__group">
+            <label for="password_comfirmation">password_comfirmation</label>
+            <input type="password"  id="password_comfirmation" name="password_comfirmation">
+            <span class="form_message"></span>
+        </div>
+        <button class="form__submit">Signup</button>
+    </form>
+</div>
+
+<script src="/js/validator.js"></script>
+<script>
+    validator({
+        form: '#form__signup',
+        formGroups: ".form__group",
+        errorSelector: '.form_message',
+        rules: [
+            validator.isRequired('#fullname', "vui lòng nhập tên đầy đủ"),
+            validator.isRequired('#email', "vui lòng nhập email"),
+            validator.isEmail('#email'),
+            validator.isPassword('#password', 6),
+            validator.isRequired('#password_comfirmation'),
+            validator.isConfirmed("#password_comfirmation", function() {
+                return document.querySelector("#form__signup #password").value;
+            }, "xac nhan mat khau khong dung"),
+            {{!-- validator.isRequired('#avatar', "vui lòng chọn avatar phù hợp"),
+            validator.isRequired('input[name="gender"]', "vui lòng xác nhận giới tính"), --}}
+        ],
+        onSubmit: function(data){
+
+            fetch('/logon/store', {
+                method: 'POST', // or 'PUT'
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+            .then(response => response.json())
+            .then(data => {
+            console.log('Success:', data);
+            })
+            .catch((error) => {
+            console.error('Error:', error);
+            });
+            console.log(data)
+        }
+    });
+</script>
+
+ 

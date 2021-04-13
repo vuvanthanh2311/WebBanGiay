@@ -1,0 +1,38 @@
+.size__small {
+  font-size: 12px; }
+
+.size__big {
+  font-size: 20px; }
+
+.form__signup {
+  background-color: #baceba;
+  padding: 30px; }
+  .form__signup h1 {
+    text-align: center; }
+  .form__signup .form__group label {
+    text-transform: uppercase;
+    display: block;
+    margin-top: 10px; }
+  .form__signup .form__group input {
+    width: 100%;
+    padding: 8px; }
+  .form__signup .form__group .form_message {
+    display: block;
+    height: 12px;
+    font-size: 12px; }
+  .form__signup .form__submit {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 20px;
+    text-transform: uppercase;
+    margin-top: 40px;
+    cursor: pointer;
+    border-radius: 4px; }
+    .form__signup .form__submit:active {
+      box-shadow: 1px 5px 10px black; }
+
+.invalid {
+  color: red; }
+  .invalid input {
+    border: 2px solid red; }
