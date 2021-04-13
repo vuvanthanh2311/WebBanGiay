@@ -1,1 +1,18 @@
-<h5>DON'T HAVE AN ACCOUNT? <a href="/logon/signup">Register an account</a></h5>
+<div class="container mt-4 mb-4" style="width: 560px;" >
+    <form class="form__signup" action="/logon/store" method="POST" id="form__signup">
+        <h1>SIGN IN</h1>
+        <div class="form__group">
+            <label for="email">email</label>
+            <input type="email" placeholder="vuvanthanh@gmail.com" id="email" name="email">
+            <span class="form_message"></span>
+        </div>
+        <div class="form__group">
+            <label for="password">password</label>
+            <input type="password"  id="password" name="password">
+            <span class="form_message"></span>
+        </div>
+        <button class="form__submit">Signin</button>
+    </form>
+</div>
+<h5 style="text-align: center;" >DON'T HAVE AN ACCOUNT? <a href="/logon/signup">Register an account</a></h5>
+
