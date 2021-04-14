@@ -12,8 +12,9 @@ class adminController {
         const Data = req.body;
         Data.slug = req.body.name;
         const product = new Product(Data);
-        product.save();
-        res.json(Data);
+        product.save()
+            .then(() => res.redirect('/admin/createPD'))
+            .catch(next);
     }
 
 }

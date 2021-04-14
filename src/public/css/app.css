@@ -4,6 +4,15 @@
 .size__big {
   font-size: 20px; }
 
+.text-overflow {
+  width: 100%;
+  white-space: pre-wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  display: -webkit-box; }
+
 .form__signup {
   background-color: #baceba;
   padding: 30px; }
