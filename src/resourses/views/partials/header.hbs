@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+{{!-- <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
   <!-- Image and text -->
   <a class="navbar-brand mb-0 h1" href="/">
     <img src="/img/logo.png" width="80" height="40" class="d-inline-block align-center" alt="">
@@ -95,4 +95,70 @@
       </a>
     </form>
   </div>
-</nav>
+</nav> --}}
+
+
+<div class="nav">
+        <div class="nav__left">
+            <a href="/"><img class="logo" src="/img/logo.png" alt=""></a>
+            <ul>
+                <li><a href="#">Men</a>
+                    <div class="dropdown-content">
+                        <a  href="/men/sport">Sport</a>
+                        <a  href="/men/lazy">Lazy</a>
+                        <a  href="/men/leather">Leather</a>
+                        <a  href="/men/sandan">Sandan</a> 
+                        <a href="#">Sale</a>
+                    </div>
+                </li>
+                <li><a href="#">Woman</a>
+                    <div class="dropdown-content">
+                        <a  href="/women/sport">Sport</a>
+                        <a  href="/women/sandan">Sandan</a>
+                        <a  href="/women/highheel">High heels</a>
+                        <a href="#">Sale</a>
+                    </div>
+                </li>
+                <li><a href="#">Kid</a>
+                    <div class="dropdown-content">
+                        <a  href="/kid/sport">Sport</a>
+                        <a  href="/kid/sandan">Sandan</a>
+                        <a  href="/kid/slipper">Slippers</a>
+                        <a href="#">Sale</a>
+                    </div>
+                </li>
+                <li><a href="#">Tutorial</a>
+                    <div class="dropdown-content">
+                        <a  href="#">Choose the size</a>
+                        <a  href="#">Commitment and warranty</a>
+                    </div>
+                </li>
+                <li><a href="#">SYS admin</a>
+                    <div class="dropdown-content">
+                        <a  href="/admin/createPD">Create Product</a>
+                        <a  href="#">Another action</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="nav__right">
+            <div class="nav__right--search">
+                <input class="input" type="text" placeholder="search">
+                <i class="fas fa-search search"></i>
+            </div>
+            <div class="nav__right--user">
+                <div class="dropbtn">
+                    <i class="fas fa-user dropbtn"></i><i class="fas fa-caret-down size-small"></i>
+                    <div class="dropdown-content">
+                        <a  href="/logon/signin">SignIn  </a>
+                        <a  href="/logon/signup">SignUp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="nav__right--cart">
+                <i class="fas fa-cart-plus "></i>
+                <span>0</span>
+            </div>
+        </div>
+
+    </div>
