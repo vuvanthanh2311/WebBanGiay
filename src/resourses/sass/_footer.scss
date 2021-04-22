@@ -1,0 +1,66 @@
+.footer {
+    background-image: linear-gradient(45deg, rgba(29, 28, 28,.8), rgba(29, 28, 28, .8)), url("/img/giay2.jpg");
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+    position: relative;
+    color: rgb(29, 28, 28);
+    color: white;
+    &__main {
+        border-bottom: .2rem solid rgb(204, 205, 221);
+        font-size: 2rem;
+        line-height: 3rem;
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;
+        padding: 10px;
+        max-width: 1280px;
+        margin-left: auto;
+        margin-right: auto;
+        .item--1 {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        .item--4 {
+            text-transform: uppercase;
+            li{
+                font-size: 1.6rem;
+                margin-top: 1rem;
+                position: relative;
+                background-color: rgb(49, 49, 49);
+                height: 5rem;
+                line-height: 5rem;
+                max-width: 16rem;
+                border-radius: 1rem;
+                cursor: pointer;
+                i{
+                    font-size: 3.2rem;
+                    width: 4rem;
+                    vertical-align: middle;   
+                    margin-left: 1rem; 
+                }
+                &:hover{
+                    background-color: rgb(75, 75, 94);
+                    transform: translateY(-5%);
+                }
+            }
+        }
+        &--item {
+            padding: 2rem;
+            img {
+                width: 50px;
+            }
+            ul {
+                li {
+                    list-style: none;
+                }
+            }
+            a {
+                text-decoration: none;
+                color: white;
+                &:hover{
+                    color: rgb(176, 176, 211);
+                }
+            }
+        }
+    }
+}
