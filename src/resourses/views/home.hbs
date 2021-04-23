@@ -4,22 +4,34 @@
     <div class="banner__content">
         <h1 class="banner__content--h1">STAN SMITH, FOREVER</h1>
         <p class="banner__content--p">The adidas Originals x Disney, Stan Smith collection—a combination of style and sustainability.</p>
-        <a href="#"><button class="banner__content--btn after">SHOP NOW<i class="far fa-long-arrow-right"></i></button></a> 
+        <a href="#"><button class="btn--adidas">SHOP NOW<i class="far fa-long-arrow-right"></i></button></a> 
     </div> 
 </div>
-<div class="container">
-{{#each product}}
-    <div class="row">
-        <div class="card">
-            <a href="/product/{{this.slug}}"><img src="{{this.image}}" alt=""></a>
-            <div class="card__content">
-                <a href="/product/{{this.slug}}">
-                    <h3 class="text-overflow">{{this.name}}</h3>
-                </a>
-                <p id="formatPrice" class="card__content--price">{{this.price}}</p>
-                <a href="/product/{{this.slug}}"><button class="card__content--btn">Buy now</button></a>
+<div class="horscroll">
+    <h1>BEST OF SHOES</h1>
+    <div class="horscroll__container">
+    {{#each product}}
+        <div class="row">
+            <div class="card">
+                <a href="/product/{{this.slug}}"><img src="{{this.image}}" alt=""></a>
+                <div class="card__content">
+                    <a href="/product/{{this.slug}}">
+                        <h3 class="text-overflow">{{this.name}}</h3>
+                    </a>
+                    <p id="formatPrice" class="card__content--price">{{this.price}}</p>
+                    <a href="/product/{{this.slug}}"><button class="card__content--btn">Buy now</button></a>
+                </div>
             </div>
         </div>
+    {{/each}} 
     </div>
-{{/each}} 
+</div>
+
+<div class="subscribe">
+    <div class="subscribe__box">
+        <div class="subscribe__box--h1">
+            <h1>SIGN UP &amp; GET AN EXCLUSIVE OFFER</h1>
+        </div> 
+        <a href="#"><button class="btn--adidas">Sign up for newsletter<i class="far fa-long-arrow-right"></i></button></a>
+    </div>
 </div>

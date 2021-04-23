@@ -1,21 +1,22 @@
-.product{
-    padding: 2rem;
+.horscroll{
+    width: 140rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
     &__container {
         overflow: hidden;
-        width: 140rem;
-        margin-left: auto;
-        margin-right: auto;
+        display: flex;
+        overflow-x: scroll;
         .row {
             width: 33%;
             display: inline;
-            float: left;
+            margin: 1rem;
             .card {
-                margin: 2rem 0;
                 position: relative;
                 left: 50%;
                 transform: translateX(-50%);
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-                max-width: 30rem;
+                width: 30rem;
                 // z-index: -1;
                 &:hover{
                     outline: 1px solid black;
