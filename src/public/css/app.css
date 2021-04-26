@@ -391,6 +391,26 @@
     vertical-align: middle;
     margin-left: 2rem; }
 
+.show {
+  width: 138rem;
+  padding: 5rem;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto; }
+  .show__product {
+    grid-column-start: 1;
+    grid-column-end: 4; }
+    .show__product img {
+      width: 80%; }
+  .show__content {
+    grid-column-start: 4;
+    grid-column-end: 6;
+    font-size: 2rem; }
+    .show__content h1 {
+      font-size: 4rem;
+      line-height: 6rem; }
+    .show__content a {
+      line-height: 5rem; }
+
 .horscroll {
   width: 140rem;
   margin-left: auto;
