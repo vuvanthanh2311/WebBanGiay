@@ -114,12 +114,13 @@
     position: absolute;
     box-shadow: 0.4rem 0.4rem 0.4rem rgba(0, 0, 0, 0.2);
     border-radius: .4rem;
-    min-width: 16rem;
+    min-width: 20rem;
+    top: 42px;
     z-index: 10; }
     .nav .dropdown-content a {
       font-size: 2rem;
       color: black;
-      padding-left: 1rem;
+      padding: 0 1rem;
       text-align: left;
       text-decoration: none;
       display: block; }
@@ -157,7 +158,6 @@
       border-radius: 50%;
       list-style: none; }
       .nav__right--user .dropdown-content {
-        top: 42px;
         left: 0; }
       .nav__right--user .dropbtn {
         display: inline-block; }
@@ -277,6 +277,49 @@
       font-size: 2rem;
       margin-bottom: 2rem; }
 
+.hp-products {
+  width: 120rem;
+  margin: auto;
+  padding: 5rem;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 3rem; }
+  .hp-products__product {
+    position: relative; }
+    .hp-products__product img {
+      width: 100%; }
+    .hp-products__product:hover .hp-products__product--wrapper {
+      opacity: 1; }
+    .hp-products__product--wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: all .5s; }
+      .hp-products__product--wrapper__content {
+        color: white;
+        margin: auto;
+        text-align: center;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        line-height: 5rem; }
+        .hp-products__product--wrapper__content h1 {
+          font-size: 3rem;
+          text-transform: uppercase;
+          font-weight: 700; }
+        .hp-products__product--wrapper__content p {
+          font-size: 1.6rem; }
+        .hp-products__product--wrapper__content button {
+          padding: 1rem 2rem;
+          cursor: pointer; }
+          .hp-products__product--wrapper__content button:hover {
+            background-color: black;
+            color: white; }
+
 .subscribe {
   background-color: yellow;
   padding: 2rem;
@@ -293,11 +336,15 @@
       width: 40rem; }
     .subscribe__box a {
       position: absolute;
-      line-height: 6rem;
       margin-left: 4rem;
       top: 50%;
       right: 0;
       transform: translateY(-50%); }
+
+.bor--adidas {
+  border: 1px solid black;
+  display: inline-block;
+  position: relative; }
 
 .btn--adidas {
   position: relative;
@@ -307,24 +354,16 @@
   background-color: black;
   color: white;
   cursor: pointer;
-  z-index: 1; }
+  z-index: 1;
+  transform: translate(-2%, -6%); }
   .btn--adidas:active {
-    transform: translate(2%, 6%); }
+    transform: none; }
   .btn--adidas:hover {
     color: #90b0b8; }
   .btn--adidas i {
     font-size: 3rem;
     vertical-align: middle;
     margin-left: 2rem; }
-  .btn--adidas::after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(2%, 6%);
-    border: 1px solid black; }
 
 .horscroll {
   width: 140rem;
