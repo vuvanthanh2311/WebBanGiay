@@ -1,29 +1,47 @@
-<div class="form" >
-    <form class="form__signup" action="/logon/store" method="POST" id="form__signup">
-        <h1>SIGN UP</h1>
-        <div class="form__group">
-            <label for="fullname">full name</label>
-            <input type="text" placeholder="vu van thanh" id="fullname" name="fullname">
-            <span class="form_message"></span>
+<div class="signup">
+    <div class="signup__title">
+        <label>MY ACCOUNT</h6>
+    </div>
+    <div class="form" >
+        <form class="form__signup" action="/logon/store" method="POST" id="form__signup">
+            <h1>SIGN UP</h1>
+            <div class="form__group">
+                <label for="fullname">full name</label>
+                <input type="text" placeholder="vu van thanh" id="fullname" name="fullname">
+                <span class="form_message"></span>
+            </div>
+            <div class="form__group">
+                <label for="email">email</label>
+                <input type="email" placeholder="vuvanthanh@gmail.com" id="email" name="email">
+                <span class="form_message"></span>
+            </div>
+            <div class="form__group">
+                <label for="password">password</label>
+                <input type="password"  id="password" name="password">
+                <span class="form_message"></span>
+            </div>
+            <div class="form__group">
+                <label for="password_comfirmation">password_comfirmation</label>
+                <input type="password"  id="password_comfirmation" name="password_comfirmation">
+                <span class="form_message"></span>
+            </div>
+            <button class="form__submit">Create Account</button>
+        </form>
+        <div class="form__content">
+            <h1>CREATE ACCOUNT</h1>
+            <label>Your Global Login will give you access to:</label>
+        <ul >
+            <li><i class="fas fa-check"></i><span>A single global login to interact with adidas products and services </span> </li>
+            <li><i class="fas fa-check"></i><span>Checkout faster </span> </li>
+            <li><i class="fas fa-check"></i><span>View your personal order history</span> </li>
+            <li><i class="fas fa-check"></i><span>Add or change email preferences </span> </li>
+        </ul>
         </div>
-        <div class="form__group">
-            <label for="email">email</label>
-            <input type="email" placeholder="vuvanthanh@gmail.com" id="email" name="email">
-            <span class="form_message"></span>
-        </div>
-        <div class="form__group">
-            <label for="password">password</label>
-            <input type="password"  id="password" name="password">
-            <span class="form_message"></span>
-        </div>
-        <div class="form__group">
-            <label for="password_comfirmation">password_comfirmation</label>
-            <input type="password"  id="password_comfirmation" name="password_comfirmation">
-            <span class="form_message"></span>
-        </div>
-        <button class="form__submit">Signup</button>
-    </form>
+        
+    </div>
 </div>
+
+
 
 <script src="/js/validator.js"></script>
 <script>

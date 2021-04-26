@@ -13,36 +13,62 @@
   -webkit-box-orient: vertical;
   display: -webkit-box; }
 
-.form {
-  width: 56rem;
-  margin: auto; }
-  .form .form__signup {
-    background-color: #baceba;
-    padding: 30px; }
-    .form .form__signup h1 {
-      text-align: center; }
-    .form .form__signup .form__group label {
+.signup__title {
+  background-color: #bfc0c0;
+  padding: 2rem;
+  font-size: 2.4rem; }
+
+.signup .form {
+  width: 102rem;
+  margin: auto;
+  display: flex; }
+  .signup .form__content {
+    width: 50rem;
+    padding-left: 2rem;
+    margin: 10rem 0;
+    font-size: 1.6rem; }
+    .signup .form__content h1 {
+      margin-bottom: 2rem; }
+    .signup .form__content ul {
+      margin-top: 1rem; }
+      .signup .form__content ul li {
+        padding: 1rem 0;
+        text-align: justify;
+        list-style: none;
+        display: flex; }
+        .signup .form__content ul li i {
+          margin-right: 1rem;
+          vertical-align: middle; }
+  .signup .form__signup {
+    width: 40rem;
+    padding: 0rem 5rem;
+    margin: 10rem 0; }
+    .signup .form__signup .form__group label {
       text-transform: uppercase;
       display: block;
-      margin-top: 10px; }
-    .form .form__signup .form__group input {
-      width: 100%;
+      margin-top: 10px;
+      font-size: 1.2rem; }
+    .signup .form__signup .form__group input {
+      width: 80%;
       padding: 8px; }
-    .form .form__signup .form__group .form_message {
+    .signup .form__signup .form__group .form_message {
       display: block;
       height: 12px;
       font-size: 12px; }
-    .form .form__signup .form__submit {
-      position: relative;
-      left: 50%;
-      transform: translateX(-50%);
-      padding: 5px 20px;
-      text-transform: uppercase;
-      margin-top: 40px;
-      cursor: pointer;
-      border-radius: 4px; }
-      .form .form__signup .form__submit:active {
-        box-shadow: 1px 5px 10px black; }
+  .signup .form__submit {
+    width: 30rem;
+    line-height: 4rem;
+    text-transform: uppercase;
+    margin-top: 4rem;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: black;
+    color: white; }
+    .signup .form__submit:hover {
+      background-color: white;
+      color: black; }
+    .signup .form__submit:active {
+      outline: 0.3rem solid rgba(151, 156, 158, 0.8); }
 
 .invalid {
   color: red; }
