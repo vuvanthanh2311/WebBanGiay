@@ -1,24 +1,25 @@
-.horscroll{
-    width: 140rem;
+.horscroll {
+    position: relative;
+    width: 120rem;
     margin-left: auto;
     margin-right: auto;
     margin-top: 2rem;
+    overflow: hidden;
     &__container {
-        overflow: hidden;
+        position: relative;
+        width: 300%;
         display: flex;
-        overflow-x: scroll;
         .row {
-            width: 33%;
-            display: inline;
-            margin: 1rem;
+            width: 25%;
             .card {
-                position: relative;
-                left: 50%;
-                transform: translateX(-50%);
+                // position: relative;
+                // left: 50%;
+                // transform: translateX(-50%);
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-                width: 30rem;
+                width: 90%;
+                margin: 5px auto;
                 // z-index: -1;
-                &:hover{
+                &:hover {
                     outline: 1px solid black;
                 }
                 img {
