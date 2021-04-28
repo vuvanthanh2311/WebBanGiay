@@ -1,8 +1,30 @@
-//mobile & tablet
-@media screen and (max-width: 63.9375em) {}
+//mobile & tablet & PC small
+@media screen and (max-width: 74.9375em) {
+    .nav__left {
+        ul {
+            display: none;
+        }
+    }
+    .nav__right {
+        width: 20%;
+        &--search {
+            display: none;
+        }
+        &--user {
+            display: none;
+        }
+    }
+    .nav__bar {
+        display: block;
+        width: 20%;
+    }
+}
 
 //mobile
 @media screen and (max-width: 46.1875em) {}
 
 //tablet
 @media screen and (min-width: 46.25em) and (max-width: 63.9375em) {}
+
+//PC small
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {}

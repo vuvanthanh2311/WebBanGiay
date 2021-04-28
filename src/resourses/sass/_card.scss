@@ -1,4 +1,4 @@
-.product{
+.product {
     padding: 2rem;
     &__container {
         overflow: hidden;
@@ -17,7 +17,7 @@
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
                 max-width: 30rem;
                 // z-index: -1;
-                &:hover{
+                &:hover {
                     outline: 1px solid black;
                 }
                 img {
