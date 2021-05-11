@@ -11,6 +11,9 @@ class logonController {
     signup(req, res) {
         res.render('logon/signup')
     }
+    profile(req, res) {
+        res.render('logon/profile')
+    }
     store(req, res, next) {
 
         const Data = req.body;

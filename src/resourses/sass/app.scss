@@ -8,9 +8,11 @@
 @import'queries';
 @import'hor--scroll';
 @import'media';
+@import'profile';
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
