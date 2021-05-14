@@ -6,8 +6,14 @@ const { join } = require('path');
 const { urlencoded } = require('express');
 const bodyParser = require('body-parser');
 var session = require('express-session');
+const dotenv = require('dotenv');
+const cookieParser = require('cookie-parser')
+
+var ls = require('local-storage');
 const app = express();
 const port = 3000;
+
+dotenv.config();
 
 const route = require('./routes');
 const db = require('./config/db');
@@ -15,6 +21,14 @@ const db = require('./config/db');
 
 // connect db
 db.connect();
+
+if (typeof localStorage === "undefined" || localStorage === null) {
+    const LocalStorage = require('node-localstorage').LocalStorage;
+    localStorage = new LocalStorage('./scratch');
+  }
+
+
+app.use(cookieParser())
 
 app.use(
     express.urlencoded({

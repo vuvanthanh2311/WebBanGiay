@@ -1,2 +1,18 @@
 @import 'varilable';
 @import'validator';
+@import 'card';
+@import'nav';
+@import'footer';
+@import'banner';
+@import'another';
+@import'queries';
+@import'hor--scroll';
+@import'media';
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}

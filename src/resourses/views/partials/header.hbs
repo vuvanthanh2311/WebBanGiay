@@ -1,99 +1,106 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-  <!-- Image and text -->
-  <a class="navbar-brand mb-0 h1" href="/">
-    <img src="/img/logo.png" width="80" height="40" class="d-inline-block align-center" alt="">
-    VUTHOLG
-  </a>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto ml-4">
-      
-      
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Men
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/men/sport">Sport</a>
-          <a class="dropdown-item" href="/men/lazy">Lazy</a>
-          <a class="dropdown-item" href="/men/leather">Leather</a>
-          <a class="dropdown-item" href="/men/sandan">Sandan</a>  
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Sale</a>
+<div class="nav">
+        <div class="nav__left">
+            <a href="/"><img class="logo" src="/img/logo.png" alt=""></a>
+            <ul>
+                <li><a href="#">Men</a>
+                    <div class="dropdown-content">
+                        <a  href="/men/sport">Sport</a>
+                        <a  href="/men/lazy">Lazy</a>
+                        <a  href="/men/leather">Leather</a>
+                        <a  href="/men/sandan">Sandan</a> 
+                        <a href="#">Sale</a>
+                    </div>
+                </li>
+                <li><a href="#">Woman</a>
+                    <div class="dropdown-content">
+                        <a  href="/women/sport">Sport</a>
+                        <a  href="/women/sandan">Sandan</a>
+                        <a  href="/women/highheel">High heels</a>
+                        <a href="#">Sale</a>
+                    </div>
+                </li>
+                <li><a href="#">Kid</a>
+                    <div class="dropdown-content">
+                        <a  href="/kid/sport">Sport</a>
+                        <a  href="/kid/sandan">Sandan</a>
+                        <a  href="/kid/slipper">Slippers</a>
+                        <a href="#">Sale</a>
+                    </div>
+                </li>
+                <li><a href="#">Tutorial</a>
+                    <div class="dropdown-content">
+                        <a  href="#">Choose the size</a>
+                        <a  href="#">Commitment and warranty</a>
+                    </div>
+                </li>
+                <li><a href="#">SYS admin</a>
+                    <div class="dropdown-content">
+                        <a  href="/admin/createPD">Create Product</a>
+                        <a  href="#">Another action</a>
+                    </div>
+                </li>
+            </ul>
         </div>
-      </li>
-      <li class="nav-item dropdown">
-
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Women
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/women/sport">Sport</a>
-          <a class="dropdown-item" href="/women/sandan">Sandan</a>
-          <a class="dropdown-item" href="/women/highheel">High heels</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="">Sale</a>
+        <div class="nav__right">
+            <div class="nav__right--search">
+                <input class="input" type="text" placeholder="search">
+                <i class="fas fa-search search"></i>
+            </div>
+            <div class="nav__right--user">
+                <div class="dropbtn">
+                    <i class="fas fa-user"></i><i class="fas fa-caret-down size-small"></i>
+                    <div class="dropdown-content">
+                        
+                         <a id="swaplogout"  href="/logon/signin">SignIn</a>
+                        
+                        <a  id="swapprofile" href="/logon/signup">SignUp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="nav__right--cart">
+                <i class="fas fa-cart-plus "></i>
+                <span>0</span>
+            </div>
+            
         </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Kids
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/kid/sport">Sport</a>
-          <a class="dropdown-item" href="/kid/sandan">Sandan</a>
-          <a class="dropdown-item" href="/kid/slipper">Slippers</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Sale</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Tutorial
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Choose the size</a>
-          <a class="dropdown-item" href="#">Commitment and warranty</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Shopping guide</a>
-        </div>
-      </li>
-       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      
-      
+        <div class="nav__bar">
+              <i class="fas fa-bars"></i>
+        </div>     
     </ul>
     <form class="form-inline my-2 my-lg-0 mr-4">
       <input class="form-control mr-sm-2" type="search"  aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0 mr-4" type="submit">Search</button>
-          <div class="dropdown">
-      <button class="btn btn-light dropdown-toggle size__small" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-       <i class="far fa-user size__big"></i> SignIn/SignUp
-      </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="/logon/signin">SignIn  </a>
-          <a class="dropdown-item" href="/logon/signup">SignUp</a>
-          <a class="dropdown-item" href="/logon/profile">profile</a>  
-        </div>
-      </div>
-      <a href="#">
-        <button style="border-radius: 50%;" type="button" class="btn btn-light">
-          <i class="fas fa-cart-plus"></i> <span style="position: absolute; top: 10px; border-radius: 50%;" class="badge badge-danger">0</span>
-        </button>
-      </a>
     </form>
   </div>
 </nav>
+    </div>
+
+    <script>
+            function getCookie(name) {
+            let cookie = {};
+            document.cookie.split(';').forEach(function(el) {
+            let [k,v] = el.split('=');
+            cookie[k.trim()] = v;
+            })
+            return cookie[name];
+            }
+
+
+
+             const to = getCookie("token")
+             if( to!=undefined){
+                 
+                document.getElementById("swaplogout").setAttribute("href","/logon/logout");
+                document.getElementById("swaplogout").innerHTML="logout";
+                document.getElementById("swapprofile").setAttribute("href","/logon/profile");
+                document.getElementById("swapprofile").innerHTML="profile";
+         
+                }
+                else{
+                document.getElementById("swaplogout").setAttribute("href","/logon/signin");
+                document.getElementById("swaplogout").innerHTML="signin";
+                document.getElementById("swapprofile").setAttribute("href","/logon/signup");
+                document.getElementById("swapprofile").innerHTML="signup";
+
+                }     
+    </script>
+

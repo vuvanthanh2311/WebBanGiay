@@ -1,12 +1,20 @@
 const User = require('../modules/Users');
 const { mutipleMongooseObject } = require('../../util/mongoose');
 const { MongooseObject } = require('../../util/mongoose');
-var ls = require('local-storage');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
 const { render } = require('node-sass');
+
+
+const dotenv = require('dotenv');
+const cookieParser = require('cookie-parser')
+
+dotenv.config()
 
 
 
 class logonController {
+
     signin(req, res) {
         res.render('logon/signin')
     }
@@ -14,6 +22,7 @@ class logonController {
         res.render('logon/signup')
     //    const a = ls.get('id')
     //     console.log(a)
+    //     ls.clear();
       
     }
     store(req, res, next) {
@@ -24,33 +33,65 @@ class logonController {
         res.json(Data);
     }
 
-    login(req, res, next){     
-      const email = req.body.email;
-      const password = req.body.password;
-      User.findOne({email: email , password: password} , function(err,user){
-          if(user)
-          {          
-            // req.session.user = user._id;  
-            res.redirect('/');
-            const id_user = user._id;
-            
-            
-        //    ls.set('id','acb');
-        //    ls('thong','abc')
-           ls.set('id',id_user)
-        //    const a = ls.get('id')
-        //    console.log(a)   
-            //  localStorage.setItem(id_user,arr);
-            // console.log(req.session.user);
-            
-          }else{         
-          }
-      })
+    async login(req, res, next){    
+        
+        const user = await User.findOne({email: req.body.email });
+        if(!user) return res.status(400).send('email not found');
+        
+
+        // const validPass = await bcrypt.compare(req.body.password, user.password)
+        // if(validPass) return res.status(400).send('Invalid pass');
+
+        if(req.body.password===user.password){
+
+      
+        const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET);
+        
+        res.cookie("token", token, {
+            httpOnly: false,
+        });
+      //  client.SET(userId,token,'EX',30 , (err,reply) => {
+      //    if(err){
+      //      console.log(err.message  )
+      //    }
+      //  })
+       
+        // localStorage.setItem("token", "abc");
+        // localStorage.getItem("token");
+      
+      
+       console.log(token)
+         res.redirect('/');
+         
+        }else
+      {
+          res.status(400).send('pass not exacli')
+      }
+    
+      
       }
 
+      logout(req,res,next){
+
+        const token = req.cookies.token;
+        res.clearCookie("token");
+        res.redirect("/")
+        
+      }
+      
+     
+
       profile(req,res,next){
-          const userId = ls.get('id')
-          console.log(userId)
+          
+        
+        const token = req.cookies.token;
+          const user = jwt.verify(token, process.env.TOKEN_SECRET);
+          req.user= user;
+        //   console.log(req.user);
+          const userId = req.user._id
+          
+           
+       
           User.findOne({_id:userId})
           .then((user)=>{
               res.render('logon/profile',{
@@ -59,10 +100,11 @@ class logonController {
           })
           .catch(next);
 
-          
+        console.log(token)
+     
       } 
-      
-    
 
+    
+      
 }
     module.exports = new logonController();

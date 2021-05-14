@@ -1,4 +1,6 @@
 const express = require('express');
+const jwt = require('jsonwebtoken');
+
 const router = express.Router();
 const logonController = require('../app/controllers/logonControllers');
 
@@ -7,6 +9,7 @@ router.get('/signup', logonController.signup);
 router.post('/store', logonController.store);
 router.post('/login', logonController.login);
 router.get('/profile', logonController.profile);
+router.get('/logout', logonController.logout);
 
 
 

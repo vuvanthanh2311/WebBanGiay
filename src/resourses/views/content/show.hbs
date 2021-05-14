@@ -1,26 +1,18 @@
-<div class="mt-4">
-    <div class="row">
-
+<div class="product">
+    <div class="product__container">
         {{#each product}}
-        <div class="col-sm-6 col-lg-4">
-            <div class="card card-courses-item " >
-                <a href="/product/{{this.slug}}">
-                <img src="{{this.image}}" class="card-img-top" alt="...">
-
-                </a>
-                
-                <div class="card-body">
-                    <a href="/product/{{this.slug}}">
-                <h5 class="card-title">{{this.name}}</h5>
-                </a>
-                <p class="card-text">{{this.price}}</p>
-                <a href="/product/{{this.slug}}" class="btn btn-primary">Buy now</a>
+            <div class="row">
+                <div class="card">
+                    <a href="/product/{{this.slug}}"><img src="{{this.image}}" alt=""></a>
+                    <div class="card__content">
+                        <a href="/product/{{this.slug}}">
+                            <h3 class="text-overflow">{{this.name}}</h3>
+                        </a>
+                        <p id="formatPrice" class="card__content--price">{{this.price}}</p>
+                        <a href="/product/{{this.slug}}"><button class="card__content--btn">Buy now</button></a>
+                    </div>
                 </div>
             </div>
-        </div>
-        {{/each}}   
-
+        {{/each}} 
     </div>
 </div>
-
-

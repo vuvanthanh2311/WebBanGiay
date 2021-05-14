@@ -6,3 +6,13 @@ $size-big: 60px;
 .size__big {
     font-size: 20px;
 }
+
+.text-overflow {
+    width: 100%; // chiều rộng bằng khối bao nó
+    white-space: pre-wrap;
+    overflow: hidden; // ẩn các nội dung khi kích thước lớn hơn chiều rộng khối bên ngoài
+    text-overflow: ellipsis; //thêm 3 dấu chấm ở cuối
+    -webkit-line-clamp: 1; // số dòng muốn hiển thị
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+}

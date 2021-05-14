@@ -6,4 +6,5 @@ const productController = require('../app/controllers/ProductController');
 
 router.get('/:slug', productController.shows);
 
+
 module.exports = router;

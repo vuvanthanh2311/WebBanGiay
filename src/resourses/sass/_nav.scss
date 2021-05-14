@@ -1,0 +1,155 @@
+.size-small {
+    font-size: 1.2rem;
+}
+
+.nav {
+    display: flex;
+    // position: fixed;
+    // top: 0;
+    // right: 0;
+    // left: 0;
+    padding: .2rem;
+    box-shadow: 0 4px 8px rgba($color: black, $alpha: .2);
+    font-size: 1.6rem;
+    z-index: 1;
+    background-color: white;
+    .dropdown-content {
+        background-color: white;
+        display: block;
+        position: absolute;
+        box-shadow: .4rem .4rem .4rem rgba($color: black, $alpha: .2);
+        border-radius: .4rem;
+        min-width: 20rem;
+        top: 36px;
+        z-index: 10;
+        a {
+            font-size: 2rem;
+            color: black;
+            padding: 0 1rem;
+            text-align: left;
+            text-decoration: none;
+            display: block;
+            &:hover {
+                background-color: black;
+                color: white;
+            }
+        }
+    }
+    &__bar {
+        line-height: 6rem;
+        font-size: 3rem;
+        display: none;
+    }
+    &__left {
+        width: 60%;
+        display: flex;
+        .logo {
+            margin-left: 1rem;
+            // max-width: 5rem;
+        }
+        ul {
+            line-height: 6rem;
+            margin-left: 5rem;
+            li {
+                font-size: 2rem;
+                margin-left: 2rem;
+                list-style: none;
+                display: inline-block;
+                &:hover>a {
+                    border-bottom: 2px solid red;
+                }
+                a {
+                    text-decoration: none;
+                }
+                // &:hover .dropdown-content {
+                //     display: block;
+                // }
+            }
+        }
+    }
+    &__right {
+        width: 40%;
+        line-height: 6rem;
+        max-width: 140rem;
+        margin-right: 4rem;
+        text-align: right;
+        &--user {
+            padding: 1rem .2rem 1rem 1rem;
+            display: inline;
+            position: relative;
+            margin-right: 2rem;
+            cursor: pointer;
+            box-shadow: .2rem .2rem .8rem rgba($color: black, $alpha: .2);
+            border-radius: 50%;
+            list-style: none;
+            .dropdown-content {
+                left: -10px;
+            }
+            .dropbtn {
+                display: inline-block;
+            }
+            // &:hover .dropdown-content {
+            //     display: block;
+            // }
+        }
+        // &--user::after{
+        //     content: "";
+            
+        // }
+        
+        &--search {
+            display: inline;
+            margin-right: 2rem;
+            box-shadow: .2rem .2rem .8rem rgba($color: black, $alpha: .2);
+            padding: .8rem 0 .8rem 1.2rem;
+            border-radius: 5rem;
+            background-color: rgb(197, 197, 197);
+            opacity: .8;
+            &:hover {
+                opacity: 1;
+            }
+            &:hover .input {
+                opacity: 1;
+            }
+            .input {
+                background-color: rgb(197, 197, 197);
+                font-size: 2rem;
+                outline: none;
+                border: none;
+                opacity: .8;
+            }
+            .search {
+                margin-right: -0.2rem;
+                padding: .8rem;
+                cursor: pointer;
+                box-shadow: .2rem .2rem .8rem rgba($color: black, $alpha: .2);
+                border-radius: 50%;
+                list-style: none;
+                &:hover {
+                    background-color: rgb(219, 218, 218);
+                }
+            }
+        }
+        &--cart {
+            padding: 1rem;
+            display: inline;
+            margin-right: 2rem;
+            cursor: pointer;
+            box-shadow: .2rem .2rem .8rem rgba($color: black, $alpha: .2);
+            border-radius: 50%;
+            list-style: none;
+            &:hover {
+                opacity: .8;
+            }
+            span {
+                position: absolute;
+                background-color: white;
+                border-radius: 50%;
+                color: red;
+                line-height: 1.2rem;
+                padding: .5rem;
+                box-shadow: .2rem .2rem .4rem rgba($color: black, $alpha: .2);
+            }
+        }
+    }
+}

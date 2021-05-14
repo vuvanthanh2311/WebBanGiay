@@ -1,36 +1,73 @@
-.form__signup {
-    background-color: rgb(186, 206, 186);
-    padding: 30px;
-    h1 {
-        text-align: center;
+.signup {
+    &__title {
+        background-color: rgb(191, 192, 192);
+        padding: 2rem;
+        font-size: 2.4rem;
     }
-    .form__group {
-        label {
+    .form {
+        width: 102rem;
+        margin: auto;
+        display: flex;
+        &__content {
+            width: 50rem;
+            padding-left: 2rem;
+            margin: 10rem 0;
+            font-size: 1.6rem;
+            h1 {
+                margin-bottom: 2rem;
+            }
+            ul {
+                margin-top: 1rem;
+                li {
+                    padding: 1rem 0;
+                    text-align: justify;
+                    list-style: none;
+                    display: flex;
+                    i {
+                        margin-right: 1rem;
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+        &__signup {
+            width: 40rem;
+            padding: 0rem 5rem;
+            margin: 10rem 0;
+            .form__group {
+                label {
+                    text-transform: uppercase;
+                    display: block;
+                    margin-top: 10px;
+                    font-size: 1.2rem;
+                }
+                input {
+                    width: 80%;
+                    padding: 8px;
+                }
+                .form_message {
+                    display: block;
+                    height: 12px;
+                    font-size: 12px;
+                }
+            }
+        }
+        &__submit {
+            width: 30rem;
+            line-height: 4rem;
             text-transform: uppercase;
-            display: block;
-            margin-top: 10px;
-        }
-        input {
-            width: 100%;
-            padding: 8px;
-        }
-        .form_message {
-            display: block;
-            height: 12px;
-            font-size: 12px;
-        }
-    }
-    .form__submit {
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 5px 20px;
-        text-transform: uppercase;
-        margin-top: 40px;
-        cursor: pointer;
-        border-radius: 4px;
-        &:active {
-            box-shadow: 1px 5px 10px black;
+            margin-top: 4rem;
+            cursor: pointer;
+            border-radius: 4px;
+            background-color: black;
+            color: white;
+            &:hover {
+                background-color: white;
+                color: black;
+            }
+            &:active {
+                outline: .3rem solid rgba($color: #979c9e, $alpha: .8);
+            }
         }
     }
 }
