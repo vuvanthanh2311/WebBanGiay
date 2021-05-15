@@ -1,5 +1,11 @@
 const Product = require('../modules/Product');
 const { MongooseObject } = require('../../util/mongoose');
+const { mutipleMongooseObject } = require('../../util/mongoose');
+
+const { findOne } = require('../modules/Product');
+const { render } = require('node-sass');
+
+
 
 class ProductController {
    
@@ -18,6 +24,21 @@ class ProductController {
             .catch(next);
     }
     
+    search(req, res, next) {
+        console.log(req.query.name);
+        Product.find({ name: req.query.name})
+        .then( product => {
+            res.render('product/search', {
+                
+                product: mutipleMongooseObject(product)
+            });
+            // console.log(product)
+            
+            
+        })
+        .catch(next);
+        
+    }
 
 
     

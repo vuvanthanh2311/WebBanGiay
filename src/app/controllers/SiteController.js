@@ -19,10 +19,9 @@ class SiteController {
 
 
 
-    //[get] news
-    search(req, res) {
-        res.render('search');
-    }
+  
+
+
 
     sport(req, res, next) {
         //  res.render('men/sport');

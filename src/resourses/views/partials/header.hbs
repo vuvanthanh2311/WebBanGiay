@@ -36,16 +36,22 @@
                 <li><a href="#">SYS admin</a>
                     <div class="dropdown-content">
                         <a  href="/admin/createPD">Create Product</a>
-                        <a  href="#">Another action</a>
+                        <a  href="/logon/profile">Profile</a>
                     </div>
                 </li>
             </ul>
         </div>
         <div class="nav__right">
-            <div class="nav__right--search">
-                <input class="input" type="text" placeholder="search">
-                <i class="fas fa-search search"></i>
-            </div>
+            {{!-- <div class="nav__right--search"> --}}
+                <form class="nav__right--search" action="/product/search" method="GET">
+               
+                <input class="input" type="text" placeholder="search"  id="name" name="name">
+                 {{!-- <a class="nav__right--search" href="/product/{{this.name}}"></a> --}}
+                <i class="fas fa-search search">   
+                </i>
+                {{!-- </a> --}}
+                </form>
+            {{!-- </div> --}}
             <div class="nav__right--user">
                 <div class="dropbtn">
                     <i class="fas fa-user"></i><i class="fas fa-caret-down size-small"></i>
@@ -67,9 +73,7 @@
               <i class="fas fa-bars"></i>
         </div>     
     </ul>
-    <form class="form-inline my-2 my-lg-0 mr-4">
-      <input class="form-control mr-sm-2" type="search"  aria-label="Search">
-    </form>
+   
   </div>
 </nav>
     </div>

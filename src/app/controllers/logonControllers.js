@@ -1,5 +1,4 @@
 const User = require('../modules/Users');
-const { mutipleMongooseObject } = require('../../util/mongoose');
 const { MongooseObject } = require('../../util/mongoose');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
@@ -25,6 +24,7 @@ class logonController {
     //     ls.clear();
       
     }
+  
     store(req, res, next) {
 
         const Data = req.body;

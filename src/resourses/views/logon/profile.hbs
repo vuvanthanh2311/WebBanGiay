@@ -1,6 +1,121 @@
 
-    <div>
-    <p>{{user.email}}</p>
-    <p>{{user.fullname}}</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #f5f5f5;">
+    <div class="userpage">
+        <div class="userpage__sidebar">
+            <div class="userpage__sidebar--brief">
+                <img src="https://upload.wikimedia.org/wikipedia/vi/archive/1/1d/20210321120435%21N%C6%A1i_n%C3%A0y_c%C3%B3_anh_-_Single_Cover.jpg" alt="avatar">
+                <div class="userpage__sidebar--brief_username">
+                    <strong>{{user.fullname}}</strong>
+                    <br>
+                    <label><i class="fas fa-pen"></i> Sửa Hồ Sơ</label>
+                </div>
+            </div>
+            <div class="userpage__sidebar--menu">
+                <ul>
+                    <li>
+                        <p style="background-color: rgb(240, 240, 69);"><i class="far fa-user-circle"></i></p>
+                        Tài Khoản Của Tôi
+                    </li>
+                     <li>
+                        <p style="background-color: rgb(53, 157, 218);"><i class="fas fa-file-alt"></i></p> 
+                        Đơn Mua 
+                    </li>
+                     <li>
+                        <p style="background-color: rgb(224, 62, 50);"><i class="fas fa-bell"></i></p>                      
+                        Thông Báo
+                    </li>
+                     <li>
+                        <p style="background-color: rgb(238, 48, 121);"><i class="fas fa-wallet"></i></p>                        
+                        Ví Voucher
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="profile">
+            <div class="profile__title">
+                <h3>Hồ Sơ Của Tôi</h3>
+                <p>quản lý thông tin để bảo mật tài khoản</p>
+            </div>
+            <div class="profile__content">
+                <div class="profile__content--left">
+                    <div class="profile__content--left_wrapper">
+                        <div class="profile__content--left_wrapper-label">
+                            <label>Tên Đăng Nhập</label>
+                        </div>
+                        <div class="profile__content--left_wrapper-input">
+                            {{user.fullname}}
+                        </div>
+                    </div>
+                    <div class="profile__content--left_wrapper">
+                        <div class="profile__content--left_wrapper-label">
+                            <label>Tên</label>
+                        </div>
+                        <div class="profile__content--left_wrapper-input">
+                            {{user.fullname}}
+                        </div>
+                    </div>
+                    <div class="profile__content--left_wrapper">
+                        <div class="profile__content--left_wrapper-label">
+                            <label>Email</label>
+                        </div>
+                        <div class="profile__content--left_wrapper-input">
+                            {{user.email}}
+                        </div>
+                    </div>
+                    <div class="profile__content--left_wrapper">
+                        <div class="profile__content--left_wrapper-label">
+                            <label>Số Điện Thoại</label>
+                        </div>
+                        <div class="profile__content--left_wrapper-input">
+                            0376598669
+                            <a href="#">Thay Đổi</a>
+                        </div>
+                    </div>
+                    <div class="profile__content--left_wrapper">
+                        <div class="profile__content--left_wrapper-label">
+                            <label>Giới Tính</label>
+                        </div>
+                        <div class="profile__content--left_wrapper-input">
+                            <input type="radio" name="male" id="male">
+                            <label for="male">Nam</label>
+                            <input type="radio" name="male" id="male">
+                            <label for="male">Nữ</label>
+                            <input type="radio" name="male" id="male">
+                            <label for="male">Khác</label>
+                        </div>
+                    </div>
+                    <div class="profile__content--left_wrapper">
+                        <div class="profile__content--left_wrapper-label">
+                            <label>Ngày Sinh</label>
+                        </div>
+                        <div class="profile__content--left_wrapper-input">
+                            <input type="date" name="bday" value="2000-01-01">
+                        </div>
+                    </div>
+                    <div class="profile__content--left_submit">
+                        <button class="btn-submit" > Lưu</button>
+                    </div>
+                </div>
+                <div class="profile__content--right">
+                    <img src="https://upload.wikimedia.org/wikipedia/vi/archive/1/1d/20210321120435%21N%C6%A1i_n%C3%A0y_c%C3%B3_anh_-_Single_Cover.jpg" alt="avatar">
+                    <div class="profile__content--right_btn">
+                        <button > Chọn Ảnh</button>
+                    </div>
+                    <span>Dụng lượng file tối đa 1 MB <br>Định dạng:.JPEG, .PNG</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
     
-</div>
+</body>
+</html>
+
