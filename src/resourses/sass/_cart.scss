@@ -1,0 +1,200 @@
+.fixed-bottom {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
+    box-shadow: 1px -2px 4px rgba($color: #000000, $alpha: .5);
+}
+
+.btn--white {
+    background-color: white;
+    cursor: pointer;
+    font-size: 1.8rem;
+    border: none;
+    &:hover {
+        color: #ee4d2d;
+    }
+}
+
+.cart {
+    width: 85%;
+    margin: 2rem auto 2rem auto;
+    font-size: 1.8rem;
+    &__checkout {
+        line-height: 5rem;
+        background-color: white;
+        display: flex;
+        margin-top: 2rem;
+        padding: 2rem 4rem;
+        &--checkbox {
+            width: 5%;
+            input {
+                transform: scale(1.5);
+            }
+        }
+        &--choose {
+            width: 25%;
+        }
+        &--tongtien {
+            span {
+                color: #ee4d2d;
+            }
+            text-align: right;
+            width: 50%;
+        }
+        &--muahang {
+            text-align: right;
+            width: 20%;
+            .mhbtn {
+                border: none;
+                padding: 1rem 6rem;
+                background-color: #ee4d2d;
+                color: white;
+                font-size: 1.6rem;
+                &:hover {
+                    background-color: #ec6044;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    &__title {
+        text-align: center;
+        background-color: white;
+        padding: 2rem 0 2rem 4rem;
+        display: flex;
+        &--checkbox {
+            input {
+                transform: scale(1.5);
+            }
+            width: 3%;
+        }
+        &--sanpham {
+            text-align: left;
+            width: 47%;
+        }
+        &--dongia {
+            width: 15%;
+        }
+        &--soluong {
+            width: 15%;
+        }
+        &--sotien {
+            width: 10%;
+        }
+        &--thaotac {
+            width: 10%;
+        }
+    }
+    &__shopinfo {
+        margin-top: 4rem;
+        background-color: white;
+        display: flex;
+        padding: 1rem 4rem;
+        &--left {
+            width: 70%;
+            .chat {
+                border: none;
+                background-color: #ee4d2d;
+                color: white;
+                padding: .5rem 1rem;
+                &:hover {
+                    cursor: pointer;
+                    background-color: #ec6044;
+                }
+            }
+        }
+        &--right {
+            width: 30%;
+            text-align: right;
+            a {
+                text-decoration: none;
+                color: #ee4d2d;
+            }
+        }
+    }
+    &__content {
+        text-align: center;
+        margin-top: .5rem;
+        background-color: white;
+        padding: 2rem 0 2rem 4rem;
+        display: flex;
+        &--checkbox {
+            line-height: 10rem;
+            input {
+                transform: scale(1.5);
+            }
+            width: 5%;
+        }
+        &--sanpham {
+            &_image {}
+            &_name {
+                line-height: 10rem;
+                display: flex;
+                margin-left: 1rem;
+            }
+            display: flex;
+            width: 45%;
+            a {
+                text-decoration: none;
+                color: black;
+            }
+        }
+        &--dongia {
+            span {
+                margin-left: .5rem;
+            }
+            display: flex;
+            color: red;
+            line-height: 10rem;
+            width: 15%;
+        }
+        &--soluong {
+            line-height: 10rem;
+            width: 15%;
+            &_quanity {
+                .quanity {
+                    font-size: 1.6rem;
+                    padding: 0 1rem;
+                    background-color: white;
+                    cursor: pointer;
+                }
+                input {
+                    width: 5rem;
+                    text-align: center;
+                    font-size: 1.6rem;
+                }
+            }
+        }
+        &--sotien {
+            span {
+                margin-left: .5rem;
+            }
+            display: flex;
+            color: red;
+            line-height: 10rem;
+            width: 10%;
+        }
+        &--thaotac {
+            line-height: 10rem;
+            width: 10%;
+        }
+    }
+    &__detail {
+        background-color: white;
+        margin-top: .5rem;
+        padding: 1rem 4rem;
+        text-align: right;
+        &--bill {
+            border: none;
+            font-size: 1.6rem;
+            padding: 1rem 2rem;
+            color: white;
+            background-color: #ee4d2d;
+            &:hover {
+                cursor: pointer;
+                background-color: #ec6044;
+            }
+        }
+    }
+}

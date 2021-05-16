@@ -192,7 +192,9 @@
       border-radius: 50%;
       list-style: none; }
       .nav__right--user .dropdown-content {
-        left: -10px; }
+        min-width: 16rem;
+        top: 45px;
+        left: -20px; }
       .nav__right--user .dropbtn {
         display: inline-block; }
       .nav__right--user:hover .dropdown-content {
@@ -584,6 +586,160 @@
             cursor: pointer; }
         .userpage .profile__content--right span {
           color: #777373; }
+
+.fixed-bottom {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+  box-shadow: 1px -2px 4px rgba(0, 0, 0, 0.5); }
+
+.btn--white {
+  background-color: white;
+  cursor: pointer;
+  font-size: 1.8rem;
+  border: none; }
+  .btn--white:hover {
+    color: #ee4d2d; }
+
+.cart {
+  width: 85%;
+  margin: 2rem auto 2rem auto;
+  font-size: 1.8rem; }
+  .cart__checkout {
+    line-height: 5rem;
+    background-color: white;
+    display: flex;
+    margin-top: 2rem;
+    padding: 2rem 4rem; }
+    .cart__checkout--checkbox {
+      width: 5%; }
+      .cart__checkout--checkbox input {
+        transform: scale(1.5); }
+    .cart__checkout--choose {
+      width: 25%; }
+    .cart__checkout--tongtien {
+      text-align: right;
+      width: 50%; }
+      .cart__checkout--tongtien span {
+        color: #ee4d2d; }
+    .cart__checkout--muahang {
+      text-align: right;
+      width: 20%; }
+      .cart__checkout--muahang .mhbtn {
+        border: none;
+        padding: 1rem 6rem;
+        background-color: #ee4d2d;
+        color: white;
+        font-size: 1.6rem; }
+        .cart__checkout--muahang .mhbtn:hover {
+          background-color: #ec6044;
+          cursor: pointer; }
+  .cart__title {
+    text-align: center;
+    background-color: white;
+    padding: 2rem 0 2rem 4rem;
+    display: flex; }
+    .cart__title--checkbox {
+      width: 3%; }
+      .cart__title--checkbox input {
+        transform: scale(1.5); }
+    .cart__title--sanpham {
+      text-align: left;
+      width: 47%; }
+    .cart__title--dongia {
+      width: 15%; }
+    .cart__title--soluong {
+      width: 15%; }
+    .cart__title--sotien {
+      width: 10%; }
+    .cart__title--thaotac {
+      width: 10%; }
+  .cart__shopinfo {
+    margin-top: 4rem;
+    background-color: white;
+    display: flex;
+    padding: 1rem 4rem; }
+    .cart__shopinfo--left {
+      width: 70%; }
+      .cart__shopinfo--left .chat {
+        border: none;
+        background-color: #ee4d2d;
+        color: white;
+        padding: .5rem 1rem; }
+        .cart__shopinfo--left .chat:hover {
+          cursor: pointer;
+          background-color: #ec6044; }
+    .cart__shopinfo--right {
+      width: 30%;
+      text-align: right; }
+      .cart__shopinfo--right a {
+        text-decoration: none;
+        color: #ee4d2d; }
+  .cart__content {
+    text-align: center;
+    margin-top: .5rem;
+    background-color: white;
+    padding: 2rem 0 2rem 4rem;
+    display: flex; }
+    .cart__content--checkbox {
+      line-height: 10rem;
+      width: 5%; }
+      .cart__content--checkbox input {
+        transform: scale(1.5); }
+    .cart__content--sanpham {
+      display: flex;
+      width: 45%; }
+      .cart__content--sanpham_name {
+        line-height: 10rem;
+        display: flex;
+        margin-left: 1rem; }
+      .cart__content--sanpham a {
+        text-decoration: none;
+        color: black; }
+    .cart__content--dongia {
+      display: flex;
+      color: red;
+      line-height: 10rem;
+      width: 15%; }
+      .cart__content--dongia span {
+        margin-left: .5rem; }
+    .cart__content--soluong {
+      line-height: 10rem;
+      width: 15%; }
+      .cart__content--soluong_quanity .quanity {
+        font-size: 1.6rem;
+        padding: 0 1rem;
+        background-color: white;
+        cursor: pointer; }
+      .cart__content--soluong_quanity input {
+        width: 5rem;
+        text-align: center;
+        font-size: 1.6rem; }
+    .cart__content--sotien {
+      display: flex;
+      color: red;
+      line-height: 10rem;
+      width: 10%; }
+      .cart__content--sotien span {
+        margin-left: .5rem; }
+    .cart__content--thaotac {
+      line-height: 10rem;
+      width: 10%; }
+  .cart__detail {
+    background-color: white;
+    margin-top: .5rem;
+    padding: 1rem 4rem;
+    text-align: right; }
+    .cart__detail--bill {
+      border: none;
+      font-size: 1.6rem;
+      padding: 1rem 2rem;
+      color: white;
+      background-color: #ee4d2d; }
+      .cart__detail--bill:hover {
+        cursor: pointer;
+        background-color: #ec6044; }
 
 * {
   margin: 0;

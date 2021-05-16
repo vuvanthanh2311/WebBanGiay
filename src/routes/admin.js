@@ -5,5 +5,6 @@ const adminController = require('../app/controllers/adminControllers');
 
 router.get('/createPD', adminController.create);
 router.post('/storePD', adminController.store);
+router.get('/dashboard', adminController.dashboard);
 
 module.exports = router;

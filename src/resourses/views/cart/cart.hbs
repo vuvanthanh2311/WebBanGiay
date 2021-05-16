@@ -1,0 +1,94 @@
+<body style="background-color: #f5f5f5;">
+    <div class="cart">
+        <div class="cart__title">
+            <div class="cart__title--checkbox">
+                <input type="checkbox" name="all" id="all">
+            </div>
+            <div class="cart__title--sanpham">
+                Sản Phẩm
+            </div>
+            <div class="cart__title--dongia">
+                Đơn Giá
+            </div>
+            <div class="cart__title--soluong">
+                Số Lượng
+            </div>
+            <div class="cart__title--sotien">
+            Số Tiền
+            </div>
+            <div class="cart__title--thaotac">
+                Thao Tác
+            </div>
+        </div>
+        {{#each product}}
+            <div class="cart__shopinfo">
+                <div class="cart__shopinfo--left">
+                    <a href="#"><button class="chat"><i class="fas fa-comments"></i>chat</button></a>
+                </div>
+                <div class="cart__shopinfo--right">
+                    <a href="#">Đã Giao </a>
+                   
+                </div>
+            </div>
+            <div id="cartitem" class="cart__content">
+                <div class="cart__content--checkbox">
+                    <input type="checkbox" name="all" id="all">
+                </div>
+                <div class="cart__content--sanpham">
+                    
+                    <div class="cart__content--sanpham_image">
+                        <a href="/product/{{this.slug}}">
+                            <img src="{{this.image}}" alt="image" style="width: 10rem; height:10rem">
+                        </a>
+                    </div>
+                    <div class="cart__content--sanpham_name">
+                        <a href="/product/{{this.slug}}">
+                            {{this.name}}
+                        </a>
+                    </div>
+                </div>
+                <div id="dongia" class="cart__content--dongia">
+                    <p id="formatPrice"  class="dongia">
+                        {{this.price}}
+                    </p>
+                    <span>VNĐ</span>
+                </div>
+                <div class="cart__content--soluong">
+                    <div id="quanity" class="cart__content--soluong_quanity" >
+                        <button id="sub" class="quanity" disabled><i class="far fa-minus"></i></button>
+                        <input type="numer" name="soluong" id="soluong" value="1">
+                        <button id="add" class="quanity"><i class="fal fa-plus"></i></button>
+                    </div>
+                    
+                </div>
+                <div id="sotien" class="cart__content--sotien">
+                    <p id="formatPrice"  class="sotien">
+                            {{this.price}}
+                    </p>
+                    <span>VNĐ</span>
+                </div>
+                <div class="cart__content--thaotac">
+                    <button class="btn--white">Xóa</button>
+                </div>
+            </div>
+            <div class="cart__detail">
+                <button class="cart__detail--bill"> Xem chi tiết đơn hàng</button>
+            </div>
+        {{/each}}
+
+        <div id="checkout" class="cart__checkout fixed-bottom">
+            <div class="cart__checkout--checkbox">
+                <input type="checkbox" name="all" id="all">
+            </div>
+            <div class="cart__checkout--choose">
+                Chọn tất cả 
+            </div>
+            <div class="cart__checkout--tongtien">
+                Tổng thanh toán : <span> 0 VNĐ</span>
+            </div>
+            <div class="cart__checkout--muahang">
+                 <button class="mhbtn"> Mua Hàng</button>
+            </div>
+        </div>
+    </div>
+</body>

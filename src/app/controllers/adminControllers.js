@@ -16,6 +16,9 @@ class adminController {
             .then(() => res.redirect('/admin/createPD'))
             .catch(next);
     }
+    dashboard(req, res) {
+        res.render('admin/dashboard')
+    }
 
 }
 module.exports = new adminController();
