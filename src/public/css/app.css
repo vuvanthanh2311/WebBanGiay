@@ -109,7 +109,8 @@
             cursor: pointer;
             text-transform: uppercase; }
           .product__container .row .card__content--price {
-            color: grey;
+            display: flex;
+            color: #ee4d2d;
             font-size: 1.6rem; }
           .product__container .row .card__content--btn {
             cursor: pointer;
@@ -127,12 +128,25 @@
 .size-small {
   font-size: 1.2rem; }
 
+@keyframes navMove {
+  from {
+    top: -100px; }
+  to {
+    top: 0px; } }
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 99;
+  animation: navMove .5s ease-out; }
+
 .nav {
   display: flex;
   padding: .2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   font-size: 1.6rem;
-  z-index: 1;
   background-color: white; }
   .nav .dropdown-content {
     background-color: white;
@@ -474,7 +488,8 @@
             cursor: pointer;
             text-transform: uppercase; }
           .horscroll__container .row .card__content--price {
-            color: grey;
+            display: flex;
+            color: #ee4d2d;
             font-size: 1.6rem; }
           .horscroll__container .row .card__content--btn {
             cursor: pointer;
@@ -704,6 +719,8 @@
       width: 15%; }
       .cart__content--dongia span {
         margin-left: .5rem; }
+      .cart__content--dongia .dongia {
+        display: none; }
     .cart__content--soluong {
       line-height: 10rem;
       width: 15%; }
@@ -730,16 +747,24 @@
     background-color: white;
     margin-top: .5rem;
     padding: 1rem 4rem;
-    text-align: right; }
-    .cart__detail--bill {
-      border: none;
-      font-size: 1.6rem;
-      padding: 1rem 2rem;
-      color: white;
-      background-color: #ee4d2d; }
-      .cart__detail--bill:hover {
-        cursor: pointer;
-        background-color: #ec6044; }
+    display: flex; }
+    .cart__detail--left {
+      font-size: 1.4rem;
+      display: flex;
+      width: 60%; }
+    .cart__detail--right {
+      text-align: right;
+      width: 40%; }
+      .cart__detail--right_bill {
+        border: none;
+        font-size: 1.6rem;
+        padding: 1rem 2rem;
+        background-color: white;
+        outline: 1px solid rgba(0, 0, 0, 0.3); }
+        .cart__detail--right_bill:hover {
+          cursor: pointer;
+          background-color: #ec6044;
+          color: white; }
 
 * {
   margin: 0;

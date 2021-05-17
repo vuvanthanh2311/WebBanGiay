@@ -8,7 +8,10 @@
                         <a href="/product/{{this.slug}}">
                             <h3 class="text-overflow">{{this.name}}</h3>
                         </a>
-                        <p id="formatPrice" class="card__content--price">{{this.price}}</p>
+                        <div class="card__content--price">
+                            <p id="formatPrice">{{this.price}}</p>
+                            <span>VNĐ</span>
+                        </div>
                         <a href="/product/{{this.slug}}"><button class="card__content--btn">Buy now</button></a>
                     </div>
                 </div>

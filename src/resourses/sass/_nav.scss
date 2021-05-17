@@ -2,16 +2,29 @@
     font-size: 1.2rem;
 }
 
+@keyframes navMove {
+    from {
+        top: -100px;
+    }
+    to {
+        top: 0px;
+    }
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 99;
+    animation: navMove .5s ease-out;
+}
+
 .nav {
     display: flex;
-    // position: fixed;
-    // top: 0;
-    // right: 0;
-    // left: 0;
     padding: .2rem;
     box-shadow: 0 4px 8px rgba($color: black, $alpha: .2);
     font-size: 1.6rem;
-    z-index: 1;
     background-color: white;
     .dropdown-content {
         background-color: white;

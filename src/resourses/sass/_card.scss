@@ -37,7 +37,8 @@
                         text-transform: uppercase;
                     }
                     &--price {
-                        color: grey;
+                        display: flex;
+                        color: #ee4d2d;
                         font-size: 1.6rem;
                     }
                     &--btn {

@@ -1,0 +1,180 @@
+// Restricts input for the given textbox to the given inputFilter.
+function setInputFilter(textbox, inputFilter) {
+    ["input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop"].forEach(function(event) {
+        textbox.addEventListener(event, function() {
+            if (inputFilter(this.value)) {
+                this.oldValue = this.value;
+                this.oldSelectionStart = this.selectionStart;
+                this.oldSelectionEnd = this.selectionEnd;
+            } else if (this.hasOwnProperty("oldValue")) {
+                this.value = this.oldValue;
+                this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+            }
+        });
+    });
+}
+
+setInputFilter(document.getElementById("soluong"), function(value) {
+    return /^\d*$/.test(value) && (value === "" || parseInt(value) >= 1);
+});
+
+
+// cart - soluong
+
+
+
+//custom
+const cartitem = document.querySelectorAll('#cartitem');
+const tong = document.getElementById("tongtien");
+const all = document.getElementById("all")
+const alltt = document.getElementById("alltt")
+const checklt = document.querySelectorAll("#check")
+
+
+function Cart() {
+    var tongtien = 0;
+    cartitem.forEach(function(item, index) {
+        const quanity = item.querySelector('#quanity');
+        const dongia = item.querySelector('#dongia')
+        const checkbox = item.querySelector('#checkbox');
+
+        var check = checkbox.querySelector("#check")
+        var price = dongia.querySelector('.dongia')
+        var soluong = quanity.querySelector("#soluong");
+
+        const dg = Number(price.innerHTML);
+        if (check.checked === true) {
+            tongtien = tongtien + (dg * soluong.value)
+        }
+
+    })
+    tong.innerHTML = tongtien;
+    const priceVND = formatCash(tong.textContent);
+    tong.innerHTML = `${priceVND}`;
+}
+
+//function check
+function check(element) {
+    element.checked = true;
+}
+
+function uncheck(element) {
+    element.checked = false;
+}
+
+all.onchange = function() {
+
+    if (all.checked === true) {
+        check(alltt)
+        checklt.forEach(function(item, index) {
+            check(item)
+        })
+    } else {
+        uncheck(alltt)
+        checklt.forEach(function(item, index) {
+            uncheck(item)
+        })
+    }
+    Cart();
+
+}
+alltt.onchange = function() {
+
+    if (alltt.checked === true) {
+        check(all)
+        checklt.forEach(function(item, index) {
+            check(item)
+        })
+    } else {
+        uncheck(all)
+        checklt.forEach(function(item, index) {
+            uncheck(item)
+        })
+    }
+    Cart();
+
+}
+
+
+// update soluong
+cartitem.forEach(function(item, index) {
+    const quanity = item.querySelector('#quanity');
+    const sotien = item.querySelector('#sotien')
+    const dongia = item.querySelector('#dongia')
+    const checkbox = item.querySelector('#checkbox');
+
+    var check = checkbox.querySelector("#check")
+
+    var price = dongia.querySelector('.dongia')
+
+    var money = sotien.querySelector('.sotien')
+
+    var subbtn = quanity.querySelector("#sub");
+    var soluong = quanity.querySelector("#soluong");
+    var addbtn = quanity.querySelector("#add");
+
+    const dg = Number(price.innerHTML);
+
+    //event click
+    addbtn.addEventListener("click", function() {
+        soluong.value++;
+        if (soluong.value <= 1) {
+            subbtn.setAttribute("disabled", true)
+        } else {
+            subbtn.disabled = false;
+        }
+        money.innerHTML = dg * Number(soluong.value);
+        const fmmoney = formatCash(money.textContent)
+        money.innerHTML = `${fmmoney}`;
+
+        Cart();
+
+    })
+    subbtn.addEventListener("click", function() {
+            soluong.value--;
+            if (soluong.value <= 1) {
+                subbtn.setAttribute("disabled", true)
+            } else {
+                subbtn.disabled = false;
+            }
+            money.innerHTML = dg * Number(soluong.value);
+            const fmmoney = formatCash(money.textContent)
+            money.innerHTML = `${fmmoney}`;
+
+            Cart();
+        })
+        //event blur
+    soluong.addEventListener("blur", function() {
+            if (soluong.value <= 1) {
+                subbtn.setAttribute("disabled", true)
+            } else {
+                subbtn.disabled = false;
+            }
+            money.innerHTML = dg * Number(soluong.value);
+            const fmmoney = formatCash(money.textContent)
+            money.innerHTML = `${fmmoney}`;
+
+            Cart();
+        })
+        //event enter
+    soluong.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            if (soluong.value <= 1) {
+                subbtn.setAttribute("disabled", true)
+            } else {
+                subbtn.disabled = false;
+            }
+
+            money.innerHTML = dg * Number(soluong.value);
+            const fmmoney = formatCash(money.textContent)
+            money.innerHTML = `${fmmoney}`;
+
+            Cart();
+        }
+
+    });
+    check.addEventListener("change", function() {
+        Cart();
+    })
+})
