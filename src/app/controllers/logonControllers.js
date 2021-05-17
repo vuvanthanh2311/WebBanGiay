@@ -19,10 +19,7 @@ class logonController {
     }
     signup(req, res) {
         res.render('logon/signup')
-    //    const a = ls.get('id')
-    //     console.log(a)
-    //     ls.clear();
-      
+ 
     }
   
     store(req, res, next) {
@@ -37,27 +34,25 @@ class logonController {
         
         const user = await User.findOne({email: req.body.email });
         if(!user) return res.status(400).send('email not found');
-        
 
-        // const validPass = await bcrypt.compare(req.body.password, user.password)
-        // if(validPass) return res.status(400).send('Invalid pass');
+        if(user.admin!=null||user.admin!=undefined)
+        {
+          const tokenadmin = jwt.sign({admin: user.admin}, process.env.TOKEN_SECRET);
 
+          res.cookie("tokenadmin", tokenadmin,{
+            httpOnly: false,
+          });
+        }
         if(req.body.password===user.password){
 
       
         const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET);
+       
         
         res.cookie("token", token, {
             httpOnly: false,
         });
-      //  client.SET(userId,token,'EX',30 , (err,reply) => {
-      //    if(err){
-      //      console.log(err.message  )
-      //    }
-      //  })
-       
-        // localStorage.setItem("token", "abc");
-        // localStorage.getItem("token");
+      
       
       
        console.log(token)
@@ -66,7 +61,10 @@ class logonController {
         }else
       {
           res.status(400).send('pass not exacli')
+
       }
+
+
     
       
       }
@@ -75,6 +73,7 @@ class logonController {
 
         const token = req.cookies.token;
         res.clearCookie("token");
+        res.clearCookie("tokenadmin")
         res.redirect("/")
         
       }
@@ -87,7 +86,7 @@ class logonController {
         const token = req.cookies.token;
           const user = jwt.verify(token, process.env.TOKEN_SECRET);
           req.user= user;
-        //   console.log(req.user);
+        
           const userId = req.user._id
           
            
