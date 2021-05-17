@@ -33,7 +33,7 @@
                         <a  href="#">Commitment and warranty</a>
                     </div>
                 </li>
-                <li><a href="#">SYS admin</a>
+                <li><a id="showSYS" href="#">SYS admin</a>
                     <div class="dropdown-content">
                         <a id="dashboad" href="/admin/dashboard">DashBoard</a>
                         <a id="createproduct" href="/admin/createPD">Create Product</a>
@@ -112,6 +112,9 @@
                 }  
 
                 if(toa!=undefined){
+                document.getElementById("showSYS").setAttribute("href","");
+                document.getElementById("showSYS").innerHTML="SYS admin";
+
                 document.getElementById("dashboad").setAttribute("href","/admin/dashboard");
                 document.getElementById("dashboad").innerHTML="DashBoard";
                 document.getElementById("createproduct").setAttribute("href","/admin/createPD");
@@ -124,15 +127,10 @@
                 }
                 else
                 {
-                    document.getElementById("dashboad").setAttribute("href","/");
-                document.getElementById("dashboad").innerHTML="DashBoard";
-                document.getElementById("createproduct").setAttribute("href","/");
-                document.getElementById("createproduct").innerHTML="Create Product";
+                document.getElementById("showSYS").setAttribute("href","");
+                document.getElementById("showSYS").innerHTML="";
 
-                 document.getElementById("accountmanagement").setAttribute("href","/");
-                document.getElementById("accountmanagement").innerHTML="account management";
-                 document.getElementById("productmanagement").setAttribute("href","/");
-                document.getElementById("productmanagement").innerHTML="Product management";      
+                    
                 }
 
                    
