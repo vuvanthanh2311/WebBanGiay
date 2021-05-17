@@ -33,12 +33,12 @@
                         <a  href="#">Commitment and warranty</a>
                     </div>
                 </li>
-                <li><a id="showSYS" href="#">SYS admin</a>
+                <li id="admin"><a href="#">SYS admin</a>
                     <div class="dropdown-content">
-                        <a id="dashboad" href="/admin/dashboard">DashBoard</a>
-                        <a id="createproduct" href="/admin/createPD">Create Product</a>
-                        <a id="accountmanagement" href="/admin/AccManage">account management</a>
-                        <a id="productmanagement" href="/admin/PDManage">Product management</a>
+                        <a href="/admin/dashboard">DashBoard</a>
+                        <a href="/admin/createPD">Create Product</a>
+                        <a href="/admin/AccManage">account management</a>
+                        <a href="/admin/PDManage">Product management</a>
                     </div>
                 </li>
             </ul>
@@ -110,27 +110,8 @@
                 document.getElementById("swapprofile").innerHTML="signup";
 
                 }  
-
-                if(toa!=undefined){
-                document.getElementById("showSYS").setAttribute("href","");
-                document.getElementById("showSYS").innerHTML="SYS admin";
-
-                document.getElementById("dashboad").setAttribute("href","/admin/dashboard");
-                document.getElementById("dashboad").innerHTML="DashBoard";
-                document.getElementById("createproduct").setAttribute("href","/admin/createPD");
-                document.getElementById("createproduct").innerHTML="Create Product";
-
-                 document.getElementById("accountmanagement").setAttribute("href","/admin/AccManage");
-                document.getElementById("accountmanagement").innerHTML="account management";
-                 document.getElementById("productmanagement").setAttribute("href","/admin/PDManage");
-                document.getElementById("productmanagement").innerHTML="Product management";                                  
-                }
-                else
-                {
-                document.getElementById("showSYS").setAttribute("href","");
-                document.getElementById("showSYS").innerHTML="";
-
-                    
+                if( toa==undefined){
+                    document.getElementById("admin").style.display ="none";
                 }
 
                    
