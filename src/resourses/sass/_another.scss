@@ -52,32 +52,6 @@
     }
 }
 
-.show {
-    width: 138rem;
-    padding: 5rem;
-    display: grid;
-    grid-template-columns: auto auto auto auto auto;
-    &__product {
-        grid-column-start: 1;
-        grid-column-end: 4;
-        img {
-            width: 80%;
-        }
-    }
-    &__content {
-        grid-column-start: 4;
-        grid-column-end: 6;
-        font-size: 2rem;
-        h1 {
-            font-size: 4rem;
-            line-height: 6rem;
-        }
-        a {
-            line-height: 5rem;
-        }
-    }
-}
-
 .btn--next,
 .btn--re {
     font-size: 3rem;

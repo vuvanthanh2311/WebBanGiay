@@ -1,0 +1,32 @@
+<body style="background-color: #f5f5f5;">
+    <div class="accountM">
+        <div class="accountM__header">
+            <h2>PRODUCT MANAGEMENT</h2>
+        </div>
+        <div class="accountM__listaccount">
+            <table>
+            <tr>
+                <th>stt</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Type</th>
+                <th>ID</th>
+                <th style="text-align: center;">Action</th>
+            </tr>
+            {{#each product}}
+            <tr>
+                <td>{{sum @index 1}}</td>
+                <td>{{this.name}}</td>
+                <td>{{this.price}}</td>
+                <td>{{this.type}}</td>
+                <td>{{this._id}}</td>
+                <td style="text-align: center;">
+                    <a href="/admin/PDManage/{{this._id}}"><button class="btn-detail" >Sữa</button></a> 
+                    <button class="btn-del" >Xóa</button>
+                </td>
+            </tr>
+            {{/each}}
+            </table>
+        </div>
+    </div>
+</body>

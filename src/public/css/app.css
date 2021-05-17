@@ -104,6 +104,9 @@
         .product__container .row .card__content {
           padding: 1rem;
           line-height: 3rem; }
+          .product__container .row .card__content a {
+            text-decoration: none;
+            color: black; }
           .product__container .row .card__content h3 {
             font-size: 2.4rem;
             cursor: pointer;
@@ -415,26 +418,6 @@
     vertical-align: middle;
     margin-left: 2rem; }
 
-.show {
-  width: 138rem;
-  padding: 5rem;
-  display: grid;
-  grid-template-columns: auto auto auto auto auto; }
-  .show__product {
-    grid-column-start: 1;
-    grid-column-end: 4; }
-    .show__product img {
-      width: 80%; }
-  .show__content {
-    grid-column-start: 4;
-    grid-column-end: 6;
-    font-size: 2rem; }
-    .show__content h1 {
-      font-size: 4rem;
-      line-height: 6rem; }
-    .show__content a {
-      line-height: 5rem; }
-
 .btn--next,
 .btn--re {
   font-size: 3rem;
@@ -483,6 +466,9 @@
         .horscroll__container .row .card__content {
           padding: 1rem;
           line-height: 3rem; }
+          .horscroll__container .row .card__content a {
+            text-decoration: none;
+            color: black; }
           .horscroll__container .row .card__content h3 {
             font-size: 2.4rem;
             cursor: pointer;
@@ -765,6 +751,87 @@
           cursor: pointer;
           background-color: #ec6044;
           color: white; }
+
+.accountM {
+  width: 80%;
+  margin: 4rem auto 4rem auto; }
+  .accountM__header {
+    font-size: 2rem;
+    padding: 2rem 4rem;
+    background-color: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.6); }
+  .accountM__listaccount {
+    margin-top: 1rem;
+    font-size: 1.6rem;
+    padding: 3rem 1rem;
+    background-color: white; }
+    .accountM__listaccount table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+      border: 1px solid rgba(0, 0, 0, 0.3); }
+    .accountM__listaccount td {
+      text-align: left;
+      padding: 10px; }
+    .accountM__listaccount th {
+      text-align: left;
+      padding: 20px;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.5); }
+    .accountM__listaccount tr:nth-child(even) {
+      background-color: #dddddd; }
+    .accountM__listaccount .btn-detail {
+      padding: 5px 20px; }
+      .accountM__listaccount .btn-detail:hover {
+        background-color: #f3563b;
+        color: white;
+        cursor: pointer; }
+    .accountM__listaccount .btn-del {
+      padding: 5px 10px;
+      background-color: #ff2600;
+      color: white; }
+      .accountM__listaccount .btn-del:hover {
+        background-color: #f35033;
+        cursor: pointer; }
+
+.btnsize--active {
+  background-color: black;
+  color: white; }
+
+.detail {
+  font-size: 1.6rem;
+  width: 90%;
+  margin: 5rem auto;
+  display: flex;
+  background-color: white;
+  padding: 2rem; }
+  .detail__content {
+    width: 70%; }
+    .detail__content--image {
+      text-align: center; }
+      .detail__content--image img {
+        width: 80rem;
+        height: 60rem; }
+    .detail__content--info {
+      padding: 2rem; }
+      .detail__content--info_decription {
+        margin-top: 10rem; }
+  .detail__sidebar {
+    position: sticky;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    padding: 1rem;
+    width: 30%;
+    border-left: 1px solid rgba(0, 0, 0, 0.1); }
+    .detail__sidebar--choose_price {
+      font-size: 2rem;
+      margin: 2rem 0;
+      display: flex;
+      color: #ee2929; }
+    .detail__sidebar--choose_size .btn--size {
+      cursor: pointer;
+      padding: 1rem 2rem;
+      margin: 2rem 0 5rem 0; }
 
 * {
   margin: 0;

@@ -65,3 +65,23 @@ window.onscroll = function() {
         document.getElementById("nav").classList.remove("fixed-top");
     }
 }
+
+// detail PD
+
+const btnsizes = document.querySelectorAll(".btn--size")
+
+function remove() {
+    btnsizes.forEach(function(item, index) {
+        if (item.classList.contains('btnsize--active')) {
+            item.classList.remove("btnsize--active")
+        }
+    })
+}
+
+btnsizes.forEach(function(item, index) {
+
+    item.addEventListener("click", function() {
+        remove()
+        item.classList.add("btnsize--active")
+    })
+})

@@ -1,0 +1,53 @@
+.btnsize--active {
+    background-color: black;
+    color: white;
+}
+
+.detail {
+    font-size: 1.6rem;
+    width: 90%;
+    margin: 5rem auto;
+    display: flex;
+    background-color: white;
+    padding: 2rem;
+    &__content {
+        width: 70%;
+        &--image {
+            text-align: center;
+            img {
+                width: 80rem;
+                height: 60rem;
+            }
+        }
+        &--info {
+            padding: 2rem;
+            &_decription {
+                margin-top: 10rem;
+            }
+        }
+    }
+    &__sidebar {
+        position: sticky;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        padding: 1rem;
+        width: 30%;
+        border-left: 1px solid rgba($color: #000000, $alpha: 0.1);
+        &--choose {
+            &_price {
+                font-size: 2rem;
+                margin: 2rem 0;
+                display: flex;
+                color: rgb(238, 41, 41);
+            }
+            &_size {
+                .btn--size {
+                    cursor: pointer;
+                    padding: 1rem 2rem;
+                    margin: 2rem 0 5rem 0;
+                }
+            }
+        }
+    }
+}

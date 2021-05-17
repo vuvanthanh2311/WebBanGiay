@@ -1,0 +1,51 @@
+.accountM {
+    width: 80%;
+    margin: 4rem auto 4rem auto;
+    &__header {
+        font-size: 2rem;
+        padding: 2rem 4rem;
+        background-color: white;
+        border-bottom: 1px solid rgba($color: #000000, $alpha: .6);
+    }
+    &__listaccount {
+        margin-top: 1rem;
+        font-size: 1.6rem;
+        padding: 3rem 1rem;
+        background-color: white;
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid rgba($color: #000000, $alpha: .3);
+        }
+        td {
+            text-align: left;
+            padding: 10px;
+        }
+        th {
+            text-align: left;
+            padding: 20px;
+            border-bottom: 2px solid rgba($color: #000000, $alpha: .5);
+        }
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+        .btn-detail {
+            padding: 5px 20px;
+            &:hover {
+                background-color: #f3563b;
+                color: white;
+                cursor: pointer;
+            }
+        }
+        .btn-del {
+            padding: 5px 10px;
+            background-color: rgb(255, 38, 0);
+            color: white;
+            &:hover {
+                background-color: #f35033;
+                cursor: pointer;
+            }
+        }
+    }
+}

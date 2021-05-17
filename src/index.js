@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 // var session = require('express-session');
 const dotenv = require('dotenv');
 const cookieParser = require('cookie-parser')
+const methodOverride = require('method-override')
 
 // var ls = require('local-storage');
 const app = express();
@@ -17,6 +18,7 @@ dotenv.config();
 
 const route = require('./routes');
 const db = require('./config/db');
+const { setupMaster } = require('cluster');
 
 
 // connect db
@@ -35,6 +37,7 @@ app.use(
         extended: true,
     }),
 );
+app.use(methodOverride('_method'))
 
 // app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 } }))
 
@@ -44,7 +47,15 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(morgan('combined'));
-app.engine('.hbs', handlebars({ extname: '.hbs' }));
+app.engine(
+    '.hbs',
+    handlebars({
+        extname: '.hbs',
+        helpers: {
+            sum: (a, b) => a + b,
+        }
+    })
+);
 app.set('view engine', '.hbs');
 app.set('views', path.join(__dirname, 'resourses/views'));
 console.log(path.join(__dirname, 'resourses/views'));

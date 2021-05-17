@@ -1,13 +1,36 @@
-<div class="show">
-  <div class="show__product">
-    <img src="{{product.image}}"alt="...">
+<body>
+  <div class="detail">
+    <div class="detail__content">
+      <div class="detail__content--image">
+        <img src="{{product.image}}"alt="...">
+      </div>
+      <div class="detail__content--info">
+        <div class="detail__content--info_decription">
+          <h2>DECRIPTION</h2>
+          <p>{{product.description}}.</p>
+        </div> 
+      </div>
+    </div>
+    <div class="detail__sidebar">
+      <div class="detail__sidebar--choose">
+        <h1>{{product.name}}</h1>
+        <div class="detail__sidebar--choose_price">
+          <p id="formatPrice">{{product.price}}</p>
+          <span>VNĐ</span>
+        </div>
+        <div class="detail__sidebar--choose_size">
+          <h3>Chọn size :</h3>
+          <button class="btn--size">39</button>
+          <button class="btn--size">40</button>
+          <button class="btn--size">41</button>
+          <button class="btn--size">42</button>
+        </div>
+        <a  href="#"> <div class="bor--adidas"><button class="btn--adidas">THÊM VÀO GIỎ HÀNG<i class="far fa-long-arrow-right"></i></button></div></a>
+      </div>
+      
+    </div>
   </div>
-  <div class="show__content">
-    <h1>{{product.name}}</h1>
-    <p>{{product.description}}.</p>
-    <a href="#">Thêm vào giỏ hàng</a>
-  </div>
-</div>
+</body>
 
 
 
