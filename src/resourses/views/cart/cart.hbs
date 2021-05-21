@@ -71,7 +71,7 @@
                     <span>VNĐ</span>
                 </div>
                 <div class="cart__content--thaotac">
-                    <button class="btn--white">Xóa</button>
+                    <button id="{{this._id}}" class="btn--white Cbtndel">Xóa</button>
                 </div>
             </div>
             <div class="cart__detail">
@@ -103,5 +103,22 @@
             </div>
         </div>
     </div>
+    <div id="confirmdel" class="confirmdel active">
+        <div class="confirmdel__title">
+            <h1>Xóa đơn hàng ?</h1>
+            <div id="Cbtntime" class="confirmdel__title--time">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+        <div class="confirmdel__ques">
+            <h3>Bạn có chắn chắn muốn xóa mặt hàng này?</h3>
+        </div>
+        <div class="confirmdel__btn">
+            <button id="Cbtndestroy" class="btn--del">Xóa Bỏ</button>
+            <button id="Cbtnclose" class="btn--close">Hủy</button>
+        </div>
+    </div>
+     <div id="bgblack" class="bg--black"></div>
+     <form id="cart-form-delete"  method="POST"></form>
 </body>
 <script src="/js/cart.js"></script>

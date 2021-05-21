@@ -33,7 +33,7 @@
                         <a  href="#">Commitment and warranty</a>
                     </div>
                 </li>
-                <li id="admin"><a href="#">SYS admin</a>
+                <li id="showSYS"><a href="#">SYS admin</a>
                     <div class="dropdown-content">
                         <a href="/admin/dashboard">DashBoard</a>
                         <a href="/admin/createPD">Create Product</a>
@@ -66,7 +66,7 @@
                 </div>
             </div>
             <div class="nav__right--cart">
-                <a href="/cart/cart">
+                <a id="cart" href="/cart/cart">
                     <i class="fas fa-cart-plus "></i>
                     <span>0</span>
                 </a>
@@ -113,7 +113,8 @@
 
 
                 if( toa==undefined){
-                    document.getElementById("showSYS").style.display ="none";              
+                    document.getElementById("showSYS").style.display ="none";   
+                    document.getElementById("cart").href ="/logon/signin";           
                 }
 
                    

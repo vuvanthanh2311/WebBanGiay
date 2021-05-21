@@ -438,6 +438,36 @@
 .btn--re {
   left: 2rem; }
 
+.bg--black {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5); }
+
+.btn--del {
+  padding: 5px 10px;
+  background-color: #ec4135;
+  cursor: pointer;
+  color: white;
+  outline: none;
+  border-radius: 5px; }
+  .btn--del:hover {
+    background-color: #f06157; }
+
+.btn--close {
+  padding: 5px 10px;
+  background-color: #574b4a;
+  cursor: pointer;
+  color: white;
+  outline: none;
+  border-radius: 5px; }
+  .btn--close:hover {
+    background-color: #77605e; }
+
 .horscroll {
   position: relative;
   width: 90%;
@@ -587,6 +617,32 @@
             cursor: pointer; }
         .userpage .profile__content--right span {
           color: #777373; }
+
+.confirmdel {
+  display: none;
+  background-color: white;
+  position: fixed;
+  top: 20px;
+  width: 300px;
+  border-radius: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 101; }
+  .confirmdel__title {
+    padding: 20px; }
+    .confirmdel__title--time {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      font-size: 20px;
+      cursor: pointer; }
+  .confirmdel__ques {
+    border-top: 1px solid rgba(139, 136, 136, 0.5);
+    padding: 20px; }
+  .confirmdel__btn {
+    border-top: 1px solid rgba(139, 136, 136, 0.5);
+    text-align: right;
+    padding: 20px; }
 
 .fixed-bottom {
   position: sticky;

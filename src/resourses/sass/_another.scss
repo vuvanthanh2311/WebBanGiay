@@ -74,3 +74,38 @@
 .btn--re {
     left: 2rem;
 }
+
+.bg--black {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: rgba($color: #000000, $alpha: .5);
+}
+
+.btn--del {
+    padding: 5px 10px;
+    background-color: rgb(236, 65, 53);
+    cursor: pointer;
+    color: white;
+    outline: none;
+    border-radius: 5px;
+    &:hover {
+        background-color: rgb(240, 97, 87);
+    }
+}
+
+.btn--close {
+    padding: 5px 10px;
+    background-color: rgb(87, 75, 74);
+    cursor: pointer;
+    color: white;
+    outline: none;
+    border-radius: 5px;
+    &:hover {
+        background-color: rgb(119, 96, 94);
+    }
+}

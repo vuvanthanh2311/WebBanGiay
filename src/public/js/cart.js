@@ -178,3 +178,34 @@ cartitem.forEach(function(item, index) {
         Cart();
     })
 })
+
+// comfirmdel
+const bg = document.getElementById("bgblack");
+const confirmdel = document.getElementById("confirmdel");
+const btndel = document.querySelectorAll(".Cbtndel");
+const btntime = document.getElementById("Cbtntime");
+const btnclose = document.getElementById("Cbtnclose");
+const btndestroy = document.getElementById("Cbtndestroy");
+const formdel = document.getElementById("cart-form-delete");
+
+
+btnclose.addEventListener("click", function() {
+    confirmdel.style.display = "none"
+    bg.style.display = "none"
+})
+btntime.addEventListener("click", function() {
+    confirmdel.style.display = "none"
+    bg.style.display = "none"
+})
+
+btndel.forEach(function(item, index) {
+    item.addEventListener("click", function() {
+        bg.style.display = "block"
+        confirmdel.style.display = "block"
+
+        btndestroy.addEventListener("click", function() {
+            formdel.action = "/cart/" + item.id + "?_method=DELETE"
+            formdel.submit();
+        })
+    })
+})
