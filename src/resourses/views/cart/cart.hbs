@@ -20,7 +20,7 @@
                 Thao Tác
             </div>
         </div>
-        {{#each product}}
+        {{#each cart}}
             <div class="cart__shopinfo">
                 <div class="cart__shopinfo--left">
                     <a href="#"><button class="chat"><i class="fas fa-comments"></i>chat</button></a>
@@ -37,22 +37,22 @@
                 <div class="cart__content--sanpham">
                     
                     <div class="cart__content--sanpham_image">
-                        <a href="/product/{{this.slug}}">
-                            <img src="{{this.image}}" alt="image" style="width: 10rem; height:10rem">
+                        <a href="/product/{{this.product_slug}}">
+                            <img src="{{this.product_image}}" alt="image" style="width: 10rem; height:10rem">
                         </a>
                     </div>
                     <div class="cart__content--sanpham_name">
-                        <a href="/product/{{this.slug}}">
-                            {{this.name}}
+                        <a href="/product/{{this.product_slug}}">
+                            {{this.product_name}}
                         </a>
                     </div>
                 </div>
                 <div id="dongia" class="cart__content--dongia">
                     <p   class="dongia">
-                        {{this.price}}
+                        {{this.product_price}}
                     </p>
                     <p id="formatPrice"  class="dongiashow">
-                            {{this.price}}
+                            {{this.product_price}}
                     </p>
                     <span>VNĐ</span>
                 </div>
@@ -66,7 +66,7 @@
                 </div>
                 <div id="sotien" class="cart__content--sotien">
                     <p id="formatPrice"  class="sotien">
-                            {{this.price}}
+                            {{this.product_price}}
                     </p>
                     <span>VNĐ</span>
                 </div>

@@ -1,4 +1,5 @@
 const User = require('../modules/Users');
+const Cart = require('../modules/Cart');
 const { MongooseObject } = require('../../util/mongoose');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
@@ -35,6 +36,8 @@ class logonController {
         const user = await User.findOne({email: req.body.email });
         if(!user) return res.status(400).send('email not found');
 
+        
+
         if(user.admin!=null||user.admin!=undefined)
         {
           const tokenadmin = jwt.sign({admin: user.admin}, process.env.TOKEN_SECRET);
@@ -64,6 +67,8 @@ class logonController {
 
       }
 
+      
+
 
     
       
@@ -83,10 +88,9 @@ class logonController {
       profile(req,res,next){
           
         
-        const token = req.cookies.token;
+          const token = req.cookies.token;
           const user = jwt.verify(token, process.env.TOKEN_SECRET);
           req.user= user;
-        
           const userId = req.user._id
           
            

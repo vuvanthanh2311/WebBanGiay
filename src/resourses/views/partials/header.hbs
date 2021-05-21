@@ -111,26 +111,8 @@
 
                 }  
 
-                if(toa!=undefined){
-                document.getElementById("showSYS").setAttribute("href","");
-                document.getElementById("showSYS").innerHTML="SYS admin";
-
-                document.getElementById("dashboad").setAttribute("href","/admin/dashboard");
-                document.getElementById("dashboad").innerHTML="DashBoard";
-                document.getElementById("createproduct").setAttribute("href","/admin/createPD");
-                document.getElementById("createproduct").innerHTML="Create Product";
-
-                 document.getElementById("accountmanagement").setAttribute("href","/admin/AccManage");
-                document.getElementById("accountmanagement").innerHTML="account management";
-                 document.getElementById("productmanagement").setAttribute("href","/admin/PDManage");
-                document.getElementById("productmanagement").innerHTML="Product management";                                  
-                }
-                else
-                {
-                document.getElementById("showSYS").setAttribute("href","");
-                document.getElementById("showSYS").innerHTML="";
-
-                    
+                if( toa==undefined){
+                    document.getElementById("showSYS").style.display ="none";
                 }
 
                    

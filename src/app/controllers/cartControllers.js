@@ -2,14 +2,22 @@ const Product = require('../modules/Product');
 const { mutipleMongooseObject } = require('../../util/mongoose');
 const { MongooseObject } = require('../../util/mongoose');
 const { render } = require('node-sass');
+const jwt = require('jsonwebtoken');
+
+
+const Cart = require('../modules/Cart');
 
 class cartController {
     cart(req, res) {
+        const token = req.cookies.token;
+        const user = jwt.verify(token, process.env.TOKEN_SECRET);
+        req.user= user;
+        const userId = req.user._id
         // res.render('cart/cart');
-        Product.find({}).limit(3)
-            .then((product) => {
+        Cart.find({user_id: userId})
+            .then((cart) => {
                 res.render('cart/cart', {
-                    product: mutipleMongooseObject(product),
+                    cart: mutipleMongooseObject(cart),
                 });
             })
             // .catch(next);
