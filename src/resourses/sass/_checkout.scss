@@ -1,0 +1,138 @@
+.checkout {
+    width: 80%;
+    margin: auto;
+    &__address {
+        margin: 5rem 0;
+        background-color: white;
+        padding: 1rem 4rem;
+        line-height: 5rem;
+        &--title {
+            display: flex;
+            color: rgb(224, 58, 58);
+            font-size: 2rem;
+            h3 {
+                margin-left: 10px;
+            }
+            i {
+                position: relative;
+                top: 15px;
+            }
+        }
+        &--content {
+            font-size: 1.6rem;
+            display: flex;
+            &_info {
+                width: 80%;
+                span,
+                strong {
+                    margin-left: 10px;
+                }
+            }
+            &_edit {
+                width: 20%;
+                color: blue;
+                cursor: pointer;
+            }
+        }
+    }
+    &__product {
+        background-color: white;
+        font-size: 1.6rem;
+        margin-bottom: 5rem;
+        &--title {
+            padding: 2rem 4rem;
+            display: flex;
+            color: gray;
+            &_sanpham {
+                width: 55%;
+                font-size: 2rem;
+                color: black;
+            }
+            &_dongia {
+                width: 15%;
+            }
+            &_soluong {
+                text-align: center;
+                width: 10%;
+            }
+            &_sotien {
+                text-align: right;
+                width: 20%;
+            }
+        }
+        &--info {
+            border-top: 1px dotted rgba($color: #524c4c, $alpha: .5);
+            padding: 2rem 4rem;
+            display: flex;
+            &_sanpham {
+                display: flex;
+                width: 55%;
+                img {
+                    width: 70px;
+                    height: 80px;
+                }
+                p {
+                    line-height: 80px;
+                    margin-left: 10px;
+                }
+            }
+            &_dongia {
+                width: 15%;
+                color: rgb(224, 53, 53);
+                p {
+                    display: inline;
+                }
+            }
+            &_soluong {
+                text-align: center;
+                width: 10%;
+            }
+            &_sotien {
+                p {
+                    display: inline;
+                }
+                text-align: right;
+                width: 20%;
+                color: rgb(224, 53, 53);
+            }
+        }
+    }
+    &__payment {
+        background-color: white;
+        &--title {
+            font-size: 1.6rem;
+            display: flex;
+            padding: 2rem 4rem;
+            h3 {
+                width: 50%;
+            }
+            &_edit {
+                width: 50%;
+                text-align: right;
+                a {
+                    color: blue;
+                    margin-left: 50px;
+                }
+            }
+        }
+        &--total {
+            border-top: 1px solid rgba($color: #a59090, $alpha: .5);
+            border-bottom: 1px solid rgba($color: #a59090, $alpha: .5);
+            font-size: 1.6rem;
+            padding: 2rem 4rem;
+            text-align: right;
+            line-height: 5rem;
+            &_thanhtoan {
+                font-size: 3rem;
+                color: rgb(233, 58, 58);
+            }
+            p {
+                display: inline;
+            }
+        }
+        &--order {
+            text-align: right;
+            padding: 2rem 4rem;
+        }
+    }
+}

@@ -209,3 +209,22 @@ btndel.forEach(function(item, index) {
         })
     })
 })
+
+// confirm checkout
+
+const btncheckout = document.getElementById("btncheckout");
+const confirmcheckout = document.getElementById("comfirm-checkout");
+const btnOK = document.querySelector(".checkout--btnOK");
+
+btncheckout.addEventListener("click", function() {
+    if (Number(tong.innerHTML) != 0) {
+        btncheckout.href = "/cart/checkout"
+    } else {
+        bg.style.display = "block"
+        confirmcheckout.style.display = "block"
+    }
+})
+btnOK.addEventListener("click", function() {
+    bg.style.display = "none"
+    confirmcheckout.style.display = "none"
+})

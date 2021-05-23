@@ -449,6 +449,7 @@
   background-color: rgba(0, 0, 0, 0.5); }
 
 .btn--del {
+  font-size: 1.8rem;
   padding: 5px 10px;
   background-color: #ec4135;
   cursor: pointer;
@@ -459,6 +460,7 @@
     background-color: #f06157; }
 
 .btn--close {
+  font-size: 1.8rem;
   padding: 5px 10px;
   background-color: #574b4a;
   cursor: pointer;
@@ -467,6 +469,26 @@
   border-radius: 5px; }
   .btn--close:hover {
     background-color: #77605e; }
+
+.checkout--btnOK {
+  background-color: #ee4d2d;
+  color: white;
+  width: 100%;
+  height: 4rem; }
+  .checkout--btnOK:hover {
+    cursor: pointer;
+    background-color: #f3694d; }
+
+.mhbtn {
+  border: none;
+  padding: 1rem 6rem;
+  background-color: #ee4d2d;
+  color: white;
+  font-size: 2.4rem;
+  border-radius: 5px; }
+  .mhbtn:hover {
+    background-color: #ec6044;
+    cursor: pointer; }
 
 .horscroll {
   position: relative;
@@ -618,16 +640,34 @@
         .userpage .profile__content--right span {
           color: #777373; }
 
+.comfirm-checkout {
+  display: none;
+  background-color: white;
+  position: fixed;
+  top: 50%;
+  width: 50rem;
+  border-radius: 10px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 101;
+  font-size: 1.8rem;
+  border-radius: 5px;
+  padding: 2rem; }
+  .comfirm-checkout__content {
+    height: 200px;
+    padding: 2rem; }
+
 .confirmdel {
   display: none;
   background-color: white;
   position: fixed;
-  top: 20px;
-  width: 300px;
+  top: 50%;
+  width: 50rem;
   border-radius: 10px;
   left: 50%;
-  transform: translateX(-50%);
-  z-index: 101; }
+  transform: translate(-50%, -50%);
+  z-index: 101;
+  font-size: 1.8rem; }
   .confirmdel__title {
     padding: 20px; }
     .confirmdel__title--time {
@@ -664,6 +704,7 @@
   margin: 2rem auto 2rem auto;
   font-size: 1.8rem; }
   .cart__checkout {
+    font-size: 2.4rem;
     line-height: 5rem;
     background-color: white;
     display: flex;
@@ -677,18 +718,19 @@
       width: 25%; }
     .cart__checkout--tongtien {
       text-align: right;
-      width: 50%; }
+      width: 45%; }
       .cart__checkout--tongtien span {
         color: #ee4d2d; }
     .cart__checkout--muahang {
       text-align: right;
-      width: 20%; }
+      width: 25%; }
       .cart__checkout--muahang .mhbtn {
         border: none;
         padding: 1rem 6rem;
         background-color: #ee4d2d;
         color: white;
-        font-size: 1.6rem; }
+        font-size: 2.4rem;
+        border-radius: 5px; }
         .cart__checkout--muahang .mhbtn:hover {
           background-color: #ec6044;
           cursor: pointer; }
@@ -719,20 +761,14 @@
     padding: 1rem 4rem; }
     .cart__shopinfo--left {
       width: 70%; }
-      .cart__shopinfo--left .chat {
-        border: none;
-        background-color: #ee4d2d;
-        color: white;
-        padding: .5rem 1rem; }
-        .cart__shopinfo--left .chat:hover {
-          cursor: pointer;
-          background-color: #ec6044; }
     .cart__shopinfo--right {
       width: 30%;
       text-align: right; }
       .cart__shopinfo--right a {
-        text-decoration: none;
-        color: #ee4d2d; }
+        line-height: 5rem;
+        color: black; }
+        .cart__shopinfo--right a:hover {
+          color: #5f5656; }
   .cart__content {
     text-align: center;
     margin-top: .5rem;
@@ -785,28 +821,6 @@
     .cart__content--thaotac {
       line-height: 10rem;
       width: 10%; }
-  .cart__detail {
-    background-color: white;
-    margin-top: .5rem;
-    padding: 1rem 4rem;
-    display: flex; }
-    .cart__detail--left {
-      font-size: 1.4rem;
-      display: flex;
-      width: 60%; }
-    .cart__detail--right {
-      text-align: right;
-      width: 40%; }
-      .cart__detail--right_bill {
-        border: none;
-        font-size: 1.6rem;
-        padding: 1rem 2rem;
-        background-color: white;
-        outline: 1px solid rgba(0, 0, 0, 0.3); }
-        .cart__detail--right_bill:hover {
-          cursor: pointer;
-          background-color: #ec6044;
-          color: white; }
 
 .accountM {
   width: 80%;
@@ -888,6 +902,112 @@
       cursor: pointer;
       padding: 1rem 2rem;
       margin: 2rem 0 5rem 0; }
+
+.checkout {
+  width: 80%;
+  margin: auto; }
+  .checkout__address {
+    margin: 5rem 0;
+    background-color: white;
+    padding: 1rem 4rem;
+    line-height: 5rem; }
+    .checkout__address--title {
+      display: flex;
+      color: #e03a3a;
+      font-size: 2rem; }
+      .checkout__address--title h3 {
+        margin-left: 10px; }
+      .checkout__address--title i {
+        position: relative;
+        top: 15px; }
+    .checkout__address--content {
+      font-size: 1.6rem;
+      display: flex; }
+      .checkout__address--content_info {
+        width: 80%; }
+        .checkout__address--content_info span,
+        .checkout__address--content_info strong {
+          margin-left: 10px; }
+      .checkout__address--content_edit {
+        width: 20%;
+        color: blue;
+        cursor: pointer; }
+  .checkout__product {
+    background-color: white;
+    font-size: 1.6rem;
+    margin-bottom: 5rem; }
+    .checkout__product--title {
+      padding: 2rem 4rem;
+      display: flex;
+      color: gray; }
+      .checkout__product--title_sanpham {
+        width: 55%;
+        font-size: 2rem;
+        color: black; }
+      .checkout__product--title_dongia {
+        width: 15%; }
+      .checkout__product--title_soluong {
+        text-align: center;
+        width: 10%; }
+      .checkout__product--title_sotien {
+        text-align: right;
+        width: 20%; }
+    .checkout__product--info {
+      border-top: 1px dotted rgba(82, 76, 76, 0.5);
+      padding: 2rem 4rem;
+      display: flex; }
+      .checkout__product--info_sanpham {
+        display: flex;
+        width: 55%; }
+        .checkout__product--info_sanpham img {
+          width: 70px;
+          height: 80px; }
+        .checkout__product--info_sanpham p {
+          line-height: 80px;
+          margin-left: 10px; }
+      .checkout__product--info_dongia {
+        width: 15%;
+        color: #e03535; }
+        .checkout__product--info_dongia p {
+          display: inline; }
+      .checkout__product--info_soluong {
+        text-align: center;
+        width: 10%; }
+      .checkout__product--info_sotien {
+        text-align: right;
+        width: 20%;
+        color: #e03535; }
+        .checkout__product--info_sotien p {
+          display: inline; }
+  .checkout__payment {
+    background-color: white; }
+    .checkout__payment--title {
+      font-size: 1.6rem;
+      display: flex;
+      padding: 2rem 4rem; }
+      .checkout__payment--title h3 {
+        width: 50%; }
+      .checkout__payment--title_edit {
+        width: 50%;
+        text-align: right; }
+        .checkout__payment--title_edit a {
+          color: blue;
+          margin-left: 50px; }
+    .checkout__payment--total {
+      border-top: 1px solid rgba(165, 144, 144, 0.5);
+      border-bottom: 1px solid rgba(165, 144, 144, 0.5);
+      font-size: 1.6rem;
+      padding: 2rem 4rem;
+      text-align: right;
+      line-height: 5rem; }
+      .checkout__payment--total_thanhtoan {
+        font-size: 3rem;
+        color: #e93a3a; }
+      .checkout__payment--total p {
+        display: inline; }
+    .checkout__payment--order {
+      text-align: right;
+      padding: 2rem 4rem; }
 
 * {
   margin: 0;

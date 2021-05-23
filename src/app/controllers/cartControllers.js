@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 const Cart = require('../modules/Cart');
 
 class cartController {
-    cart(req, res) {
+    cart(req, res, next) {
         const token = req.cookies.token;
         const user = jwt.verify(token, process.env.TOKEN_SECRET);
         req.user = user;
@@ -18,12 +18,15 @@ class cartController {
                     cart: mutipleMongooseObject(cart),
                 });
             })
-            // .catch(next);
+            .catch(next);
     }
     destroy(req, res, next) {
         Cart.deleteOne({ _id: req.params.id })
             .then(() => res.redirect('back'))
             .catch(next);
+    }
+    checkout(req, res, next) {
+        res.render('cart/checkout');
     }
 
 }

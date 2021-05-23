@@ -20,16 +20,15 @@
                 Thao Tác
             </div>
         </div>
-        {{#each cart}}
-            <div class="cart__shopinfo">
+        <div class="cart__shopinfo">
                 <div class="cart__shopinfo--left">
-                    <a href="#"><button class="chat"><i class="fas fa-comments"></i>chat</button></a>
+                   <h1>YOUR BAG</h1>
                 </div>
                 <div class="cart__shopinfo--right">
-                    <a href="#">Đã Giao </a>
-                   
+                    <a href="/">Continue shopping <i class="far fa-long-arrow-right"></i></a>
                 </div>
             </div>
+        {{#each cart}}  
             <div id="cartitem" class="cart__content">
                 <div id="checkbox" class="cart__content--checkbox">
                     <input type="checkbox" name="check" id="check">
@@ -74,18 +73,6 @@
                     <button id="{{this._id}}" class="btn--white Cbtndel">Xóa</button>
                 </div>
             </div>
-            <div class="cart__detail">
-                <div class="cart__detail--left">
-                    <div class="cart__detail--left_ship">
-                        <i class="fad fa-truck-container"></i>
-                        <span>Miễn Phí Vận Chuyển cho đơn hàng từ ₫50.000 (giảm tối đa ₫25.000)</span>
-                    </div>
-                </div>
-                <div class="cart__detail--right">
-                    <button class="cart__detail--right_bill"> Xem Chi Tiết Đơn Hàng</button>
-                </div>
-                
-            </div>
         {{/each}}
 
         <div id="checkout" class="cart__checkout fixed-bottom">
@@ -99,7 +86,7 @@
                 Tổng thanh toán : <span id="tongtien"> 0</span> <span>VNĐ</span>
             </div>
             <div class="cart__checkout--muahang">
-                 <button class="mhbtn"> Mua Hàng</button>
+                <a id="btncheckout" href="#"><button class="mhbtn"> Mua Hàng</button></a> 
             </div>
         </div>
     </div>
@@ -117,6 +104,12 @@
             <button id="Cbtndestroy" class="btn--del">Xóa Bỏ</button>
             <button id="Cbtnclose" class="btn--close">Hủy</button>
         </div>
+    </div>
+    <div id="comfirm-checkout" class="comfirm-checkout">
+        <div class="comfirm-checkout__content">
+            <span>Bạn vẫn chưa chọn sản phẩm nào để mua</span>
+        </div>
+        <button class="checkout--btnOK">OK</button>
     </div>
      <div id="bgblack" class="bg--black"></div>
      <form id="cart-form-delete"  method="POST"></form>
