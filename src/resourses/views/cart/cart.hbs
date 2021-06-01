@@ -31,17 +31,17 @@
         {{#each cart}}  
             <div id="cartitem" class="cart__content">
                 <div id="checkbox" class="cart__content--checkbox">
-                    <input type="checkbox" name="check" id="check">
+                    <input type="checkbox" name="check" id="check" >
                 </div>
                 <div class="cart__content--sanpham">
                     
                     <div class="cart__content--sanpham_image">
                         <a href="/product/{{this.product_slug}}">
-                            <img src="{{this.product_image}}" alt="image" style="width: 10rem; height:10rem">
+                            <img id="cart_image" src="{{this.product_image}}" alt="image" style="width: 10rem; height:10rem">
                         </a>
                     </div>
                     <div class="cart__content--sanpham_name">
-                        <a href="/product/{{this.product_slug}}">
+                        <a id="cart_name" href="/product/{{this.product_slug}}">
                             {{this.product_name}}
                         </a>
                     </div>

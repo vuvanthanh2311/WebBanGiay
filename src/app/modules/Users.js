@@ -7,9 +7,9 @@ const User = new Schema({
     email: { type: String, required: true },
     password: { type: String, required: true },
     password_comfirmation: { type: String, required: true },
-    phone_number: { type: Number, required: true },
+    phone_number: { type: String, required: true },
     address: { type: String, required: true },
-    admin: { type:String },
+    admin: { type: String },
 
     // address: { type: String, },
 

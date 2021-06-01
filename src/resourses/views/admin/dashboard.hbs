@@ -1,0 +1,23 @@
+
+<body>
+    <div class="list">
+        
+    </div>
+</body>
+<script>
+    var user = [
+    'user1',
+    'user1',
+    'user1',
+    'user1',
+    'user1',
+    ]
+    
+    const content = user.map(function(item){
+        return `<li> ${item} </li>`
+    })
+    document.querySelector('.list').innerHTML = content.join("")
+
+</script>
+
+

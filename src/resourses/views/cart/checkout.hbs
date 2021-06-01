@@ -1,4 +1,6 @@
 <body style="background-color: #f5f5f5;">
+    <div id="result"></div>
+    <div id="test"></div>
     <div class="checkout">
         <div class="checkout__address">
             <div class="checkout__address--title">
@@ -7,17 +9,17 @@
             </div>
             <div class="checkout__address--content">
                 <div class="checkout__address--content_info">
-                    <strong>Tên</strong>
-                    <strong>Số điện thoại</strong>
-                    <span>Địa chỉ</span>
+                    <strong>{{user.fullname}}</strong>
+                    <strong>{{user.phone_number}}</strong>
+                    <span>{{user.address}}</span>
                 </div>
                 <div class="checkout__address--content_edit"><a>THAY ĐỔI</a></div>
             </div>
         </div>
         <div class="checkout__product">
             <div class="checkout__product--title">
-                <div class="checkout__product--title_sanpham">
-                Sản Phẩm
+                <div id="checkout_title_sp" class="checkout__product--title_sanpham">
+                
                 </div>
                 <div class="checkout__product--title_dongia">
                     Đơn Giá
@@ -29,68 +31,8 @@
                 Thành tiền
                 </div>
             </div>
-            <div class="checkout__product--info">
-                <div class="checkout__product--info_sanpham">
-                <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/0ba2df71ef004243b185acc301054908_9366/Adilette_Cork_Slides_White_GZ1025_01_standard.jpg" alt="">
-                <p>ADILETTE CORK SLIDES</p>
-                </div>
-                <div class="checkout__product--info_dongia">
-                    <p id="formatPrice">
-                       999000
-                    </p>
-                    <span>VNĐ</span>
-                </div>
-                <div class="checkout__product--info_soluong">
-                    <span>1</span>
-                </div>
-                <div class="checkout__product--info_sotien">
-                    <p id="formatPrice">
-                       999000
-                    </p>
-                    <span>VNĐ</span>
-                </div>
-            </div>
-            <div class="checkout__product--info">
-                <div class="checkout__product--info_sanpham">
-                <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/0ba2df71ef004243b185acc301054908_9366/Adilette_Cork_Slides_White_GZ1025_01_standard.jpg" alt="">
-                <p>ADILETTE CORK SLIDES</p>
-                </div>
-                <div class="checkout__product--info_dongia">
-                    <p id="formatPrice">
-                       999000
-                    </p>
-                    <span>VNĐ</span>
-                </div>
-                <div class="checkout__product--info_soluong">
-                    <span>1</span>
-                </div>
-                <div class="checkout__product--info_sotien">
-                    <p id="formatPrice">
-                       999000
-                    </p>
-                    <span>VNĐ</span>
-                </div>
-            </div>
-            <div class="checkout__product--info">
-                <div class="checkout__product--info_sanpham">
-                <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/0ba2df71ef004243b185acc301054908_9366/Adilette_Cork_Slides_White_GZ1025_01_standard.jpg" alt="">
-                <p>ADILETTE CORK SLIDES</p>
-                </div>
-                <div class="checkout__product--info_dongia">
-                    <p id="formatPrice">
-                       999000
-                    </p>
-                    <span>VNĐ</span>
-                </div>
-                <div class="checkout__product--info_soluong">
-                    <span>1</span>
-                </div>
-                <div class="checkout__product--info_sotien">
-                    <p id="formatPrice">
-                       999000
-                    </p>
-                    <span>VNĐ</span>
-                </div>
+            <div id="arr_product">
+               
             </div>
         </div>
         <div class="checkout__payment">
@@ -104,22 +46,20 @@
             <div class="checkout__payment--total">
                 <div class="checkout__payment--total_tienhang">
                     <span style="margin-right:50px">Tổng tiền hàng</span>
-                    <p id="formatPrice">
-                       999000
+                    <p class="Checkout_fm_price" id="Checkout_tienhang"> 
                     </p>
                     <span>VNĐ</span>
                 </div>
                 <div class="checkout__payment--total_ship">
                     <span style="margin-right:50px">Phí vận chuyển</span>
-                    <p id="formatPrice">
-                       999000
+                    <p class="Checkout_fm_price" id="Checkout_vanchuyen">
+                       50000
                     </p>
                     <span>VNĐ</span>
                 </div>
                 <div class="checkout__payment--total_thanhtoan">
                     <span style="margin-right:50px">Tổng thanh toán:</span>
-                    <p id="formatPrice">
-                       999000
+                    <p class="Checkout_fm_price" id="Checkout_total">
                     </p>
                     <span>VNĐ</span>
                 </div>
@@ -130,3 +70,57 @@
         </div>
     </div>
 </body>
+<script>
+
+    var tienhang =  document.getElementById("Checkout_tienhang");
+    var Checkout_total =  document.getElementById("Checkout_total");
+     var checkout_title_sp =  document.getElementById("checkout_title_sp");
+    const Checkout_vanchuyen =  document.getElementById("Checkout_vanchuyen").innerHTML;
+
+    tienhang.innerHTML = sessionStorage.getItem("tongtien");
+    Checkout_total.innerHTML = (Number(sessionStorage.getItem("tongtien"))+ Number(Checkout_vanchuyen));
+    checkout_title_sp.innerHTML = ("Sản Phẩm ("+ sessionStorage.getItem("length") +")")
+
+    var products = JSON.parse(sessionStorage.getItem("products"));
+
+    
+    const content = products.map(function(item){
+        var sotien = Number(item.dongia)*Number(item.soluong)
+        return ` <div class="checkout__product--info">
+                    <div class="checkout__product--info_sanpham">
+                    <img src="${item.image}" alt="">
+                    <p>ADILETTE CORK SLIDES</p>
+                    </div>
+                    <div class="checkout__product--info_dongia">
+                        <p class="Checkout_fm_price" id="formatPrice">
+                        ${item.dongia}
+                        </p>
+                        <span>VNĐ</span>
+                    </div>
+                    <div class="checkout__product--info_soluong">
+                        <span>${item.soluong}</span>
+                    </div>
+                    <div class="checkout__product--info_sotien">
+                        <p class="Checkout_fm_price" id="formatPrice">
+                        ${sotien}
+                        </p>
+                        <span>VNĐ</span>
+                    </div>
+                </div>`
+    })
+    document.querySelector('#arr_product').innerHTML = content.join("")
+
+    //format
+function formatCash(str) {
+    return str.trim().split('').reverse().reduce((prev, next, index) => {
+        return ((index % 3) ? next : (next + '.')) + prev
+    })
+}
+const PDelement = document.querySelectorAll('.Checkout_fm_price');
+for (const element of PDelement) {
+    const priceVND = formatCash(element.textContent);
+    element.innerHTML = `${priceVND}`;
+
+}
+    
+</script>

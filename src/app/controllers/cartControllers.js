@@ -4,6 +4,7 @@ const { MongooseObject } = require('../../util/mongoose');
 const { render } = require('node-sass');
 const jwt = require('jsonwebtoken');
 const Cart = require('../modules/Cart');
+const User = require('../modules/Users');
 
 class cartController {
     cart(req, res, next) {
@@ -26,7 +27,18 @@ class cartController {
             .catch(next);
     }
     checkout(req, res, next) {
-        res.render('cart/checkout');
+        const token = req.cookies.token;
+        const user = jwt.verify(token, process.env.TOKEN_SECRET);
+        req.user = user;
+        const userId = req.user._id
+            // res.render('cart/cart');
+        User.findOne({ _id: userId })
+            .then((user) => {
+                res.render('cart/checkout', {
+                        user: MongooseObject(user),
+                    })
+                    .catch(next);
+            });
     }
 
 }

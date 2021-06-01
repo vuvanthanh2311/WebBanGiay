@@ -49,6 +49,7 @@ function Cart() {
 
     })
     tong.innerHTML = tongtien;
+    Checkout(tongtien);
     const priceVND = formatCash(tong.textContent);
     tong.innerHTML = `${priceVND}`;
 }
@@ -94,7 +95,6 @@ alltt.onchange = function() {
     Cart();
 
 }
-
 
 // update soluong
 cartitem.forEach(function(item, index) {
@@ -216,14 +216,56 @@ const btncheckout = document.getElementById("btncheckout");
 const confirmcheckout = document.getElementById("comfirm-checkout");
 const btnOK = document.querySelector(".checkout--btnOK");
 
+function Checkout(tongtien) {
+    sessionStorage.setItem("tongtien", tongtien);
+}
+var products = [];
+
 btncheckout.addEventListener("click", function() {
+    const checkbox = document.querySelectorAll('input[name="check"]:checked');
     if (Number(tong.innerHTML) != 0) {
         btncheckout.href = "/cart/checkout"
+        sessionStorage.setItem("length", checkbox.length);
+        cartitem.forEach(function(item, index) {
+            const quanity = item.querySelector('#quanity');
+            const sotien = item.querySelector('#sotien')
+            const dongia = item.querySelector('#dongia')
+            const image = item.querySelector('#cart_image')
+            const name = item.querySelector('#cart_name')
+            const checkbox = item.querySelector('#checkbox');
+
+            var check = checkbox.querySelector("#check")
+
+            var price = dongia.querySelector('.dongia')
+
+            var money = sotien.querySelector('.sotien')
+
+
+            var soluong = quanity.querySelector("#soluong");
+
+
+
+            var product = {};
+
+            if (check.checked) {
+                product.name = name.innerHTML.trim();
+                product.image = image.src.trim();
+                product.dongia = price.innerHTML.trim();
+                product.soluong = soluong.value.trim();
+
+
+            }
+            products.push(product)
+        })
+
+        sessionStorage.setItem("products", JSON.stringify(products));
+
     } else {
         bg.style.display = "block"
         confirmcheckout.style.display = "block"
     }
-})
+});
+
 btnOK.addEventListener("click", function() {
     bg.style.display = "none"
     confirmcheckout.style.display = "none"
