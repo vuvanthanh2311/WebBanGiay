@@ -252,12 +252,10 @@ btncheckout.addEventListener("click", function() {
                 product.image = image.src.trim();
                 product.dongia = price.innerHTML.trim();
                 product.soluong = soluong.value.trim();
-
-
+                products.push(product)
             }
-            products.push(product)
-        })
 
+        })
         sessionStorage.setItem("products", JSON.stringify(products));
 
     } else {

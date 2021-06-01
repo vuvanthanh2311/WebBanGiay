@@ -9,6 +9,7 @@
             </div>
             <div class="checkout__address--content">
                 <div class="checkout__address--content_info">
+                    <p id="user_id" style="display:none">{{user._id}}</p>
                     <strong>{{user.fullname}}</strong>
                     <strong>{{user.phone_number}}</strong>
                     <span>{{user.address}}</span>
@@ -65,7 +66,7 @@
                 </div>
             </div>
             <div class="checkout__payment--order">
-                <button class="mhbtn">Đặt Hàng</button>
+                <a href="/Bill/{{user._id}}"><button id="Checkout_dathang" class="mhbtn">Đặt Hàng</button></a>
             </div>
         </div>
     </div>
@@ -74,8 +75,10 @@
 
     var tienhang =  document.getElementById("Checkout_tienhang");
     var Checkout_total =  document.getElementById("Checkout_total");
-     var checkout_title_sp =  document.getElementById("checkout_title_sp");
+    var checkout_title_sp =  document.getElementById("checkout_title_sp");
     const Checkout_vanchuyen =  document.getElementById("Checkout_vanchuyen").innerHTML;
+    const user_id = document.getElementById("user_id").innerHTML;
+    const Checkout_dathang =  document.getElementById("Checkout_dathang");
 
     tienhang.innerHTML = sessionStorage.getItem("tongtien");
     Checkout_total.innerHTML = (Number(sessionStorage.getItem("tongtien"))+ Number(Checkout_vanchuyen));
@@ -109,6 +112,26 @@
                 </div>`
     })
     document.querySelector('#arr_product').innerHTML = content.join("")
+    var Bill = {};
+    Bill.user_id = user_id;
+    Bill.total = (Number(sessionStorage.getItem("tongtien"))+ Number(Checkout_vanchuyen));
+    Bill.products = products;
+    Bill.status = "ctt";
+    Checkout_dathang.addEventListener("click",function(){
+        fetch('/Bill/store', {
+            method: 'POST', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(Bill),
+        })
+        .then(data => {
+        })
+        .catch((error) => {
+        console.error('Error:', error);
+        });
+    })
+    
 
     //format
 function formatCash(str) {

@@ -3,11 +3,10 @@ const Schema = mongoose.Schema;
 
 const Bill = new Schema({
     user_id: { type: String },
-    total: { type: String },
-    address: { type: String },
-    payment: { type: String },
-    date: {type: timestamps},
-    
+    total: { type: Number },
+    products: { type: [String] },
+    status: { type: String },
+
 }, {
     timestamps: true,
 });

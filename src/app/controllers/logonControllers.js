@@ -20,94 +20,93 @@ class logonController {
     }
     signup(req, res) {
         res.render('logon/signup')
- 
+
     }
-  
+
     store(req, res, next) {
 
         const Data = req.body;
         const user = new User(Data);
-        user.save();
-        res.json(Data);
+        user.save()
+            .then(() => res.redirect('/logon/signin'))
+            .catch(next);
     }
 
-    async login(req, res, next){    
-        
-        const user = await User.findOne({email: req.body.email });
-        if(!user) return res.status(400).send('email not found');
+    async login(req, res, next) {
 
-        
+        const user = await User.findOne({ email: req.body.email });
+        if (!user) return res.status(400).send('email not found');
 
-        if(user.admin!=null||user.admin!=undefined)
-        {
-          const tokenadmin = jwt.sign({admin: user.admin}, process.env.TOKEN_SECRET);
 
-          res.cookie("tokenadmin", tokenadmin,{
-            httpOnly: false,
-          });
+
+        if (user.admin != null || user.admin != undefined) {
+            const tokenadmin = jwt.sign({ admin: user.admin }, process.env.TOKEN_SECRET);
+
+            res.cookie("tokenadmin", tokenadmin, {
+                httpOnly: false,
+            });
         }
-        if(req.body.password===user.password){
-
-      
-        const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET);
-       
-        
-        res.cookie("token", token, {
-            httpOnly: false,
-        });
-      
-      
-      
-       console.log(token)
-         res.redirect('/');
-         
-        }else
-      {
-          res.status(400).send('pass not exacli')
-
-      }
-
-      
+        if (req.body.password === user.password) {
 
 
-    
-      
-      }
+            const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
 
-      logout(req,res,next){
+
+            res.cookie("token", token, {
+                httpOnly: false,
+            });
+
+
+
+            console.log(token)
+            res.redirect('/');
+
+        } else {
+            res.status(400).send('pass not exacli')
+
+        }
+
+
+
+
+
+
+    }
+
+    logout(req, res, next) {
 
         const token = req.cookies.token;
         res.clearCookie("token");
         res.clearCookie("tokenadmin")
         res.redirect("/")
-        
-      }
-      
-     
 
-      profile(req,res,next){
-          
-        
-          const token = req.cookies.token;
-          const user = jwt.verify(token, process.env.TOKEN_SECRET);
-          req.user= user;
-          const userId = req.user._id
-          
-           
-       
-          User.findOne({_id:userId})
-          .then((user)=>{
-              res.render('logon/profile',{
-                user: MongooseObject(user),
-              });
-          })
-          .catch(next);
+    }
+
+
+
+    profile(req, res, next) {
+
+
+        const token = req.cookies.token;
+        const user = jwt.verify(token, process.env.TOKEN_SECRET);
+        req.user = user;
+        const userId = req.user._id
+
+
+
+        User.findOne({ _id: userId })
+            .then((user) => {
+                res.render('logon/profile', {
+                    user: MongooseObject(user),
+                });
+            })
+            .catch(next);
 
         console.log(token)
-     
-      } 
 
-    
-      
+    }
+
+
+
 }
-    module.exports = new logonController();
+module.exports = new logonController();

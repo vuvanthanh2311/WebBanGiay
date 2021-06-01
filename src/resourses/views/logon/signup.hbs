@@ -36,7 +36,7 @@
                 <input type="text"  id="address" name="address" placeholder="số nhà, ấp, xã, huyện, tỉnh">
                 <span class="form_message"></span>
             </div>
-            <button class="form__submit">Create Account</button>
+           <a id="redirect_signin" href="/logon/signin"><button class="form_btn_submit">CREATE ACCOUNT</button></a>
         </form>
         <div class="form__content">
             <h1>CREATE ACCOUNT</h1>
@@ -71,7 +71,7 @@
             validator.isRequired('input[name="gender"]', "vui lòng xác nhận giới tính"), --}}
         ],
         onSubmit: function(data){
-
+            const redirect_signin = document.getElementById("redirect_signin");
             fetch('/logon/store', {
                 method: 'POST', // or 'PUT'
                 headers: {
@@ -79,14 +79,10 @@
                 },
                 body: JSON.stringify(data),
             })
-            .then(response => response.json())
-            .then(data => {
-            console.log('Success:', data);
-            })
+            .then(() => redirect_signin.click())
             .catch((error) => {
             console.error('Error:', error);
             });
-            console.log(data)
         }
     });
 </script>

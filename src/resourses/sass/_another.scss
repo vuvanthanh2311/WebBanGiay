@@ -135,3 +135,21 @@
         cursor: pointer;
     }
 }
+
+.form_btn_submit {
+    width: 30rem;
+    line-height: 4rem;
+    text-transform: uppercase;
+    margin-top: 4rem;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+    &:hover {
+        background-color: white;
+        color: black;
+    }
+    &:active {
+        outline: .3rem solid rgba($color: #979c9e, $alpha: .8);
+    }
+}
