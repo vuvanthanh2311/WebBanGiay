@@ -35,10 +35,11 @@ class cartController {
         User.findOne({ _id: userId })
             .then((user) => {
                 res.render('cart/checkout', {
-                        user: MongooseObject(user),
-                    })
-                    .catch(next);
-            });
+                    user: MongooseObject(user),
+                })
+
+            })
+            .catch(next);
     }
 
 }

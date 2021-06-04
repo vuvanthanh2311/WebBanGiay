@@ -118,17 +118,19 @@
     Bill.products = products;
     Bill.status = "ctt";
     Checkout_dathang.addEventListener("click",function(){
-        fetch('/Bill/store', {
+       fetch('/Bill/store', {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(Bill),
-        })
-        .then(data => {
-        })
-        .catch((error) => {
-        console.error('Error:', error);
+            })
+            .then(response => response.json())
+            .then(data => {
+            console.log('Success:', data);
+            })
+            .catch((error) => {
+            console.error('Error:', error);
         });
     })
     

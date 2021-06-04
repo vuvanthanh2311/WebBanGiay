@@ -19,9 +19,10 @@ class BillController {
     store(req, res, next) {
 
         const Data = req.body;
+        console.log(Data)
         const bill = new Bill(Data);
         bill.save()
-            .then(() => res.redirect('/admin/createPD'))
+            .then(() => res.json("con cac"))
             .catch(next);
     }
 
