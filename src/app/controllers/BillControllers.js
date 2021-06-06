@@ -8,21 +8,29 @@ const User = require('../modules/Users');
 
 
 class BillController {
-    show(req, res) {
-        User.findOne({ _id: req.params.id })
-            .then(user => {
+    show(req, res, next) {
+        const token = req.cookies.token;
+        const user = jwt.verify(token, process.env.TOKEN_SECRET);
+        req.user = user;
+        const userId = req.user._id
+        Bill.find({ user_id: userId })
+            .then((bill) => {
+
                 res.render('Bill/show', {
-                    user: MongooseObject(user)
+                    bill: mutipleMongooseObject(bill),
                 });
+                // res.json(POB)
+                // console.log(POB)
+
             })
+            .catch(next);
     }
     store(req, res, next) {
 
         const Data = req.body;
-        console.log(Data)
         const bill = new Bill(Data);
         bill.save()
-            .then(() => res.json("con cac"))
+            .then(() => res.json("luu thanh cong"))
             .catch(next);
     }
 

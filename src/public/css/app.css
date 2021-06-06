@@ -506,6 +506,29 @@
   .form_btn_submit:active {
     outline: 0.3rem solid rgba(151, 156, 158, 0.8); }
 
+.active_bg_white {
+  background-color: white; }
+
+.btn_nor {
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  font-size: 1.6rem;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid #ac9d9d; }
+  .btn_nor:hover {
+    color: #ee4d2d; }
+  .btn_nor:active {
+    box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.5); }
+
+.active__borderbot {
+  border-bottom: 2px solid #ee4d2d; }
+  .active__borderbot a {
+    color: #ee4d2d !important; }
+
+.bill_show {
+  display: block !important; }
+
 .horscroll {
   position: relative;
   width: 90%;
@@ -591,14 +614,13 @@
         width: 8rem;
         border-radius: 50%; }
     .userpage__sidebar--menu {
-      padding: 3rem 1rem;
+      padding: 3rem 0;
       font-size: 1.6rem; }
       .userpage__sidebar--menu li {
         display: flex;
         list-style: none;
         line-height: 3rem;
-        margin-top: 2rem;
-        cursor: pointer; }
+        padding: 1rem; }
         .userpage__sidebar--menu li p {
           color: white;
           border-radius: 50%;
@@ -606,6 +628,10 @@
           width: 3rem;
           font-size: 2rem;
           margin-right: 2rem; }
+        .userpage__sidebar--menu li a {
+          text-decoration: none; }
+        .userpage__sidebar--menu li:hover > a {
+          color: #ee4d2d; }
   .userpage .profile {
     background-color: white;
     width: 80%;
@@ -655,6 +681,67 @@
             cursor: pointer; }
         .userpage .profile__content--right span {
           color: #777373; }
+  .userpage__bill {
+    width: 80%; }
+    .userpage__bill--title {
+      background-color: white;
+      width: 100%;
+      border: 0.1px solid #d6d3d3;
+      display: flex; }
+      .userpage__bill--title_status {
+        width: 20%;
+        font-size: 2rem;
+        text-align: center;
+        padding: 2rem 0; }
+        .userpage__bill--title_status a {
+          text-decoration: none;
+          color: black; }
+    .userpage__bill--content {
+      display: none;
+      width: 100%; }
+      .userpage__bill--content_products {
+        background-color: white;
+        margin: 2rem 0;
+        border: 0.1px solid #d6d3d3; }
+        .userpage__bill--content_products .Bill_product {
+          font-size: 1.6rem;
+          border-bottom: 0.1px solid #d6d3d3;
+          width: 100%;
+          display: flex; }
+          .userpage__bill--content_products .Bill_product--image {
+            padding: 1rem 2rem;
+            width: 15%; }
+          .userpage__bill--content_products .Bill_product--name {
+            line-height: 100px;
+            padding: 1rem 2rem;
+            width: 55%; }
+          .userpage__bill--content_products .Bill_product--soluong {
+            line-height: 100px;
+            padding: 1rem 0;
+            text-align: center;
+            width: 10%; }
+          .userpage__bill--content_products .Bill_product--dongia {
+            line-height: 100px;
+            padding: 1rem 0;
+            text-align: center;
+            border-left: 0.1px solid #d6d3d3;
+            width: 20%; }
+            .userpage__bill--content_products .Bill_product--dongia p {
+              display: inline; }
+        .userpage__bill--content_products--total {
+          background-color: #f1f1f1;
+          padding: 2rem 4rem 0 4rem;
+          font-size: 2rem;
+          text-align: right; }
+          .userpage__bill--content_products--total p,
+          .userpage__bill--content_products--total span:last-child {
+            display: inline;
+            color: red;
+            font-size: 3rem; }
+        .userpage__bill--content_products--button {
+          background-color: #f1f1f1;
+          padding: 2rem 4rem;
+          text-align: right; }
 
 .comfirm-checkout {
   display: none;

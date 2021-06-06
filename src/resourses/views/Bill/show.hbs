@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #f5f5f5;">
+    <div class="userpage">
+        <div class="userpage__sidebar">
+            <div class="userpage__sidebar--brief">
+                <img src="https://upload.wikimedia.org/wikipedia/vi/archive/1/1d/20210321120435%21N%C6%A1i_n%C3%A0y_c%C3%B3_anh_-_Single_Cover.jpg" alt="avatar">
+                <div class="userpage__sidebar--brief_username">
+                    <strong>{{user.fullname}}</strong>
+                    <br>
+                    <label><i class="fas fa-pen"></i> Sửa Hồ Sơ</label>
+                </div>
+            </div>
+            <div class="userpage__sidebar--menu">
+                <ul>
+                    <li>
+                        <p style="background-color: rgb(240, 240, 69);"><i class="far fa-user-circle"></i></p>
+                        <a href="/logon/profile">Tài Khoản Của Tôi</a>
+                    </li>
+                     <li class="active_bg_white">
+                        <p style="background-color: rgb(53, 157, 218);"><i class="fas fa-file-alt"></i></p> 
+                        <a href="/Bill/show">Đơn Mua</a>
+                    </li>
+                     <li>
+                        <p style="background-color: rgb(224, 62, 50);"><i class="fas fa-bell"></i></p>                      
+                        Thông Báo
+                    </li>
+                     <li>
+                        <p style="background-color: rgb(238, 48, 121);"><i class="fas fa-wallet"></i></p>                        
+                        Ví Voucher
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="userpage__bill">
+            <div class="userpage__bill--title">
+                <div class="userpage__bill--title_status active__borderbot">
+                   <a href="#" class="status">Chờ thanh toán</a>
+                </div>
+                <div class="userpage__bill--title_status">
+                     <a href="#" class="status">Chờ lấy hàng</a>
+                </div>
+                <div class="userpage__bill--title_status">
+                    <a href="#" class="status">Đang giao</a>
+                </div>
+                <div class="userpage__bill--title_status">
+                    <a href="#" class="status">Đã giao</a>
+                </div>
+                <div class="userpage__bill--title_status">
+                    <a href="#" class="status">Đã hủy</a>
+                </div>
+            </div>
+            <div class="userpage__bill--content bill_show">
+                {{#each bill}}
+                {{#if (status this.status "ctt")}}
+                <div class="userpage__bill--content_products">
+                        {{#each this.products}}
+                        <div class="Bill_product">
+                            <div class="Bill_product--image">
+                                <img src="{{this.image}}" alt="#" width="100px" height="80px">
+                            </div>
+                             <div class="Bill_product--name">
+                                <span>{{this.name}}</span>
+                            </div>
+                             <div class="Bill_product--soluong">
+                                <span>x{{this.soluong}}</span>
+                            </div>
+                             <div class="Bill_product--dongia">
+                                <p id="formatPrice">
+                                {{this.dongia}}
+                                </p>
+                                <span>VNĐ</span>
+                            </div>
+                        </div>
+                        {{/each}}
+                        <div class="userpage__bill--content_products--total">
+                            <span>Số tiền phải trả:</span>
+                            <p id="formatPrice">
+                             {{this.total}}
+                            </p>
+                            <span>VNĐ</span>
+                        </div>
+                        <div class="userpage__bill--content_products--button">
+                            <a href="#"><button class="btn_nor">Xem chi tiết đơn hàng</button></a>
+                            <button class="btn_nor">Hủy đơn hàng</button>
+                        </div>
+                </div>
+                {{/if}}
+                {{/each}}
+            </div>
+            <div class="userpage__bill--content">
+                {{#each bill}}
+                {{#if (status this.status "clh")}}
+                <div class="userpage__bill--content_products">
+                        {{#each this.products}}
+                        <div class="Bill_product">
+                            <div class="Bill_product--image">
+                                <img src="{{this.image}}" alt="#" width="100px" height="80px">
+                            </div>
+                             <div class="Bill_product--name">
+                                <span>{{this.name}}</span>
+                            </div>
+                             <div class="Bill_product--soluong">
+                                <span>x{{this.soluong}}</span>
+                            </div>
+                             <div class="Bill_product--dongia">
+                                <p id="formatPrice">
+                                {{this.dongia}}
+                                </p>
+                                <span>VNĐ</span>
+                            </div>
+                        </div>
+                        {{/each}}
+                        <div class="userpage__bill--content_products--total">
+                            <span>Số tiền phải trả:</span>
+                            <p id="formatPrice">
+                             {{this.total}}
+                            </p>
+                            <span>VNĐ</span>
+                        </div>
+                        <div class="userpage__bill--content_products--button">
+                            <a href="#"><button class="btn_nor">Xem chi tiết đơn hàng</button></a>
+                            <button class="btn_nor">Hủy đơn hàng</button>
+                        </div>
+                </div>
+                {{/if}}
+                {{/each}}
+            </div>
+            <div class="userpage__bill--content">
+                {{#each bill}}
+                {{#if (status this.status "danggiao")}}
+                <div class="userpage__bill--content_products">
+                        {{#each this.products}}
+                        <div class="Bill_product">
+                            <div class="Bill_product--image">
+                                <img src="{{this.image}}" alt="#" width="100px" height="80px">
+                            </div>
+                             <div class="Bill_product--name">
+                                <span>{{this.name}}</span>
+                            </div>
+                             <div class="Bill_product--soluong">
+                                <span>x{{this.soluong}}</span>
+                            </div>
+                             <div class="Bill_product--dongia">
+                                <p id="formatPrice">
+                                {{this.dongia}}
+                                </p>
+                                <span>VNĐ</span>
+                            </div>
+                        </div>
+                        {{/each}}
+                        <div class="userpage__bill--content_products--total">
+                            <span>Số tiền phải trả:</span>
+                            <p id="formatPrice">
+                             {{this.total}}
+                            </p>
+                            <span>VNĐ</span>
+                        </div>
+                        <div class="userpage__bill--content_products--button">
+                            <a href="#"><button class="btn_nor">Xem chi tiết đơn hàng</button></a>
+                            <button class="btn_nor">Hủy đơn hàng</button>
+                        </div>
+                </div>
+                {{/if}}
+                {{/each}}
+            </div>
+            <div class="userpage__bill--content">
+                {{#each bill}}
+                {{#if (status this.status "dagiao")}}
+                <div class="userpage__bill--content_products">
+                        {{#each this.products}}
+                        <div class="Bill_product">
+                            <div class="Bill_product--image">
+                                <img src="{{this.image}}" alt="#" width="100px" height="80px">
+                            </div>
+                             <div class="Bill_product--name">
+                                <span>{{this.name}}</span>
+                            </div>
+                             <div class="Bill_product--soluong">
+                                <span>x{{this.soluong}}</span>
+                            </div>
+                             <div class="Bill_product--dongia">
+                                <p id="formatPrice">
+                                {{this.dongia}}
+                                </p>
+                                <span>VNĐ</span>
+                            </div>
+                        </div>
+                        {{/each}}
+                        <div class="userpage__bill--content_products--total">
+                            <span>Số tiền phải trả:</span>
+                            <p id="formatPrice">
+                             {{this.total}}
+                            </p>
+                            <span>VNĐ</span>
+                        </div>
+                        <div class="userpage__bill--content_products--button">
+                            <a href="#"><button class="btn_nor">Xem chi tiết đơn hàng</button></a>
+                            <button class="btn_nor">Mua lại</button>
+                        </div>
+                </div>
+                {{/if}}
+                {{/each}}
+            </div>
+            <div class="userpage__bill--content">
+                {{#each bill}}
+                {{#if (status this.status "dh")}}
+                <div class="userpage__bill--content_products">
+                        {{#each this.products}}
+                        <div class="Bill_product">
+                            <div class="Bill_product--image">
+                                <img src="{{this.image}}" alt="#" width="100px" height="80px">
+                            </div>
+                             <div class="Bill_product--name">
+                                <span>{{this.name}}</span>
+                            </div>
+                             <div class="Bill_product--soluong">
+                                <span>x{{this.soluong}}</span>
+                            </div>
+                             <div class="Bill_product--dongia">
+                                <p id="formatPrice">
+                                {{this.dongia}}
+                                </p>
+                                <span>VNĐ</span>
+                            </div>
+                        </div>
+                        {{/each}}
+                        <div class="userpage__bill--content_products--total">
+                            <span>Số tiền phải trả:</span>
+                            <p id="formatPrice">
+                             {{this.total}}
+                            </p>
+                            <span>VNĐ</span>
+                        </div>
+                        <div class="userpage__bill--content_products--button">
+                            <a href="#"><button class="btn_nor">Xem chi tiết đơn hàng</button></a>
+                            <button class="btn_nor">Mua lại</button>
+                        </div>
+                </div>
+                {{/if}}
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script>
+const Link = document.querySelectorAll(".userpage__bill--title_status")
+const products = document.querySelectorAll(".userpage__bill--content")
+
+Link.forEach((item, index) => {
+
+    const product = products[index]
+
+    item.onclick = function() {
+
+
+        const activeItem = document.querySelector(".userpage__bill--title_status.active__borderbot")
+        const hiddenProduct = document.querySelector(".userpage__bill--content.bill_show")
+
+        hiddenProduct.classList.remove('bill_show')
+        product.classList.add('bill_show')
+
+        activeItem.classList.remove('active__borderbot')
+        this.classList.add('active__borderbot')
+
+    }
+})
+</script>
+</html>
+

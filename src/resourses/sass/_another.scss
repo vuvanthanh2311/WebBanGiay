@@ -153,3 +153,33 @@
         outline: .3rem solid rgba($color: #979c9e, $alpha: .8);
     }
 }
+
+.active_bg_white {
+    background-color: white;
+}
+
+.btn_nor {
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-size: 1.6rem;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid rgba($color: #ac9d9d, $alpha: 02);
+    &:hover {
+        color: #ee4d2d;
+    }
+    &:active {
+        box-shadow: 2px 1px 2px rgba($color: #000000, $alpha: 0.5);
+    }
+}
+
+.active__borderbot {
+    border-bottom: 2px solid #ee4d2d;
+    a {
+        color: #ee4d2d !important;
+    }
+}
+
+.bill_show {
+    display: block !important;
+}
