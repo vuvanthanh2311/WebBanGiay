@@ -87,6 +87,7 @@
 }
 
 .btn--del {
+    width: 50%;
     font-size: 1.8rem;
     padding: 5px 10px;
     background-color: rgb(236, 65, 53);
@@ -94,21 +95,24 @@
     color: white;
     outline: none;
     border-radius: 5px;
+    border: 1px solid #e4e2e2;
     &:hover {
-        background-color: rgb(240, 97, 87);
+        background-color: rgb(241, 79, 67);
     }
 }
 
 .btn--close {
+    border: 1px solid #e4e2e2;
+    width: 50%;
     font-size: 1.8rem;
     padding: 5px 10px;
-    background-color: rgb(87, 75, 74);
+    background-color: white;
     cursor: pointer;
-    color: white;
+    color: rgb(236, 65, 53);
     outline: none;
     border-radius: 5px;
     &:hover {
-        background-color: rgb(119, 96, 94);
+        background-color: rgb(238, 230, 229);
     }
 }
 

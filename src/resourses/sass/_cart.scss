@@ -23,29 +23,25 @@
     position: fixed;
     top: 50%;
     width: 50rem;
-    border-radius: 10px;
+    border-radius: 5px;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 101;
     font-size: 1.8rem;
-    &__title {
-        padding: 20px;
-        &--time {
-            position: absolute;
-            right: 20px;
-            top: 20px;
-            font-size: 20px;
-            cursor: pointer;
-        }
+    color: #5e5a5a;
+    &__time {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        font-size: 20px;
+        cursor: pointer;
     }
     &__ques {
-        border-top: 1px solid rgba($color: #8b8888, $alpha: .5);
-        padding: 20px;
+        padding: 2rem;
+        height: 150px;
     }
     &__btn {
-        border-top: 1px solid rgba($color: #8b8888, $alpha: .5);
-        text-align: right;
-        padding: 20px;
+        display: flex;
     }
 }
 

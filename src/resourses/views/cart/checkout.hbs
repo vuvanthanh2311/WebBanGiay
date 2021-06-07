@@ -10,7 +10,7 @@
             <div class="checkout__address--content">
                 <div class="checkout__address--content_info">
                     <p id="user_id" style="display:none">{{user._id}}</p>
-                    <strong>{{user.fullname}}</strong>
+                    <strong id="user_name">{{user.fullname}}</strong>
                     <strong>{{user.phone_number}}</strong>
                     <span>{{user.address}}</span>
                 </div>
@@ -72,7 +72,9 @@
     </div>
 </body>
 <script>
-
+    const user_name = document.getElementById("user_name").innerHTML;
+    sessionStorage.setItem("user_name", user_name);
+    
     var tienhang =  document.getElementById("Checkout_tienhang");
     var Checkout_total =  document.getElementById("Checkout_total");
     var checkout_title_sp =  document.getElementById("checkout_title_sp");

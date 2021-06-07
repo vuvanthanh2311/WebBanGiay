@@ -13,7 +13,7 @@
             <div class="userpage__sidebar--brief">
                 <img src="https://upload.wikimedia.org/wikipedia/vi/archive/1/1d/20210321120435%21N%C6%A1i_n%C3%A0y_c%C3%B3_anh_-_Single_Cover.jpg" alt="avatar">
                 <div class="userpage__sidebar--brief_username">
-                    <strong>{{user.fullname}}</strong>
+                    <strong id="user_name">{{user.fullname}}</strong>
                     <br>
                     <label><i class="fas fa-pen"></i> Sửa Hồ Sơ</label>
                 </div>
@@ -117,5 +117,9 @@
     </div>
     
 </body>
+<script>
+    const user_name = document.getElementById("user_name").innerHTML;
+    sessionStorage.setItem("user_name", user_name);
+</script>
 </html>
 

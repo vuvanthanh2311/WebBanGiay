@@ -13,7 +13,7 @@
             <div class="userpage__sidebar--brief">
                 <img src="https://upload.wikimedia.org/wikipedia/vi/archive/1/1d/20210321120435%21N%C6%A1i_n%C3%A0y_c%C3%B3_anh_-_Single_Cover.jpg" alt="avatar">
                 <div class="userpage__sidebar--brief_username">
-                    <strong>{{user.fullname}}</strong>
+                    <strong id="user_name"></strong>
                     <br>
                     <label><i class="fas fa-pen"></i> Sửa Hồ Sơ</label>
                 </div>
@@ -89,7 +89,7 @@
                         </div>
                         <div class="userpage__bill--content_products--button">
                             <a href="#"><button class="btn_nor">Xem chi tiết đơn hàng</button></a>
-                            <button class="btn_nor">Hủy đơn hàng</button>
+                            <button id="{{this._id}}" class="btn_nor bill_btndel">Hủy đơn hàng</button>
                         </div>
                 </div>
                 {{/if}}
@@ -127,7 +127,7 @@
                         </div>
                         <div class="userpage__bill--content_products--button">
                             <a href="#"><button class="btn_nor">Xem chi tiết đơn hàng</button></a>
-                            <button class="btn_nor">Hủy đơn hàng</button>
+                            <button id="{{this._id}}" class="btn_nor bill_btndel">Hủy đơn hàng</button>
                         </div>
                 </div>
                 {{/if}}
@@ -165,7 +165,7 @@
                         </div>
                         <div class="userpage__bill--content_products--button">
                             <a href="#"><button class="btn_nor">Xem chi tiết đơn hàng</button></a>
-                            <button class="btn_nor">Hủy đơn hàng</button>
+                            <button id="{{this._id}}" class="btn_nor bill_btndel">Hủy đơn hàng</button>
                         </div>
                 </div>
                 {{/if}}
@@ -203,7 +203,7 @@
                         </div>
                         <div class="userpage__bill--content_products--button">
                             <a href="#"><button class="btn_nor">Xem chi tiết đơn hàng</button></a>
-                            <button class="btn_nor">Mua lại</button>
+                            <button id="{{this._id}}" class="btn_nor bill_btnrepurchase">Mua lại</button>
                         </div>
                 </div>
                 {{/if}}
@@ -241,17 +241,31 @@
                         </div>
                         <div class="userpage__bill--content_products--button">
                             <a href="#"><button class="btn_nor">Xem chi tiết đơn hàng</button></a>
-                            <button class="btn_nor">Mua lại</button>
+                            <button id="{{this._id}}" class="btn_nor bill_btnrepurchase">Mua lại</button>
                         </div>
                 </div>
                 {{/if}}
                 {{/each}}
             </div>
+            <div id="confirmdel" class="confirmdel">
+                <div class="confirmdel__ques">
+                    <span>Bạn có chắn chắn muốn xóa mặt hàng này?</span>
+                </div>
+                <div class="confirmdel__btn">
+                    <button id="Cbtndestroy" class="btn--del">Xóa Bỏ</button>
+                    <button id="Cbtnclose" class="btn--close">Hủy</button>
+                </div>
+            </div>
+            <div id="bgblack" class="bg--black"></div>
+            <form id="bill-form-delete"  method="POST"></form>
         </div>
     </div>
     
 </body>
 <script>
+const user_name = sessionStorage.getItem("user_name");
+document.getElementById("user_name").innerHTML = user_name;
+
 const Link = document.querySelectorAll(".userpage__bill--title_status")
 const products = document.querySelectorAll(".userpage__bill--content")
 
@@ -273,6 +287,39 @@ Link.forEach((item, index) => {
 
     }
 })
+// comfirmdel
+const bg = document.getElementById("bgblack");
+const confirmdel = document.getElementById("confirmdel");
+const btndel = document.querySelectorAll(".bill_btndel");
+const btnrepurchase = document.querySelectorAll(".bill_btnrepurchase");
+const btnclose = document.getElementById("Cbtnclose");
+const btndestroy = document.getElementById("Cbtndestroy");
+const formdel = document.getElementById("bill-form-delete");
+
+
+btnclose.addEventListener("click", function() {
+    confirmdel.style.display = "none"
+    bg.style.display = "none"
+})
+
+btndel.forEach(function(item, index) {
+    item.addEventListener("click", function() {
+        bg.style.display = "block"
+        confirmdel.style.display = "block"
+
+        btndestroy.addEventListener("click", function() {
+            formdel.action = "/Bill/del/" + item.id + "?_method=PUT"
+            formdel.submit();
+        })
+    })
+})
+btnrepurchase.forEach(function(item, index) {
+    item.addEventListener("click", function() {
+        formdel.action = "/Bill/repurchase/" + item.id + "?_method=PUT"
+        formdel.submit();
+    })
+})
+
 </script>
 </html>
 

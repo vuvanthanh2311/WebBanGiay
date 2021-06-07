@@ -33,6 +33,16 @@ class BillController {
             .then(() => res.json("luu thanh cong"))
             .catch(next);
     }
+    delete(req, res, next) {
+        Bill.updateOne({ _id: req.params.id }, { status: "dh" })
+            .then(() => res.redirect('/Bill/show'))
+            .catch(next);
+    }
+    repurchase(req, res, next) {
+        Bill.updateOne({ _id: req.params.id }, { status: "ctt" })
+            .then(() => res.redirect('/Bill/show'))
+            .catch(next);
+    }
 
 }
 module.exports = new BillController();

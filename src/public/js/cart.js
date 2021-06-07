@@ -183,17 +183,12 @@ cartitem.forEach(function(item, index) {
 const bg = document.getElementById("bgblack");
 const confirmdel = document.getElementById("confirmdel");
 const btndel = document.querySelectorAll(".Cbtndel");
-const btntime = document.getElementById("Cbtntime");
 const btnclose = document.getElementById("Cbtnclose");
 const btndestroy = document.getElementById("Cbtndestroy");
 const formdel = document.getElementById("cart-form-delete");
 
 
 btnclose.addEventListener("click", function() {
-    confirmdel.style.display = "none"
-    bg.style.display = "none"
-})
-btntime.addEventListener("click", function() {
     confirmdel.style.display = "none"
     bg.style.display = "none"
 })

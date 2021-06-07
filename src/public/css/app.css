@@ -450,26 +450,30 @@
   background-color: rgba(0, 0, 0, 0.5); }
 
 .btn--del {
+  width: 50%;
   font-size: 1.8rem;
   padding: 5px 10px;
   background-color: #ec4135;
   cursor: pointer;
   color: white;
   outline: none;
-  border-radius: 5px; }
+  border-radius: 5px;
+  border: 1px solid #e4e2e2; }
   .btn--del:hover {
-    background-color: #f06157; }
+    background-color: #f14f43; }
 
 .btn--close {
+  border: 1px solid #e4e2e2;
+  width: 50%;
   font-size: 1.8rem;
   padding: 5px 10px;
-  background-color: #574b4a;
+  background-color: white;
   cursor: pointer;
-  color: white;
+  color: #ec4135;
   outline: none;
   border-radius: 5px; }
   .btn--close:hover {
-    background-color: #77605e; }
+    background-color: #eee6e5; }
 
 .checkout--btnOK {
   background-color: #ee4d2d;
@@ -766,26 +770,23 @@
   position: fixed;
   top: 50%;
   width: 50rem;
-  border-radius: 10px;
+  border-radius: 5px;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 101;
-  font-size: 1.8rem; }
-  .confirmdel__title {
-    padding: 20px; }
-    .confirmdel__title--time {
-      position: absolute;
-      right: 20px;
-      top: 20px;
-      font-size: 20px;
-      cursor: pointer; }
+  font-size: 1.8rem;
+  color: #5e5a5a; }
+  .confirmdel__time {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 20px;
+    cursor: pointer; }
   .confirmdel__ques {
-    border-top: 1px solid rgba(139, 136, 136, 0.5);
-    padding: 20px; }
+    padding: 2rem;
+    height: 150px; }
   .confirmdel__btn {
-    border-top: 1px solid rgba(139, 136, 136, 0.5);
-    text-align: right;
-    padding: 20px; }
+    display: flex; }
 
 .fixed-bottom {
   position: sticky;
