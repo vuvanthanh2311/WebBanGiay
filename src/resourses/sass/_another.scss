@@ -1,5 +1,5 @@
 .subscribe {
-    background-color: yellow;
+    background-color: #08c;
     padding: 2rem;
     margin-top: 3rem;
     &__box {
@@ -61,6 +61,8 @@
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
+    border: none;
+    border-radius: 5px;
     &:hover {
         background-color: black;
         color: white;
@@ -130,12 +132,12 @@
 .mhbtn {
     border: none;
     padding: 1rem 6rem;
-    background-color: #ee4d2d;
+    background-color: black;
     color: white;
     font-size: 2.4rem;
     border-radius: 5px;
     &:hover {
-        background-color: #ec6044;
+        background-color: rgba(20, 20, 20, 1);
         cursor: pointer;
     }
 }
@@ -186,4 +188,37 @@
 
 .bill_show {
     display: block !important;
+}
+
+.menuContact {
+    position: fixed;
+    z-index: 99;
+    right: -120px;
+    top: 50%;
+    transform: translateY(-50%);
+    &__item {
+        position: relative;
+        width: 160px;
+        right: 0px;
+        list-style: none;
+        background-color: #08c;
+        margin-top: 2px;
+        cursor: pointer;
+        transition: all .5s ease-out;
+        &:hover {
+            right: 120px;
+        }
+        &--link {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            line-height: 40px;
+            i {
+                width: 40px;
+                font-size: 26px;
+                text-align: center;
+                vertical-align: middle;
+            }
+        }
+    }
 }

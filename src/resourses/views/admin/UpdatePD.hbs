@@ -1,34 +1,42 @@
-<div class="signup" style="margin: auto; width:40%">
-    <form class="form__signup" action="/admin/{{product._id}}?_method=PUT" method="POST" id="form__signup">
-        <h1>Update Product</h1>
+<div class="creProduct" >
+    <form class="form__creProduct" action="/admin/{{product._id}}?_method=PUT" method="POST" id="form__creProduct">
+        <h1>Cập nhật sản phẩm</h1>
         <div class="form__group">
-            <label for="name">name</label>
+            <label for="name">Tên sản phẩm</label>
             <input type="text"  id="name" name="name" value="{{product.name}}">
         </div>
         <div class="form__group">
-            <label for="image">image</label>
+            <label for="image">link hình ảnh</label>
             <input type="text"  id="image" name="image" value="{{product.image}}">
         </div>
         <div class="form__group">
-            <label for="price">price</label>
+            <label for="price">đơn giá</label>
             <input type="number"  id="price" name="price" value="{{product.price}}">
         </div>
         <div class="form__group">
-            <label for="type">type</label>
+            <label for="type">loại</label>
             <input type="text"  id="type" name="type" value="{{product.type}}">
         </div>
         <div class="form__group">
-            <label for="description">description</label>
+            <label for="description">mô tả</label>
             <input type="text"  id="description" name="description" value="{{product.description}}">
         </div>
         <div class="form__group">
-            <label for="size">size</label>
+            <label for="size">kích cỡ</label>
             <input type="number"  id="size" name="size" value="{{product.size}}">
         </div>
         <div class="form__group">
-            <label for="number">number</label>
+            <label for="number">số lượng</label>
             <input type="number"  id="number" name="number" value="{{product.number}}">
         </div>
-        <button class="form__submit">UPDATE</button>
+        <div class="form__group">
+            <label for="sex">Dành cho giới tính nào</label>
+            <input type="text"  id="sex" name="sex" value="{{product.sex}}">
+        </div>
+        <div class="form__group">
+            <label for="brand">Thương hiệu</label>
+            <input type="brand"  id="brand" name="brand" value="{{product.brand}}">
+        </div>
+        <button class="form__submit">Cập nhật</button>
     </form>
 </div>

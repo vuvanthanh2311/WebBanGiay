@@ -1,8 +1,39 @@
 .product {
     padding: 2rem;
+    display: flex;
+    width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    &__sidebar {
+        position: sticky;
+        width: 20%;
+        padding-left: 20px;
+        font-size: 1.6rem;
+        span {
+            font-size: 2.4rem;
+        }
+        ul {
+            margin-top: 20px;
+            li {
+                list-style: none;
+                margin-left: 15px;
+                line-height: 4rem;
+                input {
+                    transform: scale(1.5);
+                    margin-right: 5px;
+                }
+            }
+        }
+        &--ftPrice {
+            margin-top: 20px;
+        }
+        &--ftBrand {
+            margin-top: 20px;
+        }
+    }
     &__container {
         overflow: hidden;
-        width: 140rem;
+        width: 80%;
         margin-left: auto;
         margin-right: auto;
         .row {
@@ -29,36 +60,24 @@
                     text-decoration: none;
                 }
                 &__content {
+                    height: 120px;
+                    padding-top: 20px;
                     a {
                         text-decoration: none;
                         color: black;
                     }
                     padding: 1rem;
                     line-height: 3rem;
-                    h3 {
-                        font-size: 2.4rem;
+                    .text-overflow {
+                        color: rgb(90, 89, 87);
+                        font-size: 1.8rem;
                         cursor: pointer;
                         text-transform: uppercase;
                     }
                     &--price {
                         display: flex;
-                        color: #ee4d2d;
+                        color: black;
                         font-size: 1.6rem;
-                    }
-                    &--btn {
-                        cursor: pointer;
-                        padding: .5rem 1rem;
-                        background-color: rgb(53, 96, 216);
-                        border-radius: 2px;
-                        color: white;
-                        font-size: 1.6rem;
-                        &:hover {
-                            opacity: 0.8;
-                        }
-                        &:active {
-                            position: relative;
-                            transform: translateY(-5%);
-                        }
                     }
                 }
             }

@@ -59,7 +59,7 @@
     font-size: 1.8rem;
     border: none;
     &:hover {
-        color: #ee4d2d;
+        color: rgb(82, 78, 78);
     }
 }
 
@@ -178,7 +178,7 @@
                 display: none;
             }
             display: flex;
-            color: red;
+            color: black;
             line-height: 10rem;
             width: 15%;
         }
@@ -204,7 +204,7 @@
                 margin-left: .5rem;
             }
             display: flex;
-            color: red;
+            color: black;
             line-height: 10rem;
             width: 10%;
         }

@@ -26,6 +26,10 @@
     box-shadow: 0 4px 8px rgba($color: black, $alpha: .2);
     font-size: 1.6rem;
     background-color: white;
+    a {
+        text-decoration: none;
+        color: black;
+    }
     .dropdown-content {
         background-color: white;
         display: none;
@@ -85,7 +89,7 @@
         line-height: 6rem;
         max-width: 140rem;
         margin-right: 4rem;
-        text-align: right;
+        text-align: center;
         &--user {
             padding: 1rem .2rem 1rem 1rem;
             display: inline;

@@ -18,4 +18,8 @@ router.get('/kid/sport', siteController.ksport);
 router.get('/kid/sandan', siteController.ksandan);
 router.get('/kid/slipper', siteController.kslipper);
 
+router.get('/men', siteController.men);
+router.get('/woman', siteController.woman);
+router.get('/kid', siteController.kid);
+
 module.exports = router;

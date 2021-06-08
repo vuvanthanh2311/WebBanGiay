@@ -107,5 +107,29 @@
     </div>
      <div id="bgblack" class="bg--black"></div>
      <form id="cart-form-delete"  method="POST"></form>
+
+     <div class="horscroll" style="margin: 10rem auto;">
+    <h1>DƯỢC ĐỀ XUẤT CHO BẠN</h1>
+    <div class="horscroll__container">
+    {{#each product}}
+        <div class="row">
+            <div class="card">
+                <a href="/product/{{this.slug}}"><img src="{{this.image}}" alt=""></a>
+                <div class="card__content">
+                    <a href="/product/{{this.slug}}">
+                        <span class="text-overflow">{{this.name}}</span>
+                    </a>
+                    <div class="card__content--price">
+                        <p id="formatPrice">{{this.price}}</p>
+                        <span>VNĐ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{/each}} 
+    </div>
+    <button class="btn--next"><i class="fas fa-chevron-right"></i></button>
+    <button class="btn--re"><i class="fas fa-chevron-left"></i></button>
+</div>
 </body>
 <script src="/js/cart.js"></script>

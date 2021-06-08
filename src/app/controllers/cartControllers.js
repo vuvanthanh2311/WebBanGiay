@@ -15,9 +15,14 @@ class cartController {
             // res.render('cart/cart');
         Cart.find({ user_id: userId })
             .then((cart) => {
-                res.render('cart/cart', {
-                    cart: mutipleMongooseObject(cart),
-                });
+                Product.find({}).limit(12)
+                    .then((product) => {
+                        res.render('cart/cart', {
+                            cart: mutipleMongooseObject(cart),
+                            product: mutipleMongooseObject(product),
+                        });
+                    })
+
             })
             .catch(next);
     }
