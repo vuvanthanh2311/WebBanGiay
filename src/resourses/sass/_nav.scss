@@ -100,9 +100,13 @@
             border-radius: 50%;
             list-style: none;
             .dropdown-content {
+                text-align: right;
                 min-width: 16rem;
                 top: 45px;
-                left: -20px;
+                right: -8rem;
+                a {
+                    text-align: center;
+                }
             }
             .dropbtn {
                 display: inline-block;
@@ -120,23 +124,17 @@
             box-shadow: .2rem .2rem .8rem rgba($color: black, $alpha: .2);
             padding: .8rem 0 .8rem 1.2rem;
             border-radius: 5rem;
-            background-color: rgb(197, 197, 197);
-            opacity: .8;
-            &:hover {
-                opacity: 1;
-            }
-            &:hover .input {
-                opacity: 1;
-            }
+            background-color: white;
             .input {
-                background-color: rgb(197, 197, 197);
+                background-color: white;
                 font-size: 2rem;
                 outline: none;
                 border: none;
                 opacity: .8;
             }
             .search {
-                margin-right: -0.2rem;
+                position: relative;
+                margin-right: -0.5rem;
                 padding: .8rem;
                 cursor: pointer;
                 box-shadow: .2rem .2rem .8rem rgba($color: black, $alpha: .2);
@@ -144,6 +142,9 @@
                 list-style: none;
                 &:hover {
                     background-color: rgb(219, 218, 218);
+                }
+                &:active {
+                    transform: translate(3%, 3%);
                 }
             }
         }

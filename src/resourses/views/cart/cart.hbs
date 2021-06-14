@@ -108,9 +108,9 @@
      <div id="bgblack" class="bg--black"></div>
      <form id="cart-form-delete"  method="POST"></form>
 
-     <div class="horscroll" style="margin: 10rem auto;">
-    <h1>DƯỢC ĐỀ XUẤT CHO BẠN</h1>
-    <div class="horscroll__container">
+<div class="horscroll" style="margin: 10rem auto;">
+    <h1>ĐƯỢC ĐỀ XUẤT CHO BẠN</h1>
+    <div class="horscroll__container horContainer">
     {{#each product}}
         <div class="row">
             <div class="card">
@@ -128,8 +128,19 @@
         </div>
     {{/each}} 
     </div>
-    <button class="btn--next"><i class="fas fa-chevron-right"></i></button>
-    <button class="btn--re"><i class="fas fa-chevron-left"></i></button>
+    <button class="btn--next btnnext"><i class="fas fa-chevron-right"></i></button>
+    <button class="btn--re btnre"><i class="fas fa-chevron-left"></i></button>
+</div>
+<div class="subscribe">
+    <div class="subscribe__box">
+        <div class="subscribe__box--h1">
+            <h1>SIGN UP &amp; GET AN EXCLUSIVE OFFER</h1>
+        </div> 
+        <a href="/logon/signup"><div class="bor--adidas"><button class="btn--adidas">Sign up for newsletter<i class="far fa-long-arrow-right"></i></button></div> </a>
+    </div>
 </div>
 </body>
 <script src="/js/cart.js"></script>
+<script>
+    sessionStorage.setItem("slC", document.querySelectorAll('#cart_name').length);
+</script>

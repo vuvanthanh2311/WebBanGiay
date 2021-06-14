@@ -9,6 +9,40 @@
           <h2>DECRIPTION</h2>
           <p>{{product.description}}.</p>
         </div> 
+        <div class="rating-review">
+          <h1>RATINGS &amp; REVIEWS</h1>
+          <div class="rating-review__wrapper">
+            <div class="rating">
+              <div class="rating__wrapper">
+                <h1>4.9</h1>
+                <div class="rating__wrapper--star">
+                  <span><i class="fas fa-star"></i></span>
+                  <span><i class="fas fa-star"></i></span>
+                  <span><i class="fas fa-star"></i></span>
+                  <span><i class="fas fa-star"></i></span>
+                  <span><i class="fas fa-star"></i></span>
+                  <p><strong>57</strong> Reviews</p>
+                </div>
+              </div>
+            </div>
+            <div class="review">
+              <div class="review__comment">
+                <strong>Comments</strong>
+                <div class="review__comment--send">
+                  <div class="review__comment--send_img">
+                    <img src="https://upload.wikimedia.org/wikipedia/vi/archive/1/1d/20210321120435%21N%C6%A1i_n%C3%A0y_c%C3%B3_anh_-_Single_Cover.jpg" >
+                  </div>
+                  <form class="form-comment" action="" method="">
+                    <textarea name="comment" id="comment" cols="30" rows="2"></textarea>
+                    <button class="btn-comment" type="submit">Send</button>
+                  </form>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+          
+      </div>
       </div>
     </div>
     <div class="detail__sidebar">
@@ -24,10 +58,11 @@
           <button class="btn--size">40</button>
           <button class="btn--size">41</button>
           <button class="btn--size">42</button>
+          <span class="warning-size">hãy chọn size của bạn</span>
         </div>
-        <form action="/product/{{product.slug}}" method="POST">
-        <a  href=""> <div class="bor--adidas"><button class="btn--adidas">THÊM VÀO GIỎ HÀNG<i class="far fa-long-arrow-right"></i></button></div></a>
+        <form id="form_addtocart" action="/product/{{product.slug}}" method="POST">
         </form>
+        <div class="bor--adidas"><button class="btn--adidas addtocart">THÊM VÀO GIỎ HÀNG<i class="far fa-long-arrow-right"></i></button></div>
       </div>
       
     </div>
@@ -40,8 +75,39 @@
         <a href="/logon/signup"><div class="bor--adidas"><button class="btn--adidas">Sign up for newsletter<i class="far fa-long-arrow-right"></i></button></div> </a>
     </div>
 </div>
+{{!-- <div id="comfirm_addCart" class="comfirm_addCart">
+  <strong>SUCCESSFULLY ADDED TO BAG!</strong>
+    <div class="comfirm_addCart__right">
+        <div class="comfirm_addCart__right--img">
+          <img src="{{product.image}}">
+        </div>
+        <div class="comfirm_addCart__right--content">
+          <h2>{{product.name}}</h2>
+          <div>
+            <p id="formatPrice">{{product.price}}</p>
+            <span>VNĐ</span>
+          </div>
+          <span class="Size"></span>
+        </div>
+    </div>
+    <div class="comfirm_addCart__left">
+        <span>Bạn vẫn chưa chọn sản phẩm nào để mua</span>
+    </div>
+    
+</div>
+<div id="bgblack" class="bg--black"></div> --}}
 </body>
 <script>
+  document.querySelector('.addtocart').addEventListener("click",function(){
+    
+    if(document.querySelector(".btnsize--active")){
+      sessionStorage.setItem("Size",document.querySelector(".btnsize--active").innerHTML)
+      document.getElementById("form_addtocart").submit();
+      sessionStorage.setItem("slC",(Number(sessionStorage.getItem("slC"))+1));
+    }else{
+      document.querySelector(".warning-size").style.display = "block";
+    } 
+  })
  
 </script>
 

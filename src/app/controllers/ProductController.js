@@ -18,11 +18,12 @@ class ProductController {
         const user = jwt.verify(token, process.env.TOKEN_SECRET);
         req.user = user;
         const userId = req.user._id
-
+            // const Size = sessionStorage.getItem("Size");
         const cart = await Product.findOne({ slug: req.params.slug })
         const Pcart = new Cart({
             // total: 
             // quantity: 
+            // size: Size,
             product_id: cart._id,
             user_id: userId,
             product_name: cart.name,
@@ -32,9 +33,7 @@ class ProductController {
             product_slug: cart.slug,
         })
         Pcart.save();
-        //    res.json(Pcart)
-        //    console.log(cart._id)
-        res.redirect('/')
+        res.redirect('back')
 
     }
 

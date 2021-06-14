@@ -5,6 +5,10 @@
     margin-right: auto;
     margin-top: 2rem;
     overflow: hidden;
+    h1 {
+        font-size: 3rem;
+        margin: 20px;
+    }
     &__container {
         position: relative;
         width: 300%;

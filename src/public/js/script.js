@@ -9,31 +9,65 @@ $(document).ready(function() {
     }
 
 
-    $('.btn--re').click(function(e) {
+    $('.btnre').click(function(e) {
         e.preventDefault();
         plus(-1);
     });
-    $('.btn--next').click(function(e) {
+    $('.btnnext').click(function(e) {
         e.preventDefault();
         plus(1);
 
     });
 
     function show(n) {
-        console.log(n);
         switch (n) {
             case 0:
-                $('.btn--re').hide(1000);
-                $('.horscroll__container').css("left", "0%")
+                $('.btnre').hide(1000);
+                $('.horContainer').css("left", "0%")
                 break;
             case 1:
-                $('.btn--re').show(1000);
-                $('.btn--next').show(1000);
-                $('.horscroll__container').css("left", "-100%")
+                $('.btnre').show(1000);
+                $('.btnnext').show(1000);
+                $('.horContainer').css("left", "-100%")
                 break;
             case 2:
-                $('.btn--next').hide(1000);
-                $('.horscroll__container').css("left", "-200%")
+                $('.btnnext').hide(1000);
+                $('.horContainer').css("left", "-200%")
+                break;
+            default:
+                break;
+        }
+    }
+
+    var i1 = 0;
+    show1(i1);
+
+    function plus1(n) {
+        show1(i1 += n);
+    }
+
+
+    $('.btnre1').click(function(e) {
+        e.preventDefault();
+        plus1(-1);
+    });
+    $('.btnnext1').click(function(e) {
+        e.preventDefault();
+        plus1(1);
+
+    });
+
+    function show1(n) {
+        switch (n) {
+            case 0:
+                $('.btnre1').hide(1000);
+                $('.btnnext1').show(1000);
+                $('.horContainer1').css("left", "0%")
+                break;
+            case 1:
+                $('.btnnext1').hide(1000);
+                $('.btnre1').show(1000);
+                $('.horContainer1').css("left", "-100%")
                 break;
             default:
                 break;

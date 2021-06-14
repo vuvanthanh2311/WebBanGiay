@@ -1,122 +1,122 @@
 <div id="nav" class="nav">
-        <div class="nav__left">
-            <a href="/"><img class="logo" src="/img/logo.png" alt=""></a>
-            <ul>
-                <li><a href="/men">Men</a>
-                    <div class="dropdown-content">
-                        <a  href="/men/sport">Sport</a>
-                        <a  href="/men/lazy">Lazy</a>
-                        <a  href="/men/leather">Leather</a>
-                        <a  href="/men/sandan">Sandan</a> 
-                        <a href="#">Sale</a>
-                    </div>
-                </li>
-                <li><a href="/woman">Woman</a>
-                    <div class="dropdown-content">
-                        <a  href="/women/sport">Sport</a>
-                        <a  href="/women/sandan">Sandan</a>
-                        <a  href="/women/highheel">High heels</a>
-                        <a href="#">Sale</a>
-                    </div>
-                </li>
-                <li><a href="/kid">Kid</a>
-                    <div class="dropdown-content">
-                        <a  href="/kid/sport">Sport</a>
-                        <a  href="/kid/sandan">Sandan</a>
-                        <a  href="/kid/slipper">Slippers</a>
-                        <a href="#">Sale</a>
-                    </div>
-                </li>
-                <li><a href="#">Tutorial</a>
-                    <div class="dropdown-content">
-                        <a  href="#">Choose the size</a>
-                        <a  href="#">Commitment and warranty</a>
-                    </div>
-                </li>
-                <li id="showSYS"><a href="#">SYS admin</a>
-                    <div class="dropdown-content">
-                        <a href="/admin/dashboard">DashBoard</a>
-                        <a href="/admin/createPD">Create Product</a>
-                        <a href="/admin/AccManage">account management</a>
-                        <a href="/admin/PDManage">Product management</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="nav__right">
-            {{!-- <div class="nav__right--search"> --}}
-                <form class="nav__right--search" action="/product/search" method="GET">
-               
-                <input class="input" type="text" placeholder="search"  id="name" name="name">
-                 {{!-- <a class="nav__right--search" href="/product/{{this.name}}"></a> --}}
-                <i class="fas fa-search search">   
-                </i>
-                {{!-- </a> --}}
-                </form>
-            {{!-- </div> --}}
-            <div class="nav__right--user">
-                <div class="dropbtn">
-                    <i class="fas fa-user"></i><i class="fas fa-caret-down size-small"></i>
-                    <div class="dropdown-content">
-                        
-                         <a id="swaplogout"  href="/logon/signin">SignIn</a>
-                        
-                        <a  id="swapprofile" href="/logon/signup">SignUp</a>
-                    </div>
+    <div class="nav__left">
+        <a href="/"><img class="logo" src="/img/logo.png" alt=""></a>
+        <ul>
+            <li><a href="/men">Men</a>
+                <div class="dropdown-content">
+                    <a  href="/men/sport">Sport</a>
+                    <a  href="/men/lazy">Lazy</a>
+                    <a  href="/men/leather">Leather</a>
+                    <a  href="/men/sandan">Sandan</a> 
+                    <a href="#">Sale</a>
+                </div>
+            </li>
+            <li><a href="/woman">Woman</a>
+                <div class="dropdown-content">
+                    <a  href="/women/sport">Sport</a>
+                    <a  href="/women/sandan">Sandan</a>
+                    <a  href="/women/highheel">High heels</a>
+                    <a href="#">Sale</a>
+                </div>
+            </li>
+            <li><a href="/kid">Kid</a>
+                <div class="dropdown-content">
+                    <a  href="/kid/sport">Sport</a>
+                    <a  href="/kid/sandan">Sandan</a>
+                    <a  href="/kid/slipper">Slippers</a>
+                    <a href="#">Sale</a>
+                </div>
+            </li>
+            <li><a href="#">Tutorial</a>
+                <div class="dropdown-content">
+                    <a  href="#">Choose the size</a>
+                    <a  href="#">Commitment and warranty</a>
+                </div>
+            </li>
+            <li id="showSYS"><a href="#">SYS admin</a>
+                <div class="dropdown-content">
+                    <a href="/admin/dashboard">DashBoard</a>
+                    <a href="/admin/createPD">Create Product</a>
+                    <a href="/admin/AccManage">account management</a>
+                    <a href="/admin/PDManage">Product management</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="nav__right">
+        {{!-- <div class="nav__right--search"> --}}
+            <form class="nav__right--search" action="/product/search" method="GET">
+            
+            <input class="input" type="text" placeholder="search"  id="name" name="name">
+                {{!-- <a class="nav__right--search" href="/product/{{this.name}}"></a> --}}
+            <i class="fas fa-search search">   
+            </i>
+            {{!-- </a> --}}
+            </form>
+        {{!-- </div> --}}
+        <div class="nav__right--user">
+            <div class="dropbtn">
+                <i class="fas fa-user"></i><i class="fas fa-caret-down size-small"></i>
+                <div class="dropdown-content">
+                    
+                        <a id="swaplogout"  href="/logon/signin">SignIn</a>
+                    
+                    <a  id="swapprofile" href="/logon/signup">SignUp</a>
                 </div>
             </div>
-            <div class="nav__right--cart">
-                <a id="cart" href="/cart/cart">
-                    <i class="fas fa-cart-plus "></i>
-                    <span>0</span>
-                </a>
-            </div>
-            
         </div>
-        <div class="nav__bar">
-              <i class="fas fa-bars"></i>
-        </div>     
-    </ul>
-   
-  </div>
-</nav>
+        <div class="nav__right--cart">
+            <a id="cart" href="/cart/cart">
+                <i class="fas fa-cart-plus "></i>
+                <span class="slC">0</span>
+            </a>
+        </div>
     </div>
+    <div class="nav__bar">
+            <i class="fas fa-bars"></i>
+    </div>     
+</div>
 
-    <script>
-            function getCookie(name) {
-            let cookie = {};
-            document.cookie.split(';').forEach(function(el) {
-            let [k,v] = el.split('=');
-            cookie[k.trim()] = v;
-            })
-            return cookie[name];
+
+<script >
+        function getCookie(name) {
+        let cookie = {};
+        document.cookie.split(';').forEach(function(el) {
+        let [k,v] = el.split('=');
+        cookie[k.trim()] = v;
+        })
+        return cookie[name];
+        }
+
+
+        const toa =getCookie("tokenadmin")
+            const to = getCookie("token")
+            if( to!=undefined){
+                
+            document.getElementById("swaplogout").setAttribute("href","/logon/logout");
+            document.getElementById("swaplogout").innerHTML="logout";
+            document.getElementById("swapprofile").setAttribute("href","/logon/profile");
+            document.getElementById("swapprofile").innerHTML="profile";
+        
             }
+            else{
+            document.getElementById("swaplogout").setAttribute("href","/logon/signin");
+            document.getElementById("swaplogout").innerHTML="signin";
+            document.getElementById("swapprofile").setAttribute("href","/logon/signup");
+            document.getElementById("swapprofile").innerHTML="signup";
+
+            }  
 
 
-            const toa =getCookie("tokenadmin")
-             const to = getCookie("token")
-             if( to!=undefined){
-                 
-                document.getElementById("swaplogout").setAttribute("href","/logon/logout");
-                document.getElementById("swaplogout").innerHTML="logout";
-                document.getElementById("swapprofile").setAttribute("href","/logon/profile");
-                document.getElementById("swapprofile").innerHTML="profile";
-         
-                }
-                else{
-                document.getElementById("swaplogout").setAttribute("href","/logon/signin");
-                document.getElementById("swaplogout").innerHTML="signin";
-                document.getElementById("swapprofile").setAttribute("href","/logon/signup");
-                document.getElementById("swapprofile").innerHTML="signup";
-
-                }  
-
-
-                if( toa==undefined){
-                    document.getElementById("showSYS").style.display ="none";   
-                    document.getElementById("cart").href ="/logon/signin";           
-                }
-
-                   
-    </script>
+            if( toa==undefined){
+                document.getElementById("showSYS").style.display ="none";   
+                document.getElementById("cart").href ="/logon/signin";           
+            }
+            setTimeout(function(){
+                document.querySelector(".slC").innerHTML = sessionStorage.getItem("slC");
+            }, 100);   
+            
+            
+            
+</script>
 

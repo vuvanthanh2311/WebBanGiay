@@ -5,6 +5,7 @@ const siteController = require('../app/controllers/SiteController');
 
 
 router.get('/', siteController.home);
+router.get('/cartSL', siteController.cartSL);
 router.get('/men/sport', siteController.sport);
 router.get('/men/lazy', siteController.lazy);
 router.get('/men/leather', siteController.leather);

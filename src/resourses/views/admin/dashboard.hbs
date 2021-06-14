@@ -1,23 +1,28 @@
-
+<!DOCTYPE html>
+<html>
 <body>
-    <div class="list">
-        
-    </div>
-</body>
-<script>
-    var user = [
-    'user1',
-    'user1',
-    'user1',
-    'user1',
-    'user1',
-    ]
-    
-    const content = user.map(function(item){
-        return `<li> ${item} </li>`
-    })
-    document.querySelector('.list').innerHTML = content.join("")
 
+<h1>The XMLHttpRequest Object</h1>
+
+<button type="button" onclick="loadDoc()">Request data</button>
+
+<p>Click the button several times to see if the time changes, or if the file is cached.</p>
+
+<p id="demo"></p>
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange=function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "/cartSL" , true);
+  xhttp.send();
+}
 </script>
 
+</body>
+</html>
 

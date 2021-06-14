@@ -8,7 +8,7 @@
 </div>
 <div class="horscroll">
     <h1>BEST OF SHOES</h1>
-    <div class="horscroll__container">
+    <div class="horscroll__container horContainer">
     {{#each product}}
         <div class="row">
             <div class="card">
@@ -26,8 +26,8 @@
         </div>
     {{/each}} 
     </div>
-    <button class="btn--next"><i class="fas fa-chevron-right"></i></button>
-    <button class="btn--re"><i class="fas fa-chevron-left"></i></button>
+    <button class="btn--next btnnext"><i class="fas fa-chevron-right"></i></button>
+    <button class="btn--re btnre"><i class="fas fa-chevron-left"></i></button>
 </div>
 <div class="bannerS">
     <div class="bannerS__item">
@@ -48,6 +48,29 @@
         </div>
     </div>
 </div>
+<div class="horscroll">
+    <h1>NEW ARRIVALS</h1>
+    <div class="horscroll__container horContainer1" style="width:200%">
+    {{#each sex}}
+        <div class="row">
+            <div class="card">
+                <a href="/product/{{this.slug}}"><img src="{{this.image}}" alt=""></a>
+                <div class="card__content">
+                    <a href="/product/{{this.slug}}">
+                        <span class="text-overflow">{{this.name}}</span>
+                    </a>
+                    <div class="card__content--price">
+                        <p id="formatPrice">{{this.price}}</p>
+                        <span>VNĐ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{/each}} 
+    </div>
+    <button class="btn--next btnnext1"><i class="fas fa-chevron-right"></i></button>
+    <button class="btn--re btnre1"><i class="fas fa-chevron-left"></i></button>
+</div>
 <div class="hp">
     <div class="hp_title">
         <span>Dành cho mọi người</span>
@@ -63,7 +86,7 @@
             </div>
         </div>
         <div class="hp_products__product">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4QvrcqBQ4CBAGViRhlegXHL-SlZlxmSQOZg&usqp=CAU" alt="">
+            <img src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enVN/Images/updated_gender_women_dt_tcm212-636701.jpg" alt="">
             <div class="hp_products__product--wrapper">
                 <div class="hp_products__product--wrapper__content">
                     <a href="/woman"><button>WOMAN</button></a>
@@ -71,7 +94,7 @@
             </div>
         </div>
         <div class="hp_products__product">
-            <img src="https://gd.image-gmkt.com/li/906/566/788566906.g_0-w_g.jpg" alt="">
+            <img src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enVN/Images/updated_gender_kids_dt_tcm212-636695.jpg" alt="">
             <div class="hp_products__product--wrapper">
                 <div class="hp_products__product--wrapper__content">
                     <a href="/kid"><button>KID</button></a>
@@ -89,3 +112,17 @@
         <a href="/logon/signup"><div class="bor--adidas"><button class="btn--adidas">Sign up for newsletter<i class="far fa-long-arrow-right"></i></button></div> </a>
     </div>
 </div>
+
+{{#each cart}}
+<div class="cartSL" style="display: none;">{{@index}}</div>
+{{/each}}
+
+<script>
+    const cartSL = document.querySelectorAll(".cartSL")
+    if(cartSL){
+        var slC = cartSL.length;
+        sessionStorage.setItem("slC",slC);
+    }else{
+        sessionStorage.setItem("slC",0);
+    }
+</script>

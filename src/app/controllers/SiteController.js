@@ -3,23 +3,60 @@ const { mutipleMongooseObject } = require('../../util/mongoose');
 const { MongooseObject } = require('../../util/mongoose');
 const { render } = require('node-sass');
 var ls = require('local-storage');
+const jwt = require('jsonwebtoken');
+const Cart = require('../modules/Cart');
+const User = require('../modules/Users');
 class SiteController {
     //[get]
     home(req, res, next) {
+        const token = req.cookies.token;
+        if (token) {
+            const user = jwt.verify(token, process.env.TOKEN_SECRET);
+            req.user = user;
+            const userId = req.user._id
+            Cart.find({ user_id: userId })
+                .then((cart) => {
+                    Product.find({ sex: "men" }).limit(8)
+                        .then((sex) => {
+                            Product.find({}).limit(12)
+                                .then((product) => {
+                                    res.render('home', {
+                                        product: mutipleMongooseObject(product.reverse()),
+                                        sex: mutipleMongooseObject(sex),
+                                        cart: mutipleMongooseObject(cart),
+                                    });
+                                })
+                                .catch(next);
+                        })
+                })
+        } else {
+            Product.find({ sex: "men" }).limit(8)
+                .then((sex) => {
+                    Product.find({}).limit(12)
+                        .then((product) => {
+                            res.render('home', {
+                                product: mutipleMongooseObject(product.reverse()),
+                                sex: mutipleMongooseObject(sex),
+                            });
+                        })
+                        .catch(next);
+                })
+        }
 
-        Product.find({ sex: "men" })
-            .then((sex) => {
-                Product.find({}).limit(12)
-                    .then((product) => {
-                        res.render('home', {
-                            product: mutipleMongooseObject(product),
-                            sex: mutipleMongooseObject(sex),
-                        });
-                    })
-                    .catch(next);
-            })
     }
 
+    cartSL(req, res) {
+        const token = req.cookies.token;
+        if (token) {
+            const user = jwt.verify(token, process.env.TOKEN_SECRET);
+            req.user = user;
+            const userId = req.user._id
+            Cart.find({ user_id: userId })
+                .then((cart) => {
+                    res.json(cart.length)
+                })
+        }
+    }
 
 
 
