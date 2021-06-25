@@ -56,16 +56,11 @@ class ProductController {
     }
 
     search(req, res, next) {
-        console.log(req.query.name);
         Product.find({ name: req.query.name })
             .then(product => {
-                res.render('product/search', {
-
-                    product: mutipleMongooseObject(product)
+                res.render('content/show', {
+                    product: mutipleMongooseObject(product),
                 });
-                // console.log(product)
-
-
             })
             .catch(next);
 

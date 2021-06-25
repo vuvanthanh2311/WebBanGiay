@@ -54,6 +54,7 @@ app.engine(
         helpers: {
             sum: (a, b) => a + b,
             status: (a, b) => (a == b) ? true : false,
+            price: (a, x, y) => (a >= x) && ((a < y)) ? true : false,
         }
     })
 );

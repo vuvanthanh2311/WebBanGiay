@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #f5f5f5;">
+    <div class="Detail__bill">
+            <div class="Detail__bill--title">
+                <h1>DETAIL BILL</h1>
+            </div>
+            <div class="Detail__bill--content bill_show">
+                <div class="Detail__bill--content_products">
+                        {{#each bill.products}}
+                        <div class="Bill_product">
+                            <div class="Bill_product--image">
+                                <img src="{{this.image}}" alt="#" width="100px" height="80px">
+                            </div>
+                             <div class="Bill_product--name">
+                                <span>{{this.name}}</span>
+                            </div>
+                             <div class="Bill_product--soluong">
+                                <span>x{{this.soluong}}</span>
+                            </div>
+                             <div class="Bill_product--dongia">
+                                <p id="formatPrice">
+                                {{this.dongia}}
+                                </p>
+                                <span>VNĐ</span>
+                            </div>
+                        </div>
+                        {{/each}}
+                        <div class="Detail__bill--content_products--user">
+                            <ul>
+                                <li>Người nhận : {{user.fullname}}</li>
+                                <li>Email : {{user.email}}</li>
+                                <li>SĐT : {{user.phone_number}}</li>
+                                <li>Địa Chỉ :{{user.address}}</li>
+                                {{#if (status bill.status "ctt")}}
+                                    <li style="color: rgb(243, 100, 95);">Trạng Thái : Chờ thanh toán</li>
+                                {{/if}}
+                                {{#if (status bill.status "clh")}}
+                                    <li style="color: rgb(243, 100, 95);">Trạng Thái : Chờ lấy hàng</li>
+                                {{/if}}
+                                {{#if (status bill.status "danggiao")}}
+                                    <li style="color: rgb(243, 100, 95);">Trạng Thái : Đang giao</li>
+                                {{/if}}
+                                {{#if (status bill.status "dagiao")}}
+                                    <li style="color: rgb(243, 100, 95);">Trạng Thái : Đã giao</li>
+                                {{/if}}
+                                {{#if (status bill.status "dh")}}
+                                    <li style="color: rgb(243, 100, 95);">Trạng Thái : Đã hủy</li>
+                                {{/if}}
+                            </ul>
+                        </div>
+                        <div class="Detail__bill--content_products--total">
+                            <span>Tổng tiền:</span>
+                            <p id="formatPrice">
+                             {{bill.total}}
+                            </p>
+                            <span>VNĐ</span>
+                        </div>
+                </div>
+            </div>
+</body>
+</html>

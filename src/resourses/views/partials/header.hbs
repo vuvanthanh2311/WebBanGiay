@@ -39,21 +39,18 @@
                     <a href="/admin/createPD">Create Product</a>
                     <a href="/admin/AccManage">account management</a>
                     <a href="/admin/PDManage">Product management</a>
+                    <a href="/admin/BillMg">Bill management</a>
                 </div>
             </li>
         </ul>
     </div>
     <div class="nav__right">
-        {{!-- <div class="nav__right--search"> --}}
+        
             <form class="nav__right--search" action="/product/search" method="GET">
-            
-            <input class="input" type="text" placeholder="search"  id="name" name="name">
-                {{!-- <a class="nav__right--search" href="/product/{{this.name}}"></a> --}}
-            <i class="fas fa-search search">   
-            </i>
-            {{!-- </a> --}}
+            <input class="input" type="text" placeholder="search"  id="name" name="name">  
+            <i class="fas fa-search search"></i>
             </form>
-        {{!-- </div> --}}
+        
         <div class="nav__right--user">
             <div class="dropbtn">
                 <i class="fas fa-user"></i><i class="fas fa-caret-down size-small"></i>
@@ -79,44 +76,47 @@
 
 
 <script >
-        function getCookie(name) {
-        let cookie = {};
-        document.cookie.split(';').forEach(function(el) {
-        let [k,v] = el.split('=');
-        cookie[k.trim()] = v;
-        })
-        return cookie[name];
-        }
-
-
-        const toa =getCookie("tokenadmin")
-            const to = getCookie("token")
-            if( to!=undefined){
-                
-            document.getElementById("swaplogout").setAttribute("href","/logon/logout");
-            document.getElementById("swaplogout").innerHTML="logout";
-            document.getElementById("swapprofile").setAttribute("href","/logon/profile");
-            document.getElementById("swapprofile").innerHTML="profile";
+    function getCookie(name) {
+    let cookie = {};
+    document.cookie.split(';').forEach(function(el) {
+    let [k,v] = el.split('=');
+    cookie[k.trim()] = v;
+    })
+    return cookie[name];
+    }
+    const toa =getCookie("tokenadmin")
+    const to = getCookie("token")
+    if( to!=undefined){
         
-            }
-            else{
-            document.getElementById("swaplogout").setAttribute("href","/logon/signin");
-            document.getElementById("swaplogout").innerHTML="signin";
-            document.getElementById("swapprofile").setAttribute("href","/logon/signup");
-            document.getElementById("swapprofile").innerHTML="signup";
+    document.getElementById("swaplogout").setAttribute("href","/logon/logout");
+    document.getElementById("swaplogout").innerHTML="logout";
+    document.getElementById("swapprofile").setAttribute("href","/logon/profile");
+    document.getElementById("swapprofile").innerHTML="profile";
 
-            }  
+    }
+    else{
+    document.getElementById("swaplogout").setAttribute("href","/logon/signin");
+    document.getElementById("swaplogout").innerHTML="signin";
+    document.getElementById("swapprofile").setAttribute("href","/logon/signup");
+    document.getElementById("swapprofile").innerHTML="signup";
+
+    }  
 
 
-            if( toa==undefined){
-                document.getElementById("showSYS").style.display ="none";   
-                document.getElementById("cart").href ="/logon/signin";           
-            }
-            setTimeout(function(){
-                document.querySelector(".slC").innerHTML = sessionStorage.getItem("slC");
-            }, 100);   
+    if( toa==undefined){
+        document.getElementById("showSYS").style.display ="none";   
+        document.getElementById("cart").href ="/logon/signin";           
+    }
+    setTimeout(function(){
+        document.querySelector(".slC").innerHTML = sessionStorage.getItem("slC");
+    }, 100);   
             
-            
+    const search = document.querySelector('.search') 
+    const formsearch = document.querySelector('.nav__right--search')
+    search.addEventListener("click",function(){
+        formsearch.submit();
+    })    
+
             
 </script>
 

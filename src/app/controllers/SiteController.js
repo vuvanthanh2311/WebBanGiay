@@ -53,7 +53,8 @@ class SiteController {
             const userId = req.user._id
             Cart.find({ user_id: userId })
                 .then((cart) => {
-                    res.json(cart.length)
+
+                    res.json(cart)
                 })
         }
     }

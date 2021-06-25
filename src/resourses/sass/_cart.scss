@@ -29,12 +29,17 @@
     z-index: 101;
     font-size: 1.8rem;
     color: #5e5a5a;
-    &__time {
-        position: absolute;
-        right: 20px;
-        top: 20px;
-        font-size: 20px;
-        cursor: pointer;
+    &__title {
+        h1 {
+            padding: 1rem 2rem;
+        }
+        &--time {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
     }
     &__ques {
         padding: 2rem;

@@ -623,6 +623,28 @@
   border: 1px solid black;
   font-weight: bold; }
 
+.productFilter {
+  display: none; }
+
+.show {
+  display: block; }
+
+.active {
+  font-weight: bolder; }
+
+.btn_green {
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: white;
+  background-color: #2b9133;
+  border: 1px solid #ac9d9d; }
+  .btn_green:hover {
+    background-color: #18c026; }
+  .btn_green:active {
+    box-shadow: 2px 1px 2px rgba(0, 0, 0, 0.5); }
+
 .horscroll {
   position: relative;
   width: 90%;
@@ -862,7 +884,9 @@
   z-index: 101;
   font-size: 1.8rem;
   color: #5e5a5a; }
-  .confirmdel__time {
+  .confirmdel__title h1 {
+    padding: 1rem 2rem; }
+  .confirmdel__title--time {
     position: absolute;
     right: 20px;
     top: 20px;
@@ -1305,6 +1329,123 @@
       color: black; }
     .creProduct .form__submit:active {
       outline: 0.3rem solid rgba(151, 156, 158, 0.8); }
+
+.admin__bill {
+  width: 80%;
+  margin: 5rem auto; }
+  .admin__bill--title {
+    background-color: white;
+    width: 100%;
+    border: 0.1px solid #d6d3d3;
+    display: flex; }
+    .admin__bill--title_status {
+      width: 20%;
+      font-size: 2rem;
+      text-align: center;
+      padding: 2rem 0; }
+      .admin__bill--title_status a {
+        text-decoration: none;
+        color: black; }
+  .admin__bill--content {
+    display: none;
+    width: 100%; }
+    .admin__bill--content_products {
+      background-color: white;
+      margin: 2rem 0;
+      border: 0.1px solid #f0eded; }
+      .admin__bill--content_products .Bill_product {
+        font-size: 1.6rem;
+        border-bottom: 0.1px solid #f0eded;
+        width: 100%;
+        display: flex; }
+        .admin__bill--content_products .Bill_product--name {
+          padding: 1rem 2rem;
+          width: 55%; }
+        .admin__bill--content_products .Bill_product--soluong {
+          padding: 1rem 0;
+          text-align: center;
+          width: 10%; }
+        .admin__bill--content_products .Bill_product--dongia {
+          padding: 1rem 0;
+          text-align: center;
+          border-left: 0.1px solid #f0eded;
+          width: 20%; }
+          .admin__bill--content_products .Bill_product--dongia p {
+            display: inline; }
+      .admin__bill--content_products--total {
+        background-color: #f1f1f1;
+        padding: 1rem 2rem 0 2rem;
+        font-size: 1.8rem;
+        text-align: right; }
+        .admin__bill--content_products--total p,
+        .admin__bill--content_products--total span:last-child {
+          display: inline;
+          color: red;
+          font-size: 2rem; }
+      .admin__bill--content_products--button {
+        background-color: #f1f1f1;
+        padding: 1rem 2rem;
+        text-align: right; }
+
+.Detail__bill {
+  width: 80%;
+  margin: 5rem auto; }
+  .Detail__bill--title {
+    padding: 2rem 4rem;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: white;
+    width: 100%;
+    border: 0.1px solid #d6d3d3; }
+  .Detail__bill--content {
+    display: none;
+    width: 100%; }
+    .Detail__bill--content_products {
+      background-color: white;
+      margin: 2rem 0;
+      border: 0.1px solid #d6d3d3; }
+      .Detail__bill--content_products .Bill_product {
+        font-size: 1.6rem;
+        border-bottom: 0.1px solid #d6d3d3;
+        width: 100%;
+        display: flex; }
+        .Detail__bill--content_products .Bill_product--image {
+          padding: 1rem 2rem;
+          width: 15%; }
+        .Detail__bill--content_products .Bill_product--name {
+          line-height: 100px;
+          padding: 1rem 2rem;
+          width: 55%; }
+        .Detail__bill--content_products .Bill_product--soluong {
+          line-height: 100px;
+          padding: 1rem 0;
+          text-align: center;
+          width: 10%; }
+        .Detail__bill--content_products .Bill_product--dongia {
+          line-height: 100px;
+          padding: 1rem 0;
+          text-align: center;
+          border-left: 0.1px solid #d6d3d3;
+          width: 20%; }
+          .Detail__bill--content_products .Bill_product--dongia p {
+            display: inline; }
+      .Detail__bill--content_products--user {
+        background-color: #f1f1f1;
+        padding: 2rem 4rem 0 4rem;
+        font-size: 2rem; }
+        .Detail__bill--content_products--user li {
+          list-style: none;
+          line-height: 30px; }
+      .Detail__bill--content_products--total {
+        background-color: #f1f1f1;
+        padding: 2rem 4rem 2rem 4rem;
+        font-size: 2rem;
+        text-align: right; }
+        .Detail__bill--content_products--total p,
+        .Detail__bill--content_products--total span:last-child {
+          display: inline;
+          color: red;
+          font-size: 3rem; }
 
 * {
   margin: 0;

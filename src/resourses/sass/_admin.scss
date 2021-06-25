@@ -1,0 +1,70 @@
+.admin__bill {
+    width: 80%;
+    margin: 5rem auto;
+    &--title {
+        background-color: white;
+        width: 100%;
+        border: .1px solid rgb(214, 211, 211);
+        display: flex;
+        &_status {
+            width: 20%;
+            font-size: 2rem;
+            text-align: center;
+            padding: 2rem 0;
+            a {
+                text-decoration: none;
+                color: black;
+            }
+        }
+    }
+    &--content {
+        display: none;
+        width: 100%;
+        &_products {
+            background-color: white;
+            margin: 2rem 0;
+            border: .1px solid rgb(240, 237, 237);
+            .Bill_product {
+                font-size: 1.6rem;
+                border-bottom: .1px solid rgb(240, 237, 237);
+                width: 100%;
+                display: flex;
+                &--name {
+                    padding: 1rem 2rem;
+                    width: 55%;
+                }
+                &--soluong {
+                    padding: 1rem 0;
+                    text-align: center;
+                    width: 10%;
+                }
+                &--dongia {
+                    padding: 1rem 0;
+                    text-align: center;
+                    border-left: .1px solid rgb(240, 237, 237);
+                    width: 20%;
+                    p {
+                        display: inline;
+                    }
+                }
+            }
+            &--total {
+                background-color: #f1f1f1;
+                padding: 1rem 2rem 0 2rem;
+                font-size: 1.8rem;
+                text-align: right;
+                p,
+                span:last-child {
+                    display: inline;
+                    color: red;
+                    font-size: 2rem;
+                }
+            }
+            &--button {
+                background-color: #f1f1f1;
+                padding: 1rem 2rem;
+                text-align: right;
+            }
+        }
+    }
+}

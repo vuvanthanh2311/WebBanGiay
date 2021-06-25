@@ -25,30 +25,30 @@
         <div class="product__sidebar--ftPrice">
             <span> </i>Khoảng Giá</span>
             <ul>
-                <li><button class="btn--white"> Dưới 500.000 VNĐ</button></li>
-                <li><button class="btn--white"> Từ 500.000 - 1 triệu VNĐ</button></li>
-                <li><button class="btn--white"> Từ 1 - 2 triệu VNĐ</button></li>
-                <li><button class="btn--white"> Từ 2 - 5 triệu VNĐ</button></li>
-                <li><button class="btn--white"> Từ 5 - 10 triệu VNĐ</button></li>
-                <li><button class="btn--white"> 10 triệu VNĐ trở lên</button></li>
+                <li><button class="btn--white btnFilter"> Dưới 500.000 VNĐ</button></li>
+                <li><button class="btn--white btnFilter"> Từ 500.000 - 1 triệu VNĐ</button></li>
+                <li><button class="btn--white btnFilter"> Từ 1 - 2 triệu VNĐ</button></li>
+                <li><button class="btn--white btnFilter"> Từ 2 - 5 triệu VNĐ</button></li>
+                <li><button class="btn--white btnFilter"> Từ 5 - 10 triệu VNĐ</button></li>
+                <li><button class="btn--white btnFilter"> 10 triệu VNĐ trở lên</button></li>
             </ul>
         </div>
         <div class="product__sidebar--ftBrand">
             <span> </i>Nhãn Hiệu</span>
             <ul>
-                <li><input type="checkbox">  Adidas</li>
-                <li><input type="checkbox">  Nike</li>
-                <li><input type="checkbox">  Converse </li>
-                <li><input type="checkbox">  Kering (PUMA)</li>
-                <li><input type="checkbox">  Vans </li>
-                <li><input type="checkbox">  Mizuno </li>
-                <li><input type="checkbox">  ASICS </li>
-                <li><input type="checkbox">  Balenciaga </li>
+                <li><button class="btn--white"> Adidas</button></li>
+                <li><button class="btn--white"> Nike</button></li>
+                <li><button class="btn--white"> Converse</button></li>
+                <li><button class="btn--white"> Kering (PUMA)</button></li>
+                <li><button class="btn--white"> Vans</button></li>
+                <li><button class="btn--white"> Mizuno</button></li>
+                <li><button class="btn--white"> ASICS</button></li>
+                <li><button class="btn--white"> Balenciaga</button></li>
             </ul>
         </div>
 
     </div>
-    <div class="product__container">
+    <div class="product__container hideProduct">
         {{#each product}}
             <div class="row">
                 <div class="card">
@@ -69,6 +69,144 @@
             </div>
         {{/each}} 
     </div>
+    <div class="product__container productFilter">
+        {{#each product}}
+        {{#if (price this.price 1000 500000)}}
+            <div class="row">
+                <div class="card">
+                    <a href="/product/{{this.slug}}"><img src="{{this.image}}" alt=""></a>
+                    <div class="card__content">
+                        <a href="/product/{{this.slug}}">
+                            <span class="text-overflow">{{this.name}}</span>
+                        </a>
+                        <div class="card__content--price">
+                            <p id="formatPrice">{{this.price}}</p>
+                            <span>VNĐ</span>
+                        </div>
+                        <div class="card__content--soluong">
+                            <span>SL:{{this.number}}</span> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/if}}
+        {{/each}} 
+    </div>
+    <div class="product__container productFilter">
+        {{#each product}}
+        {{#if (price this.price 500000 1000000)}}
+            <div class="row">
+                <div class="card">
+                    <a href="/product/{{this.slug}}"><img src="{{this.image}}" alt=""></a>
+                    <div class="card__content">
+                        <a href="/product/{{this.slug}}">
+                            <span class="text-overflow">{{this.name}}</span>
+                        </a>
+                        <div class="card__content--price">
+                            <p id="formatPrice">{{this.price}}</p>
+                            <span>VNĐ</span>
+                        </div>
+                        <div class="card__content--soluong">
+                            <span>SL:{{this.number}}</span> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/if}}
+        {{/each}} 
+    </div>
+    <div class="product__container productFilter">
+        {{#each product}}
+        {{#if (price this.price 1000000 2000000)}}
+            <div class="row">
+                <div class="card">
+                    <a href="/product/{{this.slug}}"><img src="{{this.image}}" alt=""></a>
+                    <div class="card__content">
+                        <a href="/product/{{this.slug}}">
+                            <span class="text-overflow">{{this.name}}</span>
+                        </a>
+                        <div class="card__content--price">
+                            <p id="formatPrice">{{this.price}}</p>
+                            <span>VNĐ</span>
+                        </div>
+                        <div class="card__content--soluong">
+                            <span>SL:{{this.number}}</span> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/if}}
+        {{/each}} 
+    </div>
+    <div class="product__container productFilter">
+        {{#each product}}
+        {{#if (price this.price 2000000 5000000)}}
+            <div class="row">
+                <div class="card">
+                    <a href="/product/{{this.slug}}"><img src="{{this.image}}" alt=""></a>
+                    <div class="card__content">
+                        <a href="/product/{{this.slug}}">
+                            <span class="text-overflow">{{this.name}}</span>
+                        </a>
+                        <div class="card__content--price">
+                            <p id="formatPrice">{{this.price}}</p>
+                            <span>VNĐ</span>
+                        </div>
+                        <div class="card__content--soluong">
+                            <span>SL:{{this.number}}</span> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/if}}
+        {{/each}} 
+    </div>
+    <div class="product__container productFilter">
+        {{#each product}}
+        {{#if (price this.price 5000000 10000000)}}
+            <div class="row">
+                <div class="card">
+                    <a href="/product/{{this.slug}}"><img src="{{this.image}}" alt=""></a>
+                    <div class="card__content">
+                        <a href="/product/{{this.slug}}">
+                            <span class="text-overflow">{{this.name}}</span>
+                        </a>
+                        <div class="card__content--price">
+                            <p id="formatPrice">{{this.price}}</p>
+                            <span>VNĐ</span>
+                        </div>
+                        <div class="card__content--soluong">
+                            <span>SL:{{this.number}}</span> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/if}}
+        {{/each}} 
+    </div>
+    <div class="product__container productFilter">
+        {{#each product}}
+        {{#if (price this.price 10000000 999999999)}}
+            <div class="row">
+                <div class="card">
+                    <a href="/product/{{this.slug}}"><img src="{{this.image}}" alt=""></a>
+                    <div class="card__content">
+                        <a href="/product/{{this.slug}}">
+                            <span class="text-overflow">{{this.name}}</span>
+                        </a>
+                        <div class="card__content--price">
+                            <p id="formatPrice">{{this.price}}</p>
+                            <span>VNĐ</span>
+                        </div>
+                        <div class="card__content--soluong">
+                            <span>SL:{{this.number}}</span> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/if}}
+        {{/each}} 
+    </div>
 </div>
 <div class="subscribe">
     <div class="subscribe__box">
@@ -79,6 +217,33 @@
     </div>
 </div>
 <script>
+const btnFilter = document.querySelectorAll(".btnFilter")
+const productFilter = document.querySelectorAll(".productFilter")
+const hideP = document.querySelector(".hideProduct")
+
+btnFilter.forEach((item, index) => {
+
+    const productF = productFilter[index]
+
+    item.onclick = function() {
+        hideP.style.display="none";
+
+        const activeItem = document.querySelector(".btnFilter.active")
+        const hiddenProduct = document.querySelector(".productFilter.show")
+
+        if(hiddenProduct){
+            hiddenProduct.classList.remove('show')   
+        }
+        productF.classList.add('show')
+        
+        if(activeItem){
+            activeItem.classList.remove('active') 
+        }
+        this.classList.add('active')
+        
+
+    }
+})
     const hideFilter =  document.querySelector(".hideFilter");
     const showFilter =  document.querySelector(".showFilter");
     const product__sidebar =  document.querySelector(".product__sidebar");  
