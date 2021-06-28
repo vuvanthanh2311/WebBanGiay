@@ -56,8 +56,12 @@ class ProductController {
     }
 
     search(req, res, next) {
-        console.log(req.query.name);
-        Product.find({ name: req.query.name })
+        
+        Product.find({ $or :[ 
+            {name: req.query.name},
+            {brand: req.query.name},
+            {sex: req.query.name},
+        ] })
             .then(product => {
                 res.render('product/search', {
 
@@ -68,6 +72,8 @@ class ProductController {
 
             })
             .catch(next);
+
+            
 
     }
     destroy(req, res, next) {
