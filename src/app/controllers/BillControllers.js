@@ -43,6 +43,20 @@ class BillController {
             .then(() => res.redirect('/Bill/show'))
             .catch(next);
     }
+    detail(req, res, next) {
+        Bill.findOne({ _id: req.params.id })
+            .then((bill) => {
+                User.findOne({ _id: bill.user_id })
+                    .then((user) => {
+                        res.render('Bill/detail', {
+                            bill: MongooseObject(bill),
+                            user: MongooseObject(user),
+                        });
+                    })
+
+            })
+            .catch(next);
+    }
 
 }
 module.exports = new BillController();

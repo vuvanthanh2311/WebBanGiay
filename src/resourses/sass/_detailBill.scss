@@ -1,0 +1,73 @@
+.Detail__bill {
+    width: 80%;
+    margin: 5rem auto;
+    &--title {
+        padding: 2rem 4rem;
+        font-size: 2rem;
+        font-weight: bold;
+        background-color: white;
+        width: 100%;
+        border: .1px solid rgb(214, 211, 211);
+    }
+    &--content {
+        display: none;
+        width: 100%;
+        &_products {
+            background-color: white;
+            margin: 2rem 0;
+            border: .1px solid rgb(214, 211, 211);
+            .Bill_product {
+                font-size: 1.6rem;
+                border-bottom: .1px solid rgb(214, 211, 211);
+                width: 100%;
+                display: flex;
+                &--image {
+                    padding: 1rem 2rem;
+                    width: 15%;
+                }
+                &--name {
+                    line-height: 100px;
+                    padding: 1rem 2rem;
+                    width: 55%;
+                }
+                &--soluong {
+                    line-height: 100px;
+                    padding: 1rem 0;
+                    text-align: center;
+                    width: 10%;
+                }
+                &--dongia {
+                    line-height: 100px;
+                    padding: 1rem 0;
+                    text-align: center;
+                    border-left: .1px solid rgb(214, 211, 211);
+                    width: 20%;
+                    p {
+                        display: inline;
+                    }
+                }
+            }
+            &--user {
+                background-color: #f1f1f1;
+                padding: 2rem 4rem 0 4rem;
+                font-size: 2rem;
+                li {
+                    list-style: none;
+                    line-height: 30px;
+                }
+            }
+            &--total {
+                background-color: #f1f1f1;
+                padding: 2rem 4rem 2rem 4rem;
+                font-size: 2rem;
+                text-align: right;
+                p,
+                span:last-child {
+                    display: inline;
+                    color: red;
+                    font-size: 3rem;
+                }
+            }
+        }
+    }
+}

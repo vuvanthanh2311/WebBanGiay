@@ -1,5 +1,6 @@
 const Product = require('../modules/Product');
 const User = require('../modules/Users');
+const Bill = require('../modules/Bill');
 const { mutipleMongooseObject } = require('../../util/mongoose');
 const { MongooseObject } = require('../../util/mongoose');
 const { render } = require('node-sass');
@@ -64,7 +65,30 @@ class adminController {
 
             })
     }
-    
+    BillMg(req, res, next) {
+        Bill.find({})
+            .then((bill) => {
+                res.render('admin/BillMg', {
+                    bill: mutipleMongooseObject(bill),
+                });
+            })
+            .catch(next);
+    }
+    duyetctt(req, res, next) {
+        Bill.updateOne({ _id: req.params.id }, { status: "clh" })
+            .then(() => res.redirect('/admin/BillMg'))
+            .catch(next);
+    }
+    duyetclh(req, res, next) {
+        Bill.updateOne({ _id: req.params.id }, { status: "danggiao" })
+            .then(() => res.redirect('/admin/BillMg'))
+            .catch(next);
+    }
+    duyetdg(req, res, next) {
+        Bill.updateOne({ _id: req.params.id }, { status: "dagiao" })
+            .then(() => res.redirect('/admin/BillMg'))
+            .catch(next);
+    }
 
 }
 module.exports = new adminController();
