@@ -56,12 +56,13 @@ class ProductController {
     }
 
     search(req, res, next) {
-
+        const name = req.query.name.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+        const reg = new RegExp(name, 'ig'); 
         
         Product.find({ $or :[ 
-            {name: req.query.name},
-            {brand: req.query.name},
-            {sex: req.query.name},
+            {name: reg},
+            {brand: reg},
+            {sex: reg},
         ] })
             .then(product => {
                 res.render('content/show', {
