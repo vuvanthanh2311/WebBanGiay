@@ -58,13 +58,21 @@ class ProductController {
     }
 
     search(req, res, next) {
-        Product.find({ name: req.query.name })
+
+        
+        Product.find({ $or :[ 
+            {name: req.query.name},
+            {brand: req.query.name},
+            {sex: req.query.name},
+        ] })
             .then(product => {
                 res.render('content/show', {
                     product: mutipleMongooseObject(product),
                 });
             })
             .catch(next);
+
+            
 
     }
     destroy(req, res, next) {
