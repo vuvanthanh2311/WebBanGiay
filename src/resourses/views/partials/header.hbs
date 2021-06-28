@@ -103,13 +103,19 @@
     }  
 
 
-    if( toa==undefined){
+    if( toa==undefined && to ==undefined){
         document.getElementById("showSYS").style.display ="none";   
         document.getElementById("cart").href ="/logon/signin";           
     }
     setTimeout(function(){
         document.querySelector(".slC").innerHTML = sessionStorage.getItem("slC");
     }, 100);   
+
+    if(to == undefined && toa == undefined){
+        sessionStorage.setItem("user","no")
+    }else{
+        sessionStorage.setItem("user","yes")
+    }
             
     const search = document.querySelector('.search') 
     const formsearch = document.querySelector('.nav__right--search')

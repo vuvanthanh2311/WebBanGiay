@@ -1112,6 +1112,29 @@
           .rating-review__wrapper .review__comment--send .form-comment textarea {
             width: 95%;
             padding: .5rem 1rem; }
+      .rating-review__wrapper .review__comment--page_wrapper {
+        display: flex; }
+        .rating-review__wrapper .review__comment--page_wrapper--title img {
+          border-radius: 50%;
+          width: 50px;
+          height: 50px; }
+        .rating-review__wrapper .review__comment--page_wrapper--content_box {
+          border-radius: 20px;
+          background-color: #f5f5f5;
+          margin: 5px 0 0 10px;
+          padding: 5px 10px; }
+          .rating-review__wrapper .review__comment--page_wrapper--content_box strong {
+            font-size: 1.6rem; }
+        .rating-review__wrapper .review__comment--page_wrapper--content_act {
+          padding-left: 10px;
+          font-size: 1.4rem; }
+          .rating-review__wrapper .review__comment--page_wrapper--content_act a {
+            margin-left: 10px;
+            text-decoration: none;
+            color: #686464;
+            font-weight: bold; }
+            .rating-review__wrapper .review__comment--page_wrapper--content_act a:hover {
+              border-bottom: 1px solid black; }
 
 .detail {
   font-size: 1.6rem;
@@ -1132,10 +1155,6 @@
       .detail__content--info_decription {
         margin-top: 10rem; }
   .detail__sidebar {
-    position: sticky;
-    right: 0;
-    top: 0;
-    bottom: 0;
     padding: 1rem;
     width: 30%;
     border-left: 1px solid rgba(0, 0, 0, 0.1); }
