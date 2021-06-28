@@ -1,7 +1,5 @@
 const Product = require('../modules/Product');
 const Cart = require('../modules/Cart');
-const Comment = require('../modules/Comment');
-const User = require('../modules/Users');
 const { MongooseObject } = require('../../util/mongoose');
 const { mutipleMongooseObject } = require('../../util/mongoose');
 const jwt = require('jsonwebtoken');
@@ -44,13 +42,13 @@ class ProductController {
 
         Product.findOne({ slug: req.params.slug })
             .then(product => {
-                Comment.find({ product_id: product._id })
-                    .then((comment) => {
-                        res.render('product/shows', {
-                            product: MongooseObject(product),
-                            comment: mutipleMongooseObject(comment),
-                        });
-                    })
+                res.render('product/shows', {
+                    product: MongooseObject(product),
+
+                });
+                // res.json(product);
+                console.log(product._id)
+
 
             })
             .catch(next);
@@ -58,12 +56,14 @@ class ProductController {
     }
 
     search(req, res, next) {
-        const name = req.query.name.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+        // replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+        const name = req.query.name
         const reg = new RegExp(name, 'ig'); 
+        //sử lý chữ in hoa in thường
         
         Product.find({ $or :[ 
             {name: reg},
-            {brand: reg},
+            {brand: reg}, 
             {sex: reg},
         ] })
             .then(product => {
@@ -81,6 +81,7 @@ class ProductController {
             .then(() => res.redirect('back'))
             .catch(next);
     }
+
     comment(req, res, next) {
         const token = req.cookies.token;
         const user = jwt.verify(token, process.env.TOKEN_SECRET);

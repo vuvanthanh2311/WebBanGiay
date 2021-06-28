@@ -8,6 +8,8 @@ const User = require('../modules/Users');
 
 
 class BillController {
+
+
     show(req, res, next) {
         const token = req.cookies.token;
         const user = jwt.verify(token, process.env.TOKEN_SECRET);
