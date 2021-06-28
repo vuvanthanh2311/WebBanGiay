@@ -19,9 +19,6 @@ class BillController {
                 res.render('Bill/show', {
                     bill: mutipleMongooseObject(bill),
                 });
-                // res.json(POB)
-                // console.log(POB)
-
             })
             .catch(next);
     }

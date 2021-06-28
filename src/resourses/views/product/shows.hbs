@@ -32,12 +32,34 @@
                   <div class="review__comment--send_img">
                     <img src="https://upload.wikimedia.org/wikipedia/vi/archive/1/1d/20210321120435%21N%C6%A1i_n%C3%A0y_c%C3%B3_anh_-_Single_Cover.jpg" >
                   </div>
-                  <form class="form-comment" action="" method="">
-                    <textarea name="comment" id="comment" cols="30" rows="2"></textarea>
+                  <form class="form-comment" action="/product/comment" method="POST">
+                    <input type="text" name="product_id" id="product_id" value="{{product._id}}" style="display:none">
+                    <textarea name="content" id="content" cols="30" rows="2"></textarea>
                     <button class="btn-comment" type="submit">Send</button>
                   </form>
-                  
                 </div>
+                <div class="review__comment--page">
+                  {{#each comment}}
+                  <div class="review__comment--page_wrapper">
+                    
+                    <div class="review__comment--page_wrapper--title">
+                      <img src="https://upload.wikimedia.org/wikipedia/vi/archive/1/1d/20210321120435%21N%C6%A1i_n%C3%A0y_c%C3%B3_anh_-_Single_Cover.jpg" alt="">
+                    </div>
+                    <div class="review__comment--page_wrapper--content">
+                      <div class="review__comment--page_wrapper--content_box">
+                        <strong>{{this.user_name}}</strong>
+                        <p>{{this.content}}</p>
+                      </div>
+                      <div class="review__comment--page_wrapper--content_act">
+                        <a href="#">Thích</a>
+                        <a href="#">Trả lời</a>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  {{/each}}
+                </div>
+                
               </div>
             </div>
           </div>
@@ -75,29 +97,15 @@
         <a href="/logon/signup"><div class="bor--adidas"><button class="btn--adidas">Sign up for newsletter<i class="far fa-long-arrow-right"></i></button></div> </a>
     </div>
 </div>
-{{!-- <div id="comfirm_addCart" class="comfirm_addCart">
-  <strong>SUCCESSFULLY ADDED TO BAG!</strong>
-    <div class="comfirm_addCart__right">
-        <div class="comfirm_addCart__right--img">
-          <img src="{{product.image}}">
-        </div>
-        <div class="comfirm_addCart__right--content">
-          <h2>{{product.name}}</h2>
-          <div>
-            <p id="formatPrice">{{product.price}}</p>
-            <span>VNĐ</span>
-          </div>
-          <span class="Size"></span>
-        </div>
-    </div>
-    <div class="comfirm_addCart__left">
-        <span>Bạn vẫn chưa chọn sản phẩm nào để mua</span>
-    </div>
-    
-</div>
-<div id="bgblack" class="bg--black"></div> --}}
 </body>
 <script>
+  const review = document.querySelector(".review__comment--send");
+  const user = sessionStorage.getItem("user");
+  if(user == "no"){
+    review.style.display ="none"
+  }
+  
+
   document.querySelector('.addtocart').addEventListener("click",function(){
     
     if(document.querySelector(".btnsize--active")){
