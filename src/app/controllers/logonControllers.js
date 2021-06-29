@@ -14,65 +14,66 @@ dotenv.config()
 
 
 class logonController {
-
+    // render page sigin
     signin(req, res) {
-        res.render('logon/signin')
-    }
+            res.render('logon/signin')
+        }
+        //render page signup
     signup(req, res) {
-        res.render('logon/signup')
+            res.render('logon/signup')
 
-    }
-
+        }
+        // lưu tài khoản đăng kí
     store(req, res, next) {
 
-        const Data = req.body;
-        const user = new User(Data);
-        user.save()
-            .then(() => res.redirect('/logon/signin'))
-            .catch(next);
-    }
-
+            const Data = req.body;
+            const user = new User(Data);
+            user.save()
+                .then(() => res.redirect('/logon/signin'))
+                .catch(next);
+        }
+        // xử lý đăng nhập
     async login(req, res, next) {
 
-        const user = await User.findOne({ email: req.body.email });
-        if (!user) return res.status(400).send('email not found');
+            const user = await User.findOne({ email: req.body.email });
+            if (!user) return res.status(400).send('email not found');
 
 
 
-        if (user.admin != null || user.admin != undefined) {
-            const tokenadmin = jwt.sign({ admin: user.admin }, process.env.TOKEN_SECRET);
+            if (user.admin != null || user.admin != undefined) {
+                const tokenadmin = jwt.sign({ admin: user.admin }, process.env.TOKEN_SECRET);
 
-            res.cookie("tokenadmin", tokenadmin, {
-                httpOnly: false,
-            });
+                res.cookie("tokenadmin", tokenadmin, {
+                    httpOnly: false,
+                });
+            }
+            if (req.body.password === user.password) {
+
+
+                const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
+
+
+                res.cookie("token", token, {
+                    httpOnly: false,
+                });
+
+
+
+                console.log(token)
+                res.redirect('/');
+
+            } else {
+                res.status(400).send('pass not exacli')
+
+            }
+
+
+
+
+
+
         }
-        if (req.body.password === user.password) {
-
-
-            const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
-
-
-            res.cookie("token", token, {
-                httpOnly: false,
-            });
-
-
-
-            console.log(token)
-            res.redirect('/');
-
-        } else {
-            res.status(400).send('pass not exacli')
-
-        }
-
-
-
-
-
-
-    }
-
+        // xử lý đăng xuất
     logout(req, res, next) {
 
         const token = req.cookies.token;
@@ -83,7 +84,7 @@ class logonController {
     }
 
 
-
+    // render profile
     profile(req, res, next) {
 
 

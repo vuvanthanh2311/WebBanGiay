@@ -9,42 +9,42 @@ const User = require('../modules/Users');
 class SiteController {
     //[get]
     home(req, res, next) {
-        const token = req.cookies.token;
-        if (token) {
-            const user = jwt.verify(token, process.env.TOKEN_SECRET);
-            req.user = user;
-            const userId = req.user._id
-            Cart.find({ user_id: userId })
-                .then((cart) => {
-                    Product.find({ sex: "men" }).limit(8)
-                        .then((sex) => {
-                            Product.find({}).limit(12)
-                                .then((product) => {
-                                    res.render('home', {
-                                        product: mutipleMongooseObject(product.reverse()),
-                                        sex: mutipleMongooseObject(sex),
-                                        cart: mutipleMongooseObject(cart),
-                                    });
-                                })
-                                .catch(next);
-                        })
-                })
-        } else {
-            Product.find({ sex: "men" }).limit(8)
-                .then((sex) => {
-                    Product.find({}).limit(12)
-                        .then((product) => {
-                            res.render('home', {
-                                product: mutipleMongooseObject(product.reverse()),
-                                sex: mutipleMongooseObject(sex),
-                            });
-                        })
-                        .catch(next);
-                })
+            const token = req.cookies.token;
+            if (token) {
+                const user = jwt.verify(token, process.env.TOKEN_SECRET);
+                req.user = user;
+                const userId = req.user._id
+                Cart.find({ user_id: userId })
+                    .then((cart) => {
+                        Product.find({ sex: "men" }).limit(8)
+                            .then((sex) => {
+                                Product.find({}).limit(12)
+                                    .then((product) => {
+                                        res.render('home', {
+                                            product: mutipleMongooseObject(product.reverse()),
+                                            sex: mutipleMongooseObject(sex),
+                                            cart: mutipleMongooseObject(cart),
+                                        });
+                                    })
+                                    .catch(next);
+                            })
+                    })
+            } else {
+                Product.find({ sex: "men" }).limit(8)
+                    .then((sex) => {
+                        Product.find({}).limit(12)
+                            .then((product) => {
+                                res.render('home', {
+                                    product: mutipleMongooseObject(product.reverse()),
+                                    sex: mutipleMongooseObject(sex),
+                                });
+                            })
+                            .catch(next);
+                    })
+            }
+
         }
-
-    }
-
+        // hàm test thử ajax
     cartSL(req, res) {
         const token = req.cookies.token;
         if (token) {
