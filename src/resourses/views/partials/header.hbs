@@ -103,10 +103,9 @@
     }  
 
 
-    if( toa==undefined && to ==undefined){
-        document.getElementById("showSYS").style.display ="none";   
-        document.getElementById("cart").href ="/logon/signin";           
-    }
+    if (toa == undefined) {
+            document.getElementById("showSYS").style.display = "none";
+        }
     setTimeout(function(){
         document.querySelector(".slC").innerHTML = JSON.parse(localStorage.getItem("Pro_carts")).length;
     }, 100);   

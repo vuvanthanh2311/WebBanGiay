@@ -271,6 +271,7 @@ if (Pro_carts != null) {
     var done_cart = [];
 
     btncheckout.addEventListener("click", function() {
+        const user = sessionStorage.getItem("user");
         const checkbox = document.querySelectorAll('input[name="check"]:checked');
         if (Number(tong.innerHTML) != 0) {
             btncheckout.href = "/cart/checkout"
