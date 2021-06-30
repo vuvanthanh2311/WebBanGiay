@@ -1,5 +1,4 @@
 const User = require('../modules/Users');
-const Cart = require('../modules/Cart');
 const { MongooseObject } = require('../../util/mongoose');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');

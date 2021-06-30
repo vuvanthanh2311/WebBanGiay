@@ -1,5 +1,4 @@
 const Product = require('../modules/Product');
-const Cart = require('../modules/Cart');
 const Comment = require('../modules/Comment');
 const User = require('../modules/Users');
 const { MongooseObject } = require('../../util/mongoose');
@@ -14,30 +13,6 @@ const { render } = require('node-sass');
 
 
 class ProductController {
-    // xử lý thêm sản phẩm vào giỏ hàng
-    async carts(req, res, next) {
-        const token = req.cookies.token;
-        const user = jwt.verify(token, process.env.TOKEN_SECRET);
-        req.user = user;
-        const userId = req.user._id
-            // const Size = sessionStorage.getItem("Size");
-        const cart = await Product.findOne({ slug: req.params.slug })
-        const Pcart = new Cart({
-            // total: 
-            // quantity: 
-            // size: Size,
-            product_id: cart._id,
-            user_id: userId,
-            product_name: cart.name,
-            product_image: cart.image,
-            product_price: cart.price,
-            product_description: cart.description,
-            product_slug: cart.slug,
-        })
-        Pcart.save();
-        res.redirect('back')
-
-    }
 
     // render giao diện từng sản phẩm
     shows(req, res, next) {

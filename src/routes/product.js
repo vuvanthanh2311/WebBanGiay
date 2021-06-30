@@ -5,7 +5,7 @@ const productController = require('../app/controllers/ProductController');
 router.get('/search', productController.search);
 router.get('/:slug', productController.shows);
 router.post('/:slug', productController.comment);
-router.post('/:slug', productController.carts);
+// router.post('/:slug', productController.carts);
 router.delete('/:id', productController.destroy);
 
 

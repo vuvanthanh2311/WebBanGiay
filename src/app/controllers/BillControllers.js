@@ -16,9 +16,8 @@ class BillController {
             const userId = req.user._id
             Bill.find({ user_id: userId })
                 .then((bill) => {
-
                     res.render('Bill/show', {
-                        bill: mutipleMongooseObject(bill),
+                        bill: mutipleMongooseObject(bill.reverse()),
                     });
                 })
                 .catch(next);
