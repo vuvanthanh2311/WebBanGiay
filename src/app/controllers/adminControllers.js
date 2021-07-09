@@ -6,9 +6,11 @@ const { MongooseObject } = require('../../util/mongoose');
 const { render } = require('node-sass');
 
 class adminController {
+    // tạo mới sản phẩm
     create(req, res) {
-        res.render('admin/CreProduct')
-    }
+            res.render('admin/CreProduct')
+        }
+        // lưu sản phẩm
     store(req, res, next) {
 
         const Data = req.body;
@@ -19,61 +21,67 @@ class adminController {
             .catch(next);
     }
     dashboard(req, res) {
-        res.render('admin/dashboard')
-    }
+            res.render('admin/dashboard')
+        }
+        // quản lý tài khoản
     AccManage(req, res) {
-        User.find({})
-            .then((user) => {
-                res.render('admin/AccManage', {
-                    user: mutipleMongooseObject(user),
-                });
-            })
-    }
+            User.find({})
+                .then((user) => {
+                    res.render('admin/AccManage', {
+                        user: mutipleMongooseObject(user),
+                    });
+                })
+        }
+        // chi tiết từng tài khoản
     detailAcc(req, res) {
-        User.findOne({ _id: req.params.id })
-            .then(user => {
-                res.render('admin/detailAcc', {
-                    user: MongooseObject(user)
-                });
-                // res.json(user);
+            User.findOne({ _id: req.params.id })
+                .then(user => {
+                    res.render('admin/detailAcc', {
+                        user: MongooseObject(user)
+                    });
+                    // res.json(user);
 
-            })
-    }
+                })
+        }
+        // quản lý sản phẩm
     ProductM(req, res) {
-        Product.find({})
-            .then((product) => {
-                res.render('admin/ProductManage', {
-                    product: mutipleMongooseObject(product),
-                });
-            })
-    }
+            Product.find({})
+                .then((product) => {
+                    res.render('admin/ProductManage', {
+                        product: mutipleMongooseObject(product),
+                    });
+                })
+        }
+        // cập nhật sản phẩm
     updatePD(req, res, next) {
-        const Data = req.body;
-        Data.slug = req.body.name;
-        Product.updateOne({ _id: req.params.id }, Data)
-            .then(() => res.redirect('/admin/PDManage'))
-            .catch(next);
-    }
-
+            const Data = req.body;
+            Data.slug = req.body.name;
+            Product.updateOne({ _id: req.params.id }, Data)
+                .then(() => res.redirect('/admin/PDManage'))
+                .catch(next);
+        }
+        // chi tiết từng sản phẩm
     detailPD(req, res) {
-        Product.findOne({ _id: req.params.id })
-            .then(product => {
-                res.render('admin/UpdatePD', {
-                    product: MongooseObject(product)
-                });
-                // res.json(user);
+            Product.findOne({ _id: req.params.id })
+                .then(product => {
+                    res.render('admin/UpdatePD', {
+                        product: MongooseObject(product)
+                    });
+                    // res.json(user);
 
-            })
-    }
+                })
+        }
+        // quản lý hóa đơn mua hàng
     BillMg(req, res, next) {
-        Bill.find({})
-            .then((bill) => {
-                res.render('admin/BillMg', {
-                    bill: mutipleMongooseObject(bill),
-                });
-            })
-            .catch(next);
-    }
+            Bill.find({})
+                .then((bill) => {
+                    res.render('admin/BillMg', {
+                        bill: mutipleMongooseObject(bill),
+                    });
+                })
+                .catch(next);
+        }
+        // duyệt hóa đơn
     duyetctt(req, res, next) {
         Bill.updateOne({ _id: req.params.id }, { status: "clh" })
             .then(() => res.redirect('/admin/BillMg'))

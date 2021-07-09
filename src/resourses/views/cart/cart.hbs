@@ -27,53 +27,11 @@
                 <div class="cart__shopinfo--right">
                     <a href="/">Continue shopping <i class="far fa-long-arrow-right"></i></a>
                 </div>
+            </div> 
+            <div class="Cart_pro">
+                
             </div>
-        {{#each cart}}  
-            <div id="cartitem" class="cart__content">
-                <div id="checkbox" class="cart__content--checkbox">
-                    <input type="checkbox" name="check" id="check" >
-                </div>
-                <div class="cart__content--sanpham">
-                    
-                    <div class="cart__content--sanpham_image">
-                        <a href="/product/{{this.product_slug}}">
-                            <img id="cart_image" src="{{this.product_image}}" alt="image" style="width: 10rem; height:10rem">
-                        </a>
-                    </div>
-                    <div class="cart__content--sanpham_name">
-                        <a id="cart_name" href="/product/{{this.product_slug}}">
-                            {{this.product_name}}
-                        </a>
-                    </div>
-                </div>
-                <div id="dongia" class="cart__content--dongia">
-                    <p   class="dongia">
-                        {{this.product_price}}
-                    </p>
-                    <p id="formatPrice"  class="dongiashow">
-                            {{this.product_price}}
-                    </p>
-                    <span>VNĐ</span>
-                </div>
-                <div class="cart__content--soluong">
-                    <div id="quanity" class="cart__content--soluong_quanity" >
-                        <button id="sub" class="quanity" disabled><i class="far fa-minus"></i></button>
-                        <input type="numer" name="soluong" id="soluong" value="1">
-                        <button id="add" class="quanity"><i class="fal fa-plus"></i></button>
-                    </div>
-                    
-                </div>
-                <div id="sotien" class="cart__content--sotien">
-                    <p id="formatPrice"  class="sotien">
-                            {{this.product_price}}
-                    </p>
-                    <span>VNĐ</span>
-                </div>
-                <div class="cart__content--thaotac">
-                    <button id="{{this._id}}" class="btn--white Cbtndel">Xóa</button>
-                </div>
-            </div>
-        {{/each}}
+            
 
         <div id="checkout" class="cart__checkout fixed-bottom">
             <div class="cart__checkout--checkbox">
@@ -96,6 +54,7 @@
         </div>
         <div class="confirmdel__btn">
             <button id="Cbtndestroy" class="btn--del">Xóa Bỏ</button>
+            <a href="/cart/cart" id="refesh_cart" style="none"></a>
             <button id="Cbtnclose" class="btn--close">Hủy</button>
         </div>
     </div>
@@ -106,7 +65,6 @@
         <button class="checkout--btnOK">OK</button>
     </div>
      <div id="bgblack" class="bg--black"></div>
-     <form id="cart-form-delete"  method="POST"></form>
 
 <div class="horscroll" style="margin: 10rem auto;">
     <h1>ĐƯỢC ĐỀ XUẤT CHO BẠN</h1>
@@ -141,6 +99,3 @@
 </div>
 </body>
 <script src="/js/cart.js"></script>
-<script>
-    sessionStorage.setItem("slC", document.querySelectorAll('#cart_name').length);
-</script>

@@ -120,6 +120,12 @@
     Bill.products = products;
     Bill.status = "ctt";
     Checkout_dathang.addEventListener("click",function(){
+        const done_cart = JSON.parse(sessionStorage.getItem("done_cart"));
+        done_cart.forEach(function(item, index){
+            const remove_cart = JSON.parse(localStorage.getItem("Pro_carts"))
+                remove_cart.splice(Number(item), 1)
+                localStorage.setItem("Pro_carts", JSON.stringify(remove_cart))
+        })
        fetch('/Bill/store', {
             method: 'POST', // or 'PUT'
             headers: {

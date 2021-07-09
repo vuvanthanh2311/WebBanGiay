@@ -113,16 +113,3 @@
     </div>
 </div>
 
-{{#each cart}}
-<div class="cartSL" style="display: none;">{{@index}}</div>
-{{/each}}
-
-<script>
-    const cartSL = document.querySelectorAll(".cartSL")
-    if(cartSL){
-        var slC = cartSL.length;
-        sessionStorage.setItem("slC",slC);
-    }else{
-        sessionStorage.setItem("slC",0);
-    }
-</script>

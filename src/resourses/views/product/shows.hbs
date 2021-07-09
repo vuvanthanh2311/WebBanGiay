@@ -2,7 +2,7 @@
   <div class="detail">
     <div class="detail__content">
       <div class="detail__content--image">
-        <img src="{{product.image}}"alt="...">
+        <img class="Pro_img" src="{{product.image}}"alt="...">
       </div>
       <div class="detail__content--info">
         <div class="detail__content--info_decription">
@@ -34,7 +34,7 @@
                   </div>
                   <form class="form-comment" action="/product/comment" method="POST">
                     <input type="text" name="product_id" id="product_id" value="{{product._id}}" style="display:none">
-                    <textarea name="content" id="content" cols="30" rows="2"></textarea>
+                    <textarea name="content" id="content" placeholder="Bình luận của bạn !" cols="30" rows="2"></textarea>
                     <button class="btn-comment" type="submit">Send</button>
                   </form>
                 </div>
@@ -69,7 +69,7 @@
     </div>
     <div class="detail__sidebar">
       <div class="detail__sidebar--choose">
-        <h1>{{product.name}}</h1>
+        <h1 class="Pro_name">{{product.name}}</h1>
         <div class="detail__sidebar--choose_price">
           <p id="formatPrice">{{product.price}}</p>
           <span>VNĐ</span>
@@ -82,9 +82,9 @@
           <button class="btn--size">42</button>
           <span class="warning-size">hãy chọn size của bạn</span>
         </div>
-        <form id="form_addtocart" action="/product/{{product.slug}}" method="POST">
         </form>
         <div class="bor--adidas"><button class="btn--adidas addtocart">THÊM VÀO GIỎ HÀNG<i class="far fa-long-arrow-right"></i></button></div>
+        <a href="/cart/cart" class="goto_cart" style="display: none;"></a>
       </div>
       
     </div>
@@ -97,26 +97,75 @@
         <a href="/logon/signup"><div class="bor--adidas"><button class="btn--adidas">Sign up for newsletter<i class="far fa-long-arrow-right"></i></button></div> </a>
     </div>
 </div>
+<div class="Pro_id" style="display: none;">
+  {{product._id}}
+</div>
+<div class="Pro_price" style="display: none;">
+  {{product.price}}
+</div>
 </body>
 <script>
+
+
   const review = document.querySelector(".review__comment--send");
   const user = sessionStorage.getItem("user");
   if(user == "no"){
     review.style.display ="none"
   }
+  // add to cart 
+  
+    
+
+document.querySelector('.addtocart').addEventListener("click", function() {
+  
+  if (document.querySelector(".btnsize--active")) {
+    const getPro_carts = JSON.parse(localStorage.getItem("Pro_carts"));
+      if(getPro_carts == null){
+        // xu ly khi chua co data trong localstore
+
+        const Pro_carts = [];
+
+        const Pro_cart = {};
+        Pro_cart.id = document.querySelector(".Pro_id").innerHTML.trim();
+        Pro_cart.size = document.querySelector(".btnsize--active").innerHTML;
+        Pro_cart.name = document.querySelector(".Pro_name").innerHTML.trim();
+        Pro_cart.image = document.querySelector(".Pro_img").src.trim();
+        Pro_cart.dongia = document.querySelector(".Pro_price").innerHTML.trim();
+        Pro_carts.unshift(Pro_cart);
+        localStorage.setItem("Pro_carts", JSON.stringify(Pro_carts));
+        document.querySelector(".goto_cart").click();
+
+      }else{
+        // xu ly khi co data trong local store
+
+        const Pro_cart = {};
+        Pro_cart.id = document.querySelector(".Pro_id").innerHTML.trim();
+        Pro_cart.size = document.querySelector(".btnsize--active").innerHTML;
+        Pro_cart.name = document.querySelector(".Pro_name").innerHTML.trim();
+        Pro_cart.image = document.querySelector(".Pro_img").src.trim();
+        Pro_cart.dongia = document.querySelector(".Pro_price").innerHTML.trim();
+        var trung = "no";
+        getPro_carts.forEach(function(item, index) {
+          
+            if (Pro_cart.id == item.id) {
+                trung = "yes"
+            }
+        })
+        if(trung == "no"){
+              getPro_carts.push(Pro_cart);
+              localStorage.setItem("Pro_carts", JSON.stringify(getPro_carts));
+              document.querySelector(".goto_cart").click();
+            }else{
+              confirm("da co trong go hang")
+            }
+      }
+    } else {
+        document.querySelector(".warning-size").style.display = "block";
+    }
+  })
   
 
-  document.querySelector('.addtocart').addEventListener("click",function(){
-    
-    if(document.querySelector(".btnsize--active")){
-      sessionStorage.setItem("Size",document.querySelector(".btnsize--active").innerHTML)
-      document.getElementById("form_addtocart").submit();
-      sessionStorage.setItem("slC",(Number(sessionStorage.getItem("slC"))+1));
-    }else{
-      document.querySelector(".warning-size").style.display = "block";
-    } 
-  })
- 
+
 </script>
 
 

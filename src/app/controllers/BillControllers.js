@@ -8,40 +8,47 @@ const User = require('../modules/Users');
 
 
 class BillController {
+<<<<<<< HEAD
 
 
+=======
+    // giao diện chính hóa đơn
+>>>>>>> 7b72427299f5899e4c019d69e94c7a0486c765a7
     show(req, res, next) {
-        const token = req.cookies.token;
-        const user = jwt.verify(token, process.env.TOKEN_SECRET);
-        req.user = user;
-        const userId = req.user._id
-        Bill.find({ user_id: userId })
-            .then((bill) => {
-
-                res.render('Bill/show', {
-                    bill: mutipleMongooseObject(bill),
-                });
-            })
-            .catch(next);
-    }
+            const token = req.cookies.token;
+            const user = jwt.verify(token, process.env.TOKEN_SECRET);
+            req.user = user;
+            const userId = req.user._id
+            Bill.find({ user_id: userId })
+                .then((bill) => {
+                    res.render('Bill/show', {
+                        bill: mutipleMongooseObject(bill.reverse()),
+                    });
+                })
+                .catch(next);
+        }
+        // lưu đơn hàng
     store(req, res, next) {
 
-        const Data = req.body;
-        const bill = new Bill(Data);
-        bill.save()
-            .then(() => res.json("luu thanh cong"))
-            .catch(next);
-    }
+            const Data = req.body;
+            const bill = new Bill(Data);
+            bill.save()
+                .then(() => res.json("luu thanh cong"))
+                .catch(next);
+        }
+        // hủy đơn hàng
     delete(req, res, next) {
-        Bill.updateOne({ _id: req.params.id }, { status: "dh" })
-            .then(() => res.redirect('/Bill/show'))
-            .catch(next);
-    }
+            Bill.updateOne({ _id: req.params.id }, { status: "dh" })
+                .then(() => res.redirect('/Bill/show'))
+                .catch(next);
+        }
+        // mua lại đơn hàng đã hủy hoặc đã mua
     repurchase(req, res, next) {
-        Bill.updateOne({ _id: req.params.id }, { status: "ctt" })
-            .then(() => res.redirect('/Bill/show'))
-            .catch(next);
-    }
+            Bill.updateOne({ _id: req.params.id }, { status: "ctt" })
+                .then(() => res.redirect('/Bill/show'))
+                .catch(next);
+        }
+        // chi  tiết hóa đơn và người mua
     detail(req, res, next) {
         Bill.findOne({ _id: req.params.id })
             .then((bill) => {
