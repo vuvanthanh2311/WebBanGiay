@@ -8,12 +8,11 @@ const User = require('../modules/Users');
 
 
 class BillController {
-<<<<<<< HEAD
 
 
-=======
+
     // giao diện chính hóa đơn
->>>>>>> 7b72427299f5899e4c019d69e94c7a0486c765a7
+
     show(req, res, next) {
             const token = req.cookies.token;
             const user = jwt.verify(token, process.env.TOKEN_SECRET);
